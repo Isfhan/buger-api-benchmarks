@@ -5,10 +5,6 @@ This project benchmarks different Node.js and Bun.js HTTP frameworks implementin
 ## Quick Start
 
 ```bash
-# Clone the repository
-git clone <repository-url>
-cd buger-api-benchmarks
-
 # Install all dependencies with one command
 ./install-all.sh
 ```
@@ -17,8 +13,8 @@ cd buger-api-benchmarks
 
 ```
 buger-api-benchmarks/
-├── my-express-app/       # Express.js implementation
-├── my-express-app-2/     # Second Express.js implementation
+├── my-express-app/       # Express.js implementation using Node
+├── my-express-app-2/     # Second Express.js implementation using Bun
 ├── my-burger-api-app/    # Burger API implementation using Bun
 ├── my-elysia-app/        # Elysia implementation using Bun
 ├── benchmark.js          # Main benchmark script
@@ -29,6 +25,7 @@ buger-api-benchmarks/
 ## Prerequisites
 
 Before running the benchmarks, make sure you have the following installed:
+
 - Node.js (for Express.js apps)
 - Bun.js (for Burger API and Elysia apps)
 
@@ -41,6 +38,7 @@ The project includes a convenient installation script that handles all dependenc
 ```
 
 This single script will automatically:
+
 - Install root project dependencies
 - Install Express.js app dependencies
 - Install second Express.js app dependencies
@@ -72,6 +70,7 @@ bun src/index.ts
 ```
 
 2. Run the benchmarks:
+
 ```bash
 npm run benchmark
 ```
@@ -79,6 +78,7 @@ npm run benchmark
 ## Benchmark Configuration
 
 The benchmark uses [autocannon](https://github.com/mcollina/autocannon) with the following settings:
+
 - 100 concurrent connections
 - 10 seconds duration
 - Testing the `/api` endpoint on each server
@@ -93,6 +93,7 @@ The benchmark uses [autocannon](https://github.com/mcollina/autocannon) with the
 ## Results
 
 The benchmark results will show:
+
 - Requests per second
 - Latency statistics
 - Throughput
@@ -103,16 +104,9 @@ Results are displayed in a table format for easy comparison between frameworks.
 ## System Requirements
 
 The benchmark script automatically detects and reports:
+
 - CPU model and cores
 - Total system memory
 - Operating system
 - Node.js version
 - Bun version
-
-## Contributing
-
-Feel free to contribute by:
-1. Opening issues for bugs or suggestions
-2. Submitting pull requests with improvements
-3. Adding more framework implementations
-4. Enhancing the benchmark methodology
