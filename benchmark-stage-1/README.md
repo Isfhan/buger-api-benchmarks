@@ -58,13 +58,17 @@ node express-server.js
 
 # Terminal 2 - Express.js app 2
 cd my-express-app-2
-node express-server.js
+bun express-server.js
 
 # Terminal 3 - Burger API app
 cd my-burger-api-app
 bun index.ts
 
-# Terminal 4 - Elysia app
+# Terminal 4 - Hono app
+cd my-hono-app
+bun run src/index.ts
+
+# Terminal 5 - Elysia app
 cd my-elysia-app
 bun src/index.ts
 ```
@@ -87,8 +91,9 @@ The benchmark uses [autocannon](https://github.com/mcollina/autocannon) with the
 
 - Express.js app: http://localhost:1000
 - Express.js app 2: http://localhost:2000
-- Burger API app: http://localhost:3000
-- Elysia app: http://localhost:4000
+- Elysia app: http://localhost:3000
+- Hono app: http://localhost:4000
+- Burger API app: http://localhost:5000
 
 ## Results
 

@@ -9,6 +9,6 @@ const burger = new Burger({
 });
 
 // Start the server on port 4000 with a callback
-burger.serve(4000, () => {
-  console.log(`Server is running on port ${4000}`);
+burger.serve(5000, () => {
+  console.log(`Server is running on port ${5000}`);
 });
