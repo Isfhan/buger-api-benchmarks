@@ -1,7 +1,7 @@
 # Burger API Benchmarks
 
 This project benchmarks various HTTP frameworks built with Node.js and Bun.js. It compares the performance of following frameworks:
-Express.js, Elysia, and BurgerAPI.
+Express.js, Elysia, Hono and BurgerAPI.
 
 ### Available Stages
  - benchmark-stage-1

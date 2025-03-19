@@ -18,6 +18,11 @@ cd my-burger-api-app
 bun install
 cd ..
 
+echo -e "\nInstalling Hono app dependencies..."
+cd my-hono-app
+bun install
+cd ..
+
 echo -e "\nInstalling Elysia app dependencies..."
 cd my-elysia-app
 bun install
