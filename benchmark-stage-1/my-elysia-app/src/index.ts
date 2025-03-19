@@ -1,4 +1,5 @@
 import { Elysia } from "elysia";
+const port = 3000;
 
 const app = new Elysia()
   .get("/api", () => {
@@ -6,7 +7,7 @@ const app = new Elysia()
       message: "Hello world",
     };
   })
-  .listen(3000);
+  .listen(port);
 
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`

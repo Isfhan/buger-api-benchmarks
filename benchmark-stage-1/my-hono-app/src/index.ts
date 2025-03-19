@@ -7,9 +7,11 @@ app.get('/api', (c) => {
   return c.json({ message: 'Hello world' })
 })
 
+const port = 4000;
+
 serve({
   fetch: app.fetch,
-  port: 4000
+  port: port
 })
 
 export default app

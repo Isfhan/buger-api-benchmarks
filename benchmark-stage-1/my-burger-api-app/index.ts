@@ -8,7 +8,9 @@ const burger = new Burger({
   debug: true, // Enable debug mode for detailed logging and stack trace page
 });
 
+const port = 5000;
+
 // Start the server on port 4000 with a callback
-burger.serve(5000, () => {
-  console.log(`Server is running on port ${5000}`);
+burger.serve(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

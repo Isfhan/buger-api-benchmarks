@@ -15,8 +15,9 @@ This project benchmarks different Node.js and Bun.js HTTP frameworks implementin
 buger-api-benchmarks/
 ├── my-express-app/       # Express.js implementation using Node
 ├── my-express-app-2/     # Second Express.js implementation using Bun
-├── my-burger-api-app/    # Burger API implementation using Bun
 ├── my-elysia-app/        # Elysia implementation using Bun
+├── my-hono-app/          # hono implementation using Bun
+├── my-burger-api-app/    # Burger API implementation using Bun
 ├── benchmark.js          # Main benchmark script
 ├── install-all.sh        # One-click installation script
 └── package.json          # Root package configuration
@@ -27,7 +28,7 @@ buger-api-benchmarks/
 Before running the benchmarks, make sure you have the following installed:
 
 - Node.js (for Express.js apps)
-- Bun.js (for Burger API and Elysia apps)
+- Bun.js (for Burger API , Elysia and hono apps)
 
 ## Installation
 
@@ -42,8 +43,9 @@ This single script will automatically:
 - Install root project dependencies
 - Install Express.js app dependencies
 - Install second Express.js app dependencies
-- Install Burger API app dependencies
 - Install Elysia app dependencies
+- Install hono app dependencies
+- Install Burger API app dependencies
 
 No need to run npm install in each directory manually - the script handles everything!
 
@@ -60,17 +62,18 @@ node express-server.js
 cd my-express-app-2
 bun express-server.js
 
-# Terminal 3 - Burger API app
-cd my-burger-api-app
-bun index.ts
+# Terminal 3 - Elysia app
+cd my-elysia-app
+bun src/index.ts
 
 # Terminal 4 - Hono app
 cd my-hono-app
 bun run src/index.ts
 
-# Terminal 5 - Elysia app
-cd my-elysia-app
-bun src/index.ts
+# Terminal 5 - Burger API app
+cd my-burger-api-app
+bun index.ts
+
 ```
 
 2. Run the benchmarks:

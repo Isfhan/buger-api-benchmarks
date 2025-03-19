@@ -10,11 +10,11 @@ cd ..
 
 echo -e "\nInstalling Express.js app 2 dependencies..."
 cd my-express-app-2
-npm install
+bun install
 cd ..
 
-echo -e "\nInstalling Burger API app dependencies..."
-cd my-burger-api-app
+echo -e "\nInstalling Elysia app dependencies..."
+cd my-elysia-app
 bun install
 cd ..
 
@@ -23,8 +23,8 @@ cd my-hono-app
 bun install
 cd ..
 
-echo -e "\nInstalling Elysia app dependencies..."
-cd my-elysia-app
+echo -e "\nInstalling Burger API app dependencies..."
+cd my-burger-api-app
 bun install
 cd ..
 

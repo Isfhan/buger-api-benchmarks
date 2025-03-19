@@ -57,13 +57,14 @@ async function runBenchmark(url, serverName) {
   // Benchmark Bun with Express on port 3000
   const bunExpressResults = await runBenchmark('http://localhost:2000/api', 'Bun with Express');
 
-
   // Benchmark Bun with Elysia on port 3000
   const bunElysiaResults = await runBenchmark('http://localhost:3000/api', 'Bun with Elysia');
 
+  // Benchmark Bun with Hono on port 4000
+  const bunHonoResults = await runBenchmark('http://localhost:4000/api', 'Bun with Hono');
 
-  // Benchmark Bun with BurgerAPI on port 4000
-  const bunBurgerResults = await runBenchmark('http://localhost:4000/api', 'Bun with BurgerAPI');
+  // Benchmark Bun with BurgerAPI on port 5000
+  const bunBurgerResults = await runBenchmark('http://localhost:5000/api', 'Bun with BurgerAPI');
 
   // Extract key metrics for comparison
   const metrics = [
@@ -99,6 +100,17 @@ async function runBenchmark(url, serverName) {
       'Errors': bunElysiaResults.errors,
       'Non-2xx': bunElysiaResults.non2xx,
       'Throughput (MB/s)': (bunElysiaResults.throughput.average / 1024 / 1024).toFixed(2),
+    },
+    {
+      Server: 'Bun with Hono',
+      'Duration (s)': bunHonoResults.duration.toFixed(2),
+      'Total Requests': bunHonoResults.requests.total,
+      'Req/Sec': bunHonoResults.requests.average.toFixed(2),
+      'Avg Latency (ms)': bunHonoResults.latency.average.toFixed(2),
+      '99th Latency (ms)': bunHonoResults.latency.p99.toFixed(2),
+      'Errors': bunHonoResults.errors,
+      'Non-2xx': bunHonoResults.non2xx,
+      'Throughput (MB/s)': (bunHonoResults.throughput.average / 1024 / 1024).toFixed(2),
     },
     {
       Server: 'Bun with BurgerAPI',
