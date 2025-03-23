@@ -1,17 +1,14 @@
-import { Hono } from 'hono'
-import { serve } from "bun";
+import { Hono } from "hono";
 
-const app = new Hono()
+const app = new Hono();
 
-app.get('/api', (c) => {
-  return c.json({ message: 'Hello world' })
-})
+app.get("/api", (c) => {
+  return c.json({ message: "Hello world" });
+});
 
 const port = 4000;
 
-serve({
+export default {
+  port,
   fetch: app.fetch,
-  port: port
-})
-
-export default app
+};
