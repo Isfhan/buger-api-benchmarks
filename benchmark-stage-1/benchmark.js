@@ -35,7 +35,7 @@ async function runBenchmark(url, serverName) {
   return new Promise((resolve, reject) => {
     const instance = autocannon({
       url,
-      connections: 100, // Number of concurrent connections
+      connections: 500, // Number of concurrent connections
       duration: 10,     // Duration in seconds
     }, (err, results) => {
       if (err) return reject(err);
@@ -51,10 +51,10 @@ async function runBenchmark(url, serverName) {
   printSystemSpecs();
   console.log("Starting benchmarks...\n");
 
-  // Benchmark Node.js with Express on port 2000
+  // Benchmark Node.js with Express on port 1000
   const nodeExpressResults = await runBenchmark('http://localhost:1000/api', 'Node.js with Express');
 
-  // Benchmark Bun with Express on port 3000
+  // Benchmark Bun with Express on port 2000
   const bunExpressResults = await runBenchmark('http://localhost:2000/api', 'Bun with Express');
 
   // Benchmark Bun with Elysia on port 3000
@@ -65,6 +65,8 @@ async function runBenchmark(url, serverName) {
 
   // Benchmark Bun with BurgerAPI on port 5000
   const bunBurgerResults = await runBenchmark('http://localhost:5000/api', 'Bun with BurgerAPI');
+
+
 
   // Extract key metrics for comparison
   const metrics = [
@@ -126,7 +128,7 @@ async function runBenchmark(url, serverName) {
   ];
 
   // Display benchmark configuration and results
-  console.log("\nBenchmark Configuration: 100 connections, 10 seconds");
+  console.log("\nBenchmark Configuration: 500 connections, 10 seconds");
   console.log("Benchmark Comparison:");
   console.table(metrics);
 })();
