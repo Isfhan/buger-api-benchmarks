@@ -1,0 +1,6 @@
+benchmark-stage-1/package-lock.json
+benchmark-stage-1/my-burger-api-app/bun.lock
+benchmark-stage-1/my-express-app/package-lock.json
+benchmark-stage-1/my-elysia-app/bun.lock
+benchmark-stage-1/my-express-app-2/bun.lock
+benchmark-stage-1/my-hono-app/bun.lock
