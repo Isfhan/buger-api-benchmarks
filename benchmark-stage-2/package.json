@@ -1,0 +1,12 @@
+{
+  "name": "benchmark-stage-2",
+  "module": "benchmark.js",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.2"
+  }
+}

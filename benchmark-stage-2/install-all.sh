@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "Installing root dependencies..."
+npm install
+
+echo -e "\nInstalling Express.js app  dependencies..."
+cd my-express-app
+bun install
+cd ..
+
+echo -e "\nInstalling Hono app dependencies..."
+cd my-hono-app
+bun install
+cd ..
+
+echo -e "\nInstalling Elysia app dependencies..."
+cd my-elysia-app
+bun install
+cd ..
+
+
+echo -e "\nInstalling Burger API app dependencies..."
+cd my-burger-api-app
+bun install
+cd ..
+
+echo -e "\nAll installations completed!" 
