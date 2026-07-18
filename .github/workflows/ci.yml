@@ -32,10 +32,11 @@ jobs:
       - name: Install Bombardier (benchmark engine)
         run: |
           BOMB_VERSION="1.2.5"
-          curl -sSL \
-            "https://github.com/cmpxchg16/bombardier/releases/download/v${BOMB_VERSION}/bombardier-v${BOMB_VERSION}-linux-amd64.tar.gz" \
-            -o bombardier.tar.gz
-          tar -xzf bombardier.tar.gz bombardier
+          # codesenberg/bombardier ships per-OS binaries (no archive). Follow
+          # the redirect (-L) and place the binary on PATH.
+          curl -sSL -o bombardier \
+            "https://github.com/codesenberg/bombardier/releases/download/v${BOMB_VERSION}/bombardier-linux-amd64"
+          chmod +x bombardier
           sudo mv bombardier /usr/local/bin/bombardier
           bombardier --version
 
