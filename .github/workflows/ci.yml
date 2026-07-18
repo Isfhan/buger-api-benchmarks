@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BENCHMARKS_DIR: ${{ github.workspace }}
-      FRAMEWORK_DIR: ${{ github.workspace }}/../burger-api
+      FRAMEWORK_DIR: ${{ github.workspace }}/burger-api
     steps:
       - name: Checkout benchmarks
         uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: isfhan/burger-api
-          path: ${{ github.workspace }}/../burger-api
+          path: burger-api
 
       - uses: oven-sh/setup-bun@v2
         with:
