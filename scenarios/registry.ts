@@ -14,6 +14,8 @@ import { validationNone } from './validation/none';
 import { validationQuery } from './validation/query';
 import { validationParams } from './validation/params';
 import { validationBody } from './validation/body';
+import { validationCoerce } from './validation/coerce';
+import { validationResponse } from './validation/response';
 
 import { requestQueryParsing } from './request/query-parsing';
 import { requestResponseMutation } from './request/response-mutation';
@@ -44,6 +46,8 @@ export const scenarios: Scenario[] = [
   validationQuery,
   validationParams,
   validationBody,
+  validationCoerce,
+  validationResponse,
 
   requestQueryParsing,
   requestResponseMutation,

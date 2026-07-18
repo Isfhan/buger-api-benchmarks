@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      BENCHMARKS_DIR: ${{ github.workspace }}
+      FRAMEWORK_DIR: ${{ github.workspace }}/../burger-api
+    steps:
+      - name: Checkout benchmarks
+        uses: actions/checkout@v4
+
+      # The benchmarks depend on the local framework working copy (linked via
+      # `bun link`). Check out the framework repo alongside this one so the link
+      # resolves. Pin to `main`; align the ref with the benchmarks release when
+      # the framework is versioned.
+      - name: Checkout framework (burger-api)
+        uses: actions/checkout@v4
+        with:
+          repository: isfhan/burger-api
+          path: ${{ github.workspace }}/../burger-api
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install Bombardier (benchmark engine)
+        run: |
+          BOMB_VERSION="1.2.5"
+          curl -sSL \
+            "https://github.com/cmpxchg16/bombardier/releases/download/v${BOMB_VERSION}/bombardier-v${BOMB_VERSION}-linux-amd64.tar.gz" \
+            -o bombardier.tar.gz
+          tar -xzf bombardier.tar.gz bombardier
+          sudo mv bombardier /usr/local/bin/bombardier
+          bombardier --version
+
+      # Build + register the framework so `bun link burger-api` resolves the
+      # local working copy in the benchmarks repo.
+      - name: Build framework + register link
+        run: |
+          cd "$FRAMEWORK_DIR"
+          bun install
+          bun run --filter burger-api build
+          cd packages/burger-api
+          bun link
+
+      - name: Install benchmark dependencies (links local burger-api)
+        run: |
+          cd "$BENCHMARKS_DIR"
+          bun link burger-api
+          bun install
+
+      - name: Typecheck
+        run: bun run typecheck
+        working-directory: ${{ env.BENCHMARKS_DIR }}
+
+      - name: Core benchmark suite (ci profile)
+        run: bun run bench --profile ci
+        working-directory: ${{ env.BENCHMARKS_DIR }}
+
+      - name: Cross-framework battle suite (ci profile)
+        run: bun run battle --profile ci
+        working-directory: ${{ env.BENCHMARKS_DIR }}

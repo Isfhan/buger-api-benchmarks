@@ -3,9 +3,26 @@
 A dedicated, Bun-native benchmark suite for [BurgerAPI](https://burger-api.com).
 
 This repository is the single home for measuring BurgerAPI performance. It does
-not live inside the framework repository, and it does not compare BurgerAPI with
-other frameworks. It measures how BurgerAPI behaves under load for the features
-it actually provides.
+not live inside the framework repository. The core suite measures how BurgerAPI
+behaves under load (many requests sent at once) for the features it actually
+provides, and does not compare BurgerAPI with other frameworks.
+
+A separate, opt-in **battle** module (see [Framework comparison (battle)](#framework-comparison-battle))
+does compare BurgerAPI against other frameworks (Elysia, Hono, Express). It is
+isolated under `battle/` and does not affect the core suite.
+
+## Official Home for All BurgerAPI Benchmarks
+
+**This repository is the official home for all BurgerAPI performance
+benchmarks.** All benchmark work — new scenarios, new engines, new reporters —
+must be implemented here, in `burger-api-benchmarks`.
+
+Do **not** create benchmark folders or benchmark code inside the `burger-api`
+framework repository. Keeping benchmarks here means the framework stays focused
+on the framework, ships no benchmark implementation, and does not embed any
+generated numbers. If you need a new measurement, add a scenario in
+`scenarios/` (see [Adding a benchmark](#adding-a-benchmark)) rather than
+modifying the framework repo.
 
 ## Why a separate repository?
 
@@ -22,7 +39,8 @@ Benchmark code is not framework code. Keeping it separate means:
 [Bombardier](https://github.com/codesenberg/bombardier) is a mature, widely used
 HTTP load generator. It is fast, scriptable, and prints clear latency and
 throughput statistics. The runner drives Bombardier through Bun's `Bun.spawn`
-API, parses its output, and turns it into structured reports.
+API (a Bun built-in for starting another program), parses its output, and turns
+it into structured reports.
 
 ## Prerequisites
 
@@ -55,14 +73,26 @@ From this repository root:
 bun install
 ```
 
-This installs the local `burger-api` package (linked from the sibling
-`../burger-api` repository) and its dependencies.
+This installs the benchmark dependencies. The local `burger-api` package is
+linked into this repo with [Bun's `link` command](https://bun.com/docs/pm/cli/link),
+which is the recommended way to use your local working copy of the framework.
+
+To (re)establish the link, in the framework package register it, then link it
+here:
+
+```bash
+# one-time, in the burger-api framework package:
+cd ../burger-api/packages/burger-api && bun link
+
+# in this repository:
+bun link burger-api
+```
+
+After that, `bun install` keeps the `burger-api` entry as `"link:burger-api"`
+and resolves it to your local copy. No manual `node_modules` symlink is needed.
 
 The benchmark suite needs the built framework, so make sure `burger-api` is
-built first (`bun run build` in that repository). If `bun install` cannot copy
-or link the local `burger-api` package on your platform, confirm it is built and
-either switch the `burger-api` entry in `package.json` to the `link:` form or
-place the built package at `node_modules/burger-api`.
+built first (`bun run build` in that repository).
 
 ## Running benchmarks
 
@@ -91,8 +121,9 @@ bun run bench middleware/ten
 
 ### Benchmark profiles
 
-Profiles control duration, warm-up, and concurrency. No code changes are needed
-to switch.
+Profiles control duration, warm-up (a short period of traffic before measuring,
+so the server is settled), and concurrency (how many connections hit the server
+at once). No code changes are needed to switch.
 
 ```bash
 bun run bench --profile quick   # short, low concurrency (fast local checks)
@@ -114,7 +145,7 @@ bun run bench                   # same as --profile default
 | --- | --- |
 | routing | static, dynamic, wildcard, nested |
 | middleware | none, one, five, ten |
-| validation | none, query, params, body |
+| validation | none, query, params, body, coerce, response |
 | request | query-parsing, response-mutation, json |
 | errors | 404, 405, validation |
 
@@ -177,7 +208,7 @@ burger-api-benchmarks/
 ## Using the published BurgerAPI package
 
 By default this repository depends on the local sibling
-`../burger-api/packages/burger-api` (a `file:` dependency) so benchmarks track
+`../burger-api/packages/burger-api` (a `link:` dependency) so benchmarks track
 your working copy. To benchmark a released version instead, change the
 `burger-api` entry in `package.json` to a published version, for example:
 
@@ -188,3 +219,24 @@ your working copy. To benchmark a released version instead, change the
 ```
 
 Then run `bun install` again.
+
+## Framework comparison (battle)
+
+The `battle/` module is an opt-in, cross-framework comparison. It starts
+BurgerAPI alongside Elysia, Hono, and Express, each implementing the **same
+route shape**, and bombards them with identical load settings so the numbers
+reflect framework overhead, not application logic.
+
+```bash
+bun run battle                 # all battle scenarios, default profile
+bun run battle routing         # one group
+bun run battle routing/static  # one scenario
+bun run battle --profile quick # quick | ci | full | default
+```
+
+Reports are written to `reports/battle/<date>/summary.md` (side-by-side
+throughput + p99 tables). `reports/` is gitignored.
+
+**Runtime note:** all contestants run on Bun. Express is Node-based and runs
+under Bun's Node compatibility layer (not native Node), so its column is an
+"Express-on-Bun" measurement — this is stated in the report, not hidden.

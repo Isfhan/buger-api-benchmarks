@@ -15,5 +15,5 @@
     "noUncheckedIndexedAccess": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "scenarios", "configs"]
+  "include": ["src", "scenarios", "configs", "battle"]
 }
