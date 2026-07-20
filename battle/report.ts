@@ -67,9 +67,11 @@ export function renderBattleReport(meta: ReportMeta, results: BattleResult[]): s
 _Generated ${meta.date} · profile \`${meta.profile}\` · Bun ${meta.bunVersion}_
 
 **Environment:** ${meta.os}/${meta.arch} · ${meta.cpu} · ${meta.memory}
-**Frameworks:** BurgerAPI ${meta.burgerApiVersion}, Elysia, Hono, Express
+**Frameworks:** BurgerAPI ${meta.burgerApiVersion}, Elysia (v1), Elysia 2 (elysia@experimental, for testing only), Hono, Express
 **Runtime note:** all frameworks were run on Bun. Express is Node-based and ran
 under Bun's Node compatibility layer (not native Node); its numbers reflect that.
+**Testing note:** Elysia 2 is included for evaluation only (installed as
+elysia at experimental tag); it is not yet the default Elysia baseline.
 
 ## Throughput (requests/sec, higher is better)
 

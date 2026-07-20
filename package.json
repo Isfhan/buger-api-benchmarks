@@ -1,6 +1,6 @@
 {
   "name": "burger-api-benchmarks",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Bun-native benchmark suite for BurgerAPI",
   "module": "src/index.ts",
   "type": "module",
@@ -13,6 +13,7 @@
   "dependencies": {
     "burger-api": "link:burger-api",
     "elysia": "^1.2.0",
+    "elysia-experimental": "^2.0.0-exp.46",
     "express": "^4.21.2",
     "hono": "^4.6.0",
     "zod": "^4.0.17"

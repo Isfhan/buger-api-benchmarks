@@ -20,6 +20,7 @@ export interface BattleTarget {
 export interface BattleContestants {
   burger: () => FrameworkApp;
   elysia: () => FrameworkApp;
+  elysia2?: () => FrameworkApp;
   hono: () => FrameworkApp;
   express: () => FrameworkApp;
 }
@@ -42,6 +43,7 @@ export type ContestantName = keyof BattleContestants;
 export const CONTESTANT_ORDER: ContestantName[] = [
   'burger',
   'elysia',
+  'elysia2',
   'hono',
   'express',
 ];
@@ -49,6 +51,7 @@ export const CONTESTANT_ORDER: ContestantName[] = [
 export const CONTESTANT_LABEL: Record<ContestantName, string> = {
   burger: 'BurgerAPI',
   elysia: 'Elysia',
+  elysia2: 'Elysia 2',
   hono: 'Hono',
   express: 'Express',
 };

@@ -5,11 +5,6 @@ import { routingDynamic } from './routing/dynamic';
 import { routingWildcard } from './routing/wildcard';
 import { routingNested } from './routing/nested';
 
-import { middlewareNone } from './middleware/none';
-import { middlewareOne } from './middleware/one';
-import { middlewareFive } from './middleware/five';
-import { middlewareTen } from './middleware/ten';
-
 import { validationNone } from './validation/none';
 import { validationQuery } from './validation/query';
 import { validationParams } from './validation/params';
@@ -25,6 +20,9 @@ import { errors404 } from './errors/404';
 import { errors405 } from './errors/405';
 import { errorsValidation } from './errors/validation-error';
 
+import { phase1DevStatic } from './phase1/dev-static';
+import { phase1DevDynamic } from './phase1/dev-dynamic';
+
 /**
  * Explicit registry of every benchmark scenario. To add a benchmark:
  *   1. Create a scenario file under the relevant group folder.
@@ -36,11 +34,6 @@ export const scenarios: Scenario[] = [
   routingDynamic,
   routingWildcard,
   routingNested,
-
-  middlewareNone,
-  middlewareOne,
-  middlewareFive,
-  middlewareTen,
 
   validationNone,
   validationQuery,
@@ -56,4 +49,7 @@ export const scenarios: Scenario[] = [
   errors404,
   errors405,
   errorsValidation,
+
+  phase1DevStatic,
+  phase1DevDynamic,
 ];

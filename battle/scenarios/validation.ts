@@ -1,6 +1,7 @@
 import { Burger } from 'burger-api';
 import { toFrameworkApp } from '../../src/battle-adapter';
 import { createApp as elysiaApp } from '../challengers/elysia';
+import { createApp as elysia2App } from '../challengers/elysia2';
 import { createApp as honoApp } from '../challengers/hono';
 import { createApp as expressApp } from '../challengers/express';
 import type { BattleScenario, BattleRouteSpec } from '../types';
@@ -32,6 +33,7 @@ export const battleValidation: BattleScenario = {
         }),
       ),
     elysia: () => elysiaApp(spec),
+    elysia2: () => elysia2App(spec),
     hono: () => honoApp(spec),
     express: () => expressApp(spec),
   },

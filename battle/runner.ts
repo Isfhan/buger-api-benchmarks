@@ -64,6 +64,7 @@ export async function runBattle(
     console.log(`  ${scenario.description}`);
 
     for (const name of CONTESTANT_ORDER) {
+      if (!scenario.contestants[name]) continue;
       const port = BASE_PORT + results.length;
       const child = Bun.spawn(
         [process.execPath, SERVER_SCRIPT, scenario.id, name, String(port)],

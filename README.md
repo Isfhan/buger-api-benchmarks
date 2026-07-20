@@ -214,7 +214,7 @@ your working copy. To benchmark a released version instead, change the
 
 ```json
 "dependencies": {
-  "burger-api": "^0.11.0"
+  "burger-api": "^0.14.0"
 }
 ```
 
