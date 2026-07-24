@@ -104,7 +104,10 @@ and must never be committed. Node modules are gitignored too.
 Write everything as if this has always been BurgerAPI's benchmark suite. Do not
 use: `Phase 1/2/0`, `milestone`, `baseline`, `previous implementation`,
 `old benchmark`, `rewritten benchmark`. Use neutral category names: Routing,
-Middleware, Validation, Request Processing, Error Handling.
+Hooks, Validation, Request Processing, Error Handling.
+
+Architecture target: `../burger-api-roadmaps/BURGERAPI_VISION.md` (vision wins).
+Core suite should eventually cover hooks (not middleware). Battle stays under `battle/`.
 
 ## Rule 8 — Adding a Benchmark
 

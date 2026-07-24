@@ -2,6 +2,12 @@
 
 All notable changes to the BurgerAPI benchmark suite are documented here.
 
+## 1.3.0
+
+- 🔄 **Updated for burger-api 0.15.0**: global hooks discovery, hook name
+  aliases, and self-contained routes.
+- All 18 core scenarios and 4 battle scenarios pass.
+
 ## 1.2.0
 
 - 🧹 **Removed the Middleware category**: the `middleware/none`, `middleware/one`,

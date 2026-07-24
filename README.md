@@ -2,10 +2,14 @@
 
 A dedicated, Bun-native benchmark suite for [BurgerAPI](https://burger-api.com).
 
+**Architecture target:** `../burger-api-roadmaps/BURGERAPI_VISION.md`  
+Performance is a feature, not a marketing number. Core suite = BurgerAPI only.
+Optional **battle/** compares frameworks and stays isolated.
+
 This repository is the single home for measuring BurgerAPI performance. It does
 not live inside the framework repository. The core suite measures how BurgerAPI
-behaves under load (many requests sent at once) for the features it actually
-provides, and does not compare BurgerAPI with other frameworks.
+behaves under load for real features (routing, hooks, validation, request
+handling, errors) and does not compare BurgerAPI with other frameworks.
 
 A separate, opt-in **battle** module (see [Framework comparison (battle)](#framework-comparison-battle))
 does compare BurgerAPI against other frameworks (Elysia, Hono, Express). It is
