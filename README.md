@@ -2,7 +2,7 @@
 
 A dedicated, Bun-native benchmark suite for [BurgerAPI](https://burger-api.com).
 
-**Architecture target:** `../burger-api-roadmaps/BURGERAPI_VISION.md`  
+**Architecture target:** [`../BURGERAPI_VISION.md`](../BURGERAPI_VISION.md)
 Performance is a feature, not a marketing number. Core suite = BurgerAPI only.
 Optional **battle/** compares frameworks and stays isolated.
 

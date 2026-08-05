@@ -106,7 +106,7 @@ use: `Phase 1/2/0`, `milestone`, `baseline`, `previous implementation`,
 `old benchmark`, `rewritten benchmark`. Use neutral category names: Routing,
 Hooks, Validation, Request Processing, Error Handling.
 
-Architecture target: `../burger-api-roadmaps/BURGERAPI_VISION.md` (vision wins).
+Architecture target: [`../BURGERAPI_VISION.md`](../BURGERAPI_VISION.md) (vision wins).
 Core suite should eventually cover hooks (not middleware). Battle stays under `battle/`.
 
 ## Rule 8 — Adding a Benchmark
