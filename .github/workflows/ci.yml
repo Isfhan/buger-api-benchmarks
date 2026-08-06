@@ -17,7 +17,7 @@ jobs:
 
       # The benchmarks depend on the local framework working copy (linked via
       # `bun link`). Check out the framework repo inside the workspace so the
-      # link resolves. The framework's Phase 3 validation APIs live on the
+      # link resolves. The validation APIs live on the
       # `feat/burger-api-v1` branch; override the repo variable BURGER_API_REF
       # if they move to a different branch/tag.
       - name: Checkout framework (burger-api)
@@ -57,16 +57,16 @@ jobs:
           cd "$BENCHMARKS_DIR"
           bun link burger-api
           bun install
-          # Sanity check: the linked framework must expose the Phase 3 APIs
+          # Sanity check: the linked framework must expose the APIs
           # this suite exercises. Fail fast with a clear message if the linked
-          # copy is stale (e.g. framework not pushed with Phase 3 changes).
+          # copy is stale (e.g. framework not pushed with the latest changes).
           node -e "
             const fs = require('fs');
             const link = require('path').resolve('node_modules/burger-api');
             const real = fs.realpathSync(link);
             const src = fs.readFileSync(require('path').join(real, 'src/index.ts'), 'utf8');
             if (!src.includes('getServer')) {
-              console.error('Linked burger-api at ' + real + ' is missing getServer(); ensure the framework Phase 3 changes are pushed.');
+              console.error('Linked burger-api at ' + real + ' is missing getServer(); ensure the framework changes are pushed.');
               process.exit(1);
             }
             console.log('linked burger-api exposes getServer(): OK (' + real + ')');

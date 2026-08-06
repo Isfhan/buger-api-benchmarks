@@ -23,12 +23,6 @@ export function createApp(spec: BattleRouteSpec): FrameworkApp {
         res.json({ id: req.params.id, ...(spec.response as object) }),
       );
       break;
-    case 'middleware':
-      for (let i = 0; i < spec.count; i++) {
-        app.use((_req, _res, next) => next());
-      }
-      app.get(spec.path, (_req, res) => res.json(spec.response));
-      break;
     case 'validation':
       app.post(spec.path, (req, res) => res.json(req.body as object));
       break;

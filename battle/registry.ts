@@ -10,7 +10,8 @@ import { battleValidation } from './scenarios/validation';
  *
  * Note: the old middleware battle was removed after the v2 architecture reset,
  * which eliminated the separate middleware concept (infrastructure is now
- * expressed as hooks). Hooks-based battle scenarios can be added in Phase 4.
+ * expressed as hooks). Hooks-based battle scenarios can be added as new
+ * scenarios here when they are defined.
  */
 export const battleScenarios: BattleScenario[] = [
   battleRoutingStatic,

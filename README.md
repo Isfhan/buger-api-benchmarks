@@ -2,7 +2,6 @@
 
 A dedicated, Bun-native benchmark suite for [BurgerAPI](https://burger-api.com).
 
-**Architecture target:** [`../BURGERAPI_VISION.md`](../BURGERAPI_VISION.md)
 Performance is a feature, not a marketing number. Core suite = BurgerAPI only.
 Optional **battle/** compares frameworks and stays isolated.
 
@@ -110,7 +109,6 @@ Run one category:
 
 ```bash
 bun run bench routing
-bun run bench middleware
 bun run bench validation
 bun run bench request
 bun run bench errors
@@ -120,7 +118,7 @@ Run a single scenario:
 
 ```bash
 bun run bench routing/static
-bun run bench middleware/ten
+bun run bench validation/body
 ```
 
 ### Benchmark profiles
@@ -148,7 +146,6 @@ bun run bench                   # same as --profile default
 | Category | Scenarios |
 | --- | --- |
 | routing | static, dynamic, wildcard, nested |
-| middleware | none, one, five, ten |
 | validation | none, query, params, body, coerce, response |
 | request | query-parsing, response-mutation, json |
 | errors | 404, 405, validation |
@@ -203,7 +200,6 @@ burger-api-benchmarks/
 └── scenarios/
     ├── registry.ts     # explicit list of all scenarios
     ├── routing/
-    ├── middleware/
     ├── validation/
     ├── request/
     └── errors/
@@ -218,7 +214,7 @@ your working copy. To benchmark a released version instead, change the
 
 ```json
 "dependencies": {
-  "burger-api": "^0.14.0"
+  "burger-api": "^1.0.0"
 }
 ```
 

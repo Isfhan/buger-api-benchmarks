@@ -12,7 +12,8 @@ export const validationCoerce: Scenario = {
         {
           path: '/bench/validation/coerce',
           handlers: {
-            GET: (req) => Response.json({ v: req.validated.query }),
+            GET: (req) =>
+              Response.json({ v: (req.validated as { query?: unknown } | undefined)?.query ?? null }),
           },
           schema: {
             get: {

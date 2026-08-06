@@ -34,7 +34,6 @@ export type BattleRouteSpec =
   | { kind: 'static'; path: string; response: unknown }
   | { kind: 'json'; path: string; response: unknown }
   | { kind: 'param'; path: string; response: unknown }
-  | { kind: 'middleware'; count: number; path: string; response: unknown }
   | { kind: 'validation'; path: string; response: unknown };
 
 export type ContestantName = keyof BattleContestants;

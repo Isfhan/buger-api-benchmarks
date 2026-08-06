@@ -12,7 +12,8 @@ export const validationQuery: Scenario = {
         {
           path: '/bench/validation/query',
           handlers: {
-            GET: (req) => Response.json({ q: req.validated.query?.q ?? null }),
+            GET: (req) =>
+              Response.json({ q: (req.validated as { query?: { q?: string } } | undefined)?.query?.q ?? null }),
           },
           schema: { get: { query: z.object({ q: z.string() }) } },
         },

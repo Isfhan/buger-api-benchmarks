@@ -12,7 +12,8 @@ export const validationParams: Scenario = {
         {
           path: '/bench/validation/user/:id',
           handlers: {
-            GET: (req) => Response.json({ id: req.validated.params?.id ?? null }),
+            GET: (req) =>
+              Response.json({ id: (req.validated as { params?: { id?: string } } | undefined)?.params?.id ?? null }),
           },
           schema: { get: { params: z.object({ id: z.string() }) } },
         },

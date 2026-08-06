@@ -16,14 +16,6 @@ export function createApp(spec: BattleRouteSpec): FrameworkApp {
     case 'param':
       app.get(spec.path, (c) => c.json({ id: c.req.param('id'), ...(spec.response as object) }));
       break;
-    case 'middleware':
-      for (let i = 0; i < spec.count; i++) {
-        app.use('*', async (_c, next) => {
-          await next();
-        });
-      }
-      app.get(spec.path, (c) => c.json(spec.response));
-      break;
     case 'validation':
       app.post(spec.path, async (c) => {
         const body = await c.req.json().catch(() => ({}));
