@@ -8,6 +8,7 @@
   "scripts": {
     "bench": "bun run src/index.ts",
     "battle": "bun run battle/index.ts",
+    "size": "bun run src/size-guard.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
