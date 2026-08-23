@@ -23,6 +23,16 @@ import { errorsValidation } from './errors/validation-error';
 import { phase1DevStatic } from './phase1/dev-static';
 import { phase1DevDynamic } from './phase1/dev-dynamic';
 
+import {
+  optimizeFallbackTrie,
+  optimizeFallbackRegex,
+  optimizeHooksInterpreter,
+  optimizeHooksJit,
+  optimizeSetClean,
+  optimizeManyTrie,
+  optimizeManyRegex,
+} from './optimize/index';
+
 /**
  * Explicit registry of every benchmark scenario. To add a benchmark:
  *   1. Create a scenario file under the relevant group folder.
@@ -52,4 +62,12 @@ export const scenarios: Scenario[] = [
 
   phase1DevStatic,
   phase1DevDynamic,
+
+  optimizeFallbackTrie,
+  optimizeFallbackRegex,
+  optimizeHooksInterpreter,
+  optimizeHooksJit,
+  optimizeSetClean,
+  optimizeManyTrie,
+  optimizeManyRegex,
 ];
