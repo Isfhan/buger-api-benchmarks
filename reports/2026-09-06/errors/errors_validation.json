@@ -1,0 +1,24 @@
+{
+  "id": "errors/validation",
+  "group": "errors",
+  "description": "POST with an invalid body (validation error response)",
+  "target": {
+    "method": "POST",
+    "path": "/bench/errors/validate",
+    "body": "{\"name\":\"burger\"}",
+    "headers": {
+      "content-type": "application/json"
+    }
+  },
+  "metrics": {
+    "requestsPerSec": 43046.08,
+    "latencyAvgMs": 5.94,
+    "p50Ms": 5.83,
+    "p95Ms": 6.83,
+    "p99Ms": 7.25,
+    "throughputMBs": 46.38,
+    "totalRequests": 430679,
+    "errors": 430679
+  },
+  "raw": "Bombarding http://localhost:4315/bench/errors/validate for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     43046.08    1704.34   47252.40\n  Latency        5.94ms   160.12us    26.17ms\n  Latency Distribution\n     50%     5.83ms\n     75%     6.29ms\n     90%     6.59ms\n     95%     6.83ms\n     99%     7.25ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 430679, 5xx - 0\n    others - 0\n  Throughput:    46.38MB/s\n"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "validation/response",
+  "group": "validation",
+  "description": "GET route declaring a response schema (response validation in dev mode)",
+  "target": {
+    "method": "GET",
+    "path": "/bench/validation/response"
+  },
+  "metrics": {
+    "requestsPerSec": 104456.25,
+    "latencyAvgMs": 2.45,
+    "p50Ms": 2.59,
+    "p95Ms": 3.12,
+    "p99Ms": 3.63,
+    "throughputMBs": 21.91,
+    "totalRequests": 1044743,
+    "errors": 0
+  },
+  "raw": "Bombarding http://localhost:4309/bench/validation/response for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    104456.25    3781.53  111905.83\n  Latency        2.45ms    79.39us    15.32ms\n  Latency Distribution\n     50%     2.59ms\n     75%     2.62ms\n     90%     2.82ms\n     95%     3.12ms\n     99%     3.63ms\n  HTTP codes:\n    1xx - 0, 2xx - 1044743, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    21.91MB/s\n"
+}

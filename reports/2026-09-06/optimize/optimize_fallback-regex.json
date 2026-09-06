@@ -1,0 +1,20 @@
+{
+  "id": "optimize/fallback-regex",
+  "group": "optimize",
+  "description": "Fallback dispatch, regex engine (dynamic :id via trailing-slash miss)",
+  "target": {
+    "method": "GET",
+    "path": "/bench/opt/user/42/"
+  },
+  "metrics": {
+    "requestsPerSec": 89098.43,
+    "latencyAvgMs": 2.87,
+    "p50Ms": 2.65,
+    "p95Ms": 3.61,
+    "p99Ms": 4.18,
+    "throughputMBs": 23.7,
+    "totalRequests": 891210,
+    "errors": 891210
+  },
+  "raw": "Bombarding http://localhost:4319/bench/opt/user/42/ for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     89098.43    3762.74   99566.12\n  Latency        2.87ms    93.12us    16.18ms\n  Latency Distribution\n     50%     2.65ms\n     75%     3.13ms\n     90%     3.27ms\n     95%     3.61ms\n     99%     4.18ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 891210, 5xx - 0\n    others - 0\n  Throughput:    23.70MB/s\n"
+}

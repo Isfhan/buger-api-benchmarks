@@ -1,0 +1,20 @@
+{
+  "id": "request/query-parsing",
+  "group": "request",
+  "description": "Route that reads the lazily parsed query string",
+  "target": {
+    "method": "GET",
+    "path": "/bench/request/query?q=hello&lang=en"
+  },
+  "metrics": {
+    "requestsPerSec": 106250.24,
+    "latencyAvgMs": 2.41,
+    "p50Ms": 2.58,
+    "p95Ms": 3.01,
+    "p99Ms": 3.52,
+    "throughputMBs": 23.51,
+    "totalRequests": 1062724,
+    "errors": 0
+  },
+  "raw": "Bombarding http://localhost:4310/bench/request/query?q=hello&lang=en for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    106250.24    4518.55  116007.32\n  Latency        2.41ms    73.39us    17.35ms\n  Latency Distribution\n     50%     2.58ms\n     75%     2.62ms\n     90%     2.70ms\n     95%     3.01ms\n     99%     3.52ms\n  HTTP codes:\n    1xx - 0, 2xx - 1062724, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    23.51MB/s\n"
+}

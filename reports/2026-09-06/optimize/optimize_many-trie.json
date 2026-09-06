@@ -1,0 +1,20 @@
+{
+  "id": "optimize/many-trie",
+  "group": "optimize",
+  "description": "241 dynamic routes, trie engine, mid-set target",
+  "target": {
+    "method": "GET",
+    "path": "/bench/opt/target/77/"
+  },
+  "metrics": {
+    "requestsPerSec": 90974.97,
+    "latencyAvgMs": 2.81,
+    "p50Ms": 2.63,
+    "p95Ms": 3.47,
+    "p99Ms": 4.13,
+    "throughputMBs": 24.38,
+    "totalRequests": 909887,
+    "errors": 909887
+  },
+  "raw": "Bombarding http://localhost:4323/bench/opt/target/77/ for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     90974.97    4036.30  102011.97\n  Latency        2.81ms    96.16us    18.02ms\n  Latency Distribution\n     50%     2.63ms\n     75%     3.11ms\n     90%     3.20ms\n     95%     3.47ms\n     99%     4.13ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 909887, 5xx - 0\n    others - 0\n  Throughput:    24.38MB/s\n"
+}

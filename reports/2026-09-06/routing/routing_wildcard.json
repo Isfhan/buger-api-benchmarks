@@ -1,0 +1,20 @@
+{
+  "id": "routing/wildcard",
+  "group": "routing",
+  "description": "Wildcard GET route reading wildcard segments",
+  "target": {
+    "method": "GET",
+    "path": "/bench/routing/files/a/b/c"
+  },
+  "metrics": {
+    "requestsPerSec": 106881.99,
+    "latencyAvgMs": 2.39,
+    "p50Ms": 2.27,
+    "p95Ms": 3.03,
+    "p99Ms": 3.48,
+    "throughputMBs": 23.95,
+    "totalRequests": 1068987,
+    "errors": 0
+  },
+  "raw": "Bombarding http://localhost:4302/bench/routing/files/a/b/c for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    106881.99    4160.82  114522.78\n  Latency        2.39ms    69.17us    15.72ms\n  Latency Distribution\n     50%     2.27ms\n     75%     2.61ms\n     90%     2.68ms\n     95%     3.03ms\n     99%     3.48ms\n  HTTP codes:\n    1xx - 0, 2xx - 1068987, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    23.95MB/s\n"
+}
