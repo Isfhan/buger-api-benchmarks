@@ -7,14 +7,14 @@
     "path": "/bench/routing/user/42"
   },
   "metrics": {
-    "requestsPerSec": 106736.74,
-    "latencyAvgMs": 2.4,
-    "p50Ms": 2.23,
-    "p95Ms": 3.08,
-    "p99Ms": 3.58,
-    "throughputMBs": 21.98,
-    "totalRequests": 1067571,
+    "requestsPerSec": 100950.52,
+    "latencyAvgMs": 2.53,
+    "p50Ms": 2.59,
+    "p95Ms": 3.05,
+    "p99Ms": 4,
+    "throughputMBs": 20.79,
+    "totalRequests": 1009637,
     "errors": 0
   },
-  "raw": "Bombarding http://localhost:4301/bench/routing/user/42 for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    106736.74    5360.17  117284.94\n  Latency        2.40ms    78.05us    15.62ms\n  Latency Distribution\n     50%     2.23ms\n     75%     2.62ms\n     90%     2.71ms\n     95%     3.08ms\n     99%     3.58ms\n  HTTP codes:\n    1xx - 0, 2xx - 1067571, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    21.98MB/s\n"
+  "raw": "Bombarding http://localhost:4301/bench/routing/user/42 for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    100950.52    7626.27  116147.10\n  Latency        2.53ms    76.84us    18.75ms\n  Latency Distribution\n     50%     2.59ms\n     75%     3.00ms\n     90%     3.00ms\n     95%     3.05ms\n     99%     4.00ms\n  HTTP codes:\n    1xx - 0, 2xx - 1009637, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    20.79MB/s\n"
 }

@@ -13,19 +13,19 @@ elysia at experimental tag); it is not yet the default Elysia baseline.
 
 Scenario | BurgerAPI | Elysia | Elysia 2 | Hono | Express
 --- | --- | --- | --- | --- | ---
-routing/static | 109,822.77 req/s | 107,370 req/s | 111,461.19 req/s | 105,958.28 req/s | 64,003.38 req/s
-routing/param | 103,586.51 req/s | 108,327.4 req/s | 115,670.79 req/s | 112,215.04 req/s | 62,526.46 req/s
-json/echo | 113,863.83 req/s | 111,175.42 req/s | 109,253.7 req/s | 110,666.82 req/s | 63,431.36 req/s
-validation/body | 97,778.52 req/s | 99,105.11 req/s | 102,497.96 req/s | 94,726.3 req/s | 45,201.17 req/s
+routing/static | 108,050.09 req/s | 113,944.17 req/s | 110,375.79 req/s | 113,206.39 req/s | 65,897.07 req/s
+routing/param | 105,875.94 req/s | 112,650.56 req/s | 109,181.16 req/s | 112,582.76 req/s | 63,508.69 req/s
+json/echo | 115,188.5 req/s | 113,137.99 req/s | 110,743.51 req/s | 114,198.86 req/s | 64,042.26 req/s
+validation/body | 101,964.36 req/s | 100,911.28 req/s | 100,623.53 req/s | 93,304.2 req/s | 45,550.85 req/s
 
 ## Latency p99 (ms, lower is better)
 
 Scenario | BurgerAPI | Elysia | Elysia 2 | Hono | Express
 --- | --- | --- | --- | --- | ---
-routing/static | 2 ms | 2 ms | 1.85 ms | 2.01 ms | 3.35 ms
-routing/param | 2.09 ms | 1.99 ms | 1.75 ms | 2 ms | 3.39 ms
-json/echo | 2 ms | 2 ms | 2 ms | 2 ms | 3.13 ms
-validation/body | 2.01 ms | 2.01 ms | 2.01 ms | 2.01 ms | 4.36 ms
+routing/static | 2.01 ms | 2 ms | 2 ms | 2 ms | 3.12 ms
+routing/param | 2.01 ms | 2 ms | 2 ms | 2 ms | 3.38 ms
+json/echo | 2 ms | 2 ms | 2 ms | 2 ms | 3.41 ms
+validation/body | 2.07 ms | 2.01 ms | 2.01 ms | 2.25 ms | 4.27 ms
 
 ## How to read this
 

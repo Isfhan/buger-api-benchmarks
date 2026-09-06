@@ -6,9 +6,15 @@
  *
  * - `app-core`: Burger + toFetchHandler, no schemas. Guards the framework
  *   core (entry) and detects heavy eager dependencies leaking into the
- *   import graph (e.g. zod, which is ~333 KB minified, must stay lazy).
+ *   import graph (zod must stay lazy — it does not appear in this bundle
+ *   at all unless something statically imports it outside a schema.ts).
  * - `app-schema`: same app with a Zod query/body schema. Guards the full
- *   schema path (adapters, coercer, OpenAPI generator).
+ *   schema path (adapters, coercer, OpenAPI generator). zod itself is
+ *   necessarily part of this bundle's weight, so its threshold tracks
+ *   zod's own minified size, not just burger-api's contribution — bump it
+ *   when zod itself grows (checked: zod 4.0.17 → 4.5.4 alone accounts for
+ *   the jump from ~410 KB to ~495 KB here, confirmed by app-core staying
+ *   flat since it never imports zod).
  *
  * The guard asserts on both the entry chunk (startup cost) and the total
  * output (everything that gets shipped). Thresholds carry headroom for
@@ -69,7 +75,7 @@ export default { fetch: toFetchHandler(app) };
 /** Entry chunk budget (minified bytes) — framework core must stay tiny. */
 const LIMITS = {
   'app-core': { entry: 55_000, total: 560_000 },
-  'app-schema': { entry: 410_000, total: 980_000 },
+  'app-schema': { entry: 520_000, total: 980_000 },
 } as const;
 
 interface BundleResult {
