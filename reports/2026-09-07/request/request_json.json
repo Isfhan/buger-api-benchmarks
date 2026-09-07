@@ -1,0 +1,20 @@
+{
+  "id": "request/json",
+  "group": "request",
+  "description": "Route returning a JSON response",
+  "target": {
+    "method": "GET",
+    "path": "/bench/request/json"
+  },
+  "metrics": {
+    "requestsPerSec": 104756.44,
+    "latencyAvgMs": 2.44,
+    "p50Ms": 2.59,
+    "p95Ms": 3.05,
+    "p99Ms": 3.56,
+    "throughputMBs": 23.67,
+    "totalRequests": 1047735,
+    "errors": 0
+  },
+  "raw": "Bombarding http://localhost:4312/bench/request/json for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    104756.44    4283.04  115537.65\n  Latency        2.44ms    67.99us    14.72ms\n  Latency Distribution\n     50%     2.59ms\n     75%     2.62ms\n     90%     2.70ms\n     95%     3.05ms\n     99%     3.56ms\n  HTTP codes:\n    1xx - 0, 2xx - 1047735, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    23.67MB/s\n"
+}

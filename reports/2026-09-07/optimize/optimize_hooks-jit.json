@@ -1,0 +1,20 @@
+{
+  "id": "optimize/hooks-jit",
+  "group": "optimize",
+  "description": "Same hooks, JIT-compiled HookPlan",
+  "target": {
+    "method": "GET",
+    "path": "/bench/opt/hooks"
+  },
+  "metrics": {
+    "requestsPerSec": 104832.6,
+    "latencyAvgMs": 2.44,
+    "p50Ms": 2.58,
+    "p95Ms": 2.96,
+    "p99Ms": 3.47,
+    "throughputMBs": 20.99,
+    "totalRequests": 1048575,
+    "errors": 0
+  },
+  "raw": "Bombarding http://localhost:4321/bench/opt/hooks for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    104832.60    4739.92  121735.35\n  Latency        2.44ms    68.10us    14.15ms\n  Latency Distribution\n     50%     2.58ms\n     75%     2.61ms\n     90%     2.67ms\n     95%     2.96ms\n     99%     3.47ms\n  HTTP codes:\n    1xx - 0, 2xx - 1048575, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    20.99MB/s\n"
+}

@@ -1,6 +1,6 @@
 # BurgerAPI Battle — Framework Comparison
 
-_Generated 2026-09-06 · profile `full` · Bun 1.4.0_
+_Generated 2026-09-07 · profile `ci` · Bun 1.4.0_
 
 **Environment:** win32/x64 · Intel(R) Core(TM) i5-14400F (16 cores) · 31.8 GB
 **Frameworks:** BurgerAPI 1.0.0-beta.1, Elysia (v1), Elysia 2 (elysia@experimental, for testing only), Hono, Express
@@ -13,19 +13,19 @@ elysia at experimental tag); it is not yet the default Elysia baseline.
 
 Scenario | BurgerAPI | Elysia | Elysia 2 | Hono | Express
 --- | --- | --- | --- | --- | ---
-routing/static | 79,660.18 req/s | 72,831.53 req/s | 103,309.43 req/s | 96,849.75 req/s | 26,380.18 req/s
-routing/param | 45,272.21 req/s | 83,447.18 req/s | 89,568.37 req/s | 72,373.69 req/s | 54,389.57 req/s
-json/echo | 100,669.43 req/s | 103,412.83 req/s | 72,450.4 req/s | 98,072.26 req/s | 55,174.3 req/s
-validation/body | 55,653.24 req/s | 39,529.48 req/s | 64,809.63 req/s | 77,325.48 req/s | 26,599.98 req/s
+routing/static | 103,668.89 req/s | 113,312.14 req/s | 104,383.29 req/s | 97,085.88 req/s | 57,972.34 req/s
+routing/param | 94,406.16 req/s | 110,486.8 req/s | 108,046.52 req/s | 100,796.8 req/s | 55,303.2 req/s
+json/echo | 104,927 req/s | 109,425.75 req/s | 102,307.24 req/s | 100,430.82 req/s | 57,576.49 req/s
+validation/body | 89,725.23 req/s | 89,620.29 req/s | 91,310.75 req/s | 85,654.24 req/s | 40,971.39 req/s
 
 ## Latency p99 (ms, lower is better)
 
 Scenario | BurgerAPI | Elysia | Elysia 2 | Hono | Express
 --- | --- | --- | --- | --- | ---
-routing/static | 11.7 ms | 12.13 ms | 8 ms | 7.31 ms | 37.35 ms
-routing/param | 15.73 ms | 12.24 ms | 11.46 ms | 14.17 ms | 13 ms
-json/echo | 7 ms | 8.35 ms | 12.07 ms | 7 ms | 12 ms
-validation/body | 16.27 ms | 20.1 ms | 16.89 ms | 9 ms | 35.56 ms
+routing/static | 2 ms | 2 ms | 2.87 ms | 2.43 ms | 4 ms
+routing/param | 2.08 ms | 2 ms | 2 ms | 2.01 ms | 4 ms
+json/echo | 2 ms | 2 ms | 2.25 ms | 2.1 ms | 4 ms
+validation/body | 2.09 ms | 2.14 ms | 2.11 ms | 2.51 ms | 5 ms
 
 ## How to read this
 

@@ -12,7 +12,7 @@ export const markdownReporter: Reporter = {
     lines.push(`- BurgerAPI: ${meta.burgerApiVersion}`);
     lines.push(`- Bun: ${meta.bunVersion}`);
     lines.push(`- OS: ${meta.os} ${meta.arch}`);
-    lines.push(`- CPU: ${meta.cpu}`);
+    lines.push(`- CPU: ${meta.cpu} (${meta.cores} cores)`);
     lines.push(`- Memory: ${meta.memory}`);
     lines.push(`- Git commit: ${meta.gitCommit}`);
     lines.push('');

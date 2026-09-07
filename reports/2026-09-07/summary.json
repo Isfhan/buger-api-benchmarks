@@ -1,0 +1,524 @@
+{
+  "meta": {
+    "burgerApiVersion": "1.0.0-beta.1",
+    "bunVersion": "1.4.0",
+    "os": "win32",
+    "arch": "x64",
+    "cpu": "Intel(R) Core(TM) i5-14400F",
+    "cores": 16,
+    "memory": "31.8 GB",
+    "date": "2026-09-07",
+    "gitCommit": "6ed45f0065eaa61482e5a64cb6c5522144994ee1",
+    "profile": "default"
+  },
+  "results": [
+    {
+      "id": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "target": {
+        "method": "GET",
+        "path": "/bench/routing/static"
+      },
+      "metrics": {
+        "requestsPerSec": 103294.01,
+        "latencyAvgMs": 2.48,
+        "p50Ms": 2.59,
+        "p95Ms": 3.1,
+        "p99Ms": 3.65,
+        "throughputMBs": 21.18,
+        "totalRequests": 1033086,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4300/bench/routing/static for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    103294.01    5221.91  115955.28\n  Latency        2.48ms    72.13us    14.68ms\n  Latency Distribution\n     50%     2.59ms\n     75%     2.62ms\n     90%     2.83ms\n     95%     3.10ms\n     99%     3.65ms\n  HTTP codes:\n    1xx - 0, 2xx - 1033086, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    21.18MB/s\n"
+    },
+    {
+      "id": "routing/dynamic",
+      "group": "routing",
+      "description": "Dynamic GET route reading a single path parameter",
+      "target": {
+        "method": "GET",
+        "path": "/bench/routing/user/42"
+      },
+      "metrics": {
+        "requestsPerSec": 93802.31,
+        "latencyAvgMs": 2.73,
+        "p50Ms": 2.61,
+        "p95Ms": 3.26,
+        "p99Ms": 3.95,
+        "throughputMBs": 19.32,
+        "totalRequests": 938168,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4301/bench/routing/user/42 for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     93802.31    4815.40  106027.70\n  Latency        2.73ms    95.63us    17.00ms\n  Latency Distribution\n     50%     2.61ms\n     75%     2.72ms\n     90%     3.15ms\n     95%     3.26ms\n     99%     3.95ms\n  HTTP codes:\n    1xx - 0, 2xx - 938168, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    19.32MB/s\n"
+    },
+    {
+      "id": "routing/wildcard",
+      "group": "routing",
+      "description": "Wildcard GET route reading wildcard segments",
+      "target": {
+        "method": "GET",
+        "path": "/bench/routing/files/a/b/c"
+      },
+      "metrics": {
+        "requestsPerSec": 92230.03,
+        "latencyAvgMs": 2.77,
+        "p50Ms": 2.62,
+        "p95Ms": 3.49,
+        "p99Ms": 4.17,
+        "throughputMBs": 20.67,
+        "totalRequests": 922625,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4302/bench/routing/files/a/b/c for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     92230.03    7132.99  108156.47\n  Latency        2.77ms   119.84us    19.48ms\n  Latency Distribution\n     50%     2.62ms\n     75%     3.00ms\n     90%     3.18ms\n     95%     3.49ms\n     99%     4.17ms\n  HTTP codes:\n    1xx - 0, 2xx - 922625, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    20.67MB/s\n"
+    },
+    {
+      "id": "routing/nested",
+      "group": "routing",
+      "description": "Nested dynamic route with two path parameters",
+      "target": {
+        "method": "GET",
+        "path": "/bench/routing/api/users/7/posts/99"
+      },
+      "metrics": {
+        "requestsPerSec": 85126.58,
+        "latencyAvgMs": 3.01,
+        "p50Ms": 3.09,
+        "p95Ms": 3.99,
+        "p99Ms": 5,
+        "throughputMBs": 19.97,
+        "totalRequests": 851405,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4303/bench/routing/api/users/7/posts/99 for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     85126.58    8834.40   99612.98\n  Latency        3.01ms   120.16us    17.18ms\n  Latency Distribution\n     50%     3.09ms\n     75%     3.15ms\n     90%     3.65ms\n     95%     3.99ms\n     99%     5.00ms\n  HTTP codes:\n    1xx - 0, 2xx - 851405, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    19.97MB/s\n"
+    },
+    {
+      "id": "validation/none",
+      "group": "validation",
+      "description": "Route without any validation schema",
+      "target": {
+        "method": "GET",
+        "path": "/bench/validation/none?q=hello"
+      },
+      "metrics": {
+        "requestsPerSec": 94989,
+        "latencyAvgMs": 2.69,
+        "p50Ms": 2.61,
+        "p95Ms": 3.39,
+        "p99Ms": 4.41,
+        "throughputMBs": 20.47,
+        "totalRequests": 949980,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4304/bench/validation/none?q=hello for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     94989.00    8675.61  110567.46\n  Latency        2.69ms   129.72us    17.04ms\n  Latency Distribution\n     50%     2.61ms\n     75%     2.67ms\n     90%     3.15ms\n     95%     3.39ms\n     99%     4.41ms\n  HTTP codes:\n    1xx - 0, 2xx - 949980, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    20.47MB/s\n"
+    },
+    {
+      "id": "validation/query",
+      "group": "validation",
+      "description": "GET route with query validation",
+      "target": {
+        "method": "GET",
+        "path": "/bench/validation/query?q=hello"
+      },
+      "metrics": {
+        "requestsPerSec": 91415.83,
+        "latencyAvgMs": 2.8,
+        "p50Ms": 2.63,
+        "p95Ms": 3.58,
+        "p99Ms": 4.28,
+        "throughputMBs": 19.79,
+        "totalRequests": 914375,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4305/bench/validation/query?q=hello for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     91415.83    5655.19  102159.84\n  Latency        2.80ms   109.38us    15.63ms\n  Latency Distribution\n     50%     2.63ms\n     75%     3.04ms\n     90%     3.21ms\n     95%     3.58ms\n     99%     4.28ms\n  HTTP codes:\n    1xx - 0, 2xx - 914375, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    19.79MB/s\n"
+    },
+    {
+      "id": "validation/params",
+      "group": "validation",
+      "description": "Dynamic route with params validation",
+      "target": {
+        "method": "GET",
+        "path": "/bench/validation/user/42"
+      },
+      "metrics": {
+        "requestsPerSec": 89100.62,
+        "latencyAvgMs": 2.87,
+        "p50Ms": 2.63,
+        "p95Ms": 4,
+        "p99Ms": 5,
+        "throughputMBs": 18.61,
+        "totalRequests": 891196,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4306/bench/validation/user/42 for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     89100.62   11735.01  106611.83\n  Latency        2.87ms   117.68us    16.32ms\n  Latency Distribution\n     50%     2.63ms\n     75%     3.11ms\n     90%     3.54ms\n     95%     4.00ms\n     99%     5.00ms\n  HTTP codes:\n    1xx - 0, 2xx - 891196, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    18.61MB/s\n"
+    },
+    {
+      "id": "validation/body",
+      "group": "validation",
+      "description": "POST route with body validation",
+      "target": {
+        "method": "POST",
+        "path": "/bench/validation/body",
+        "body": "{\"name\":\"burger\",\"price\":9.99}",
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "metrics": {
+        "requestsPerSec": 77397.1,
+        "latencyAvgMs": 3.31,
+        "p50Ms": 3.15,
+        "p95Ms": 4.37,
+        "p99Ms": 5.55,
+        "throughputMBs": 22.07,
+        "totalRequests": 774096,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4307/bench/validation/body for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     77397.10    8112.89   88512.55\n  Latency        3.31ms   158.32us    17.90ms\n  Latency Distribution\n     50%     3.15ms\n     75%     3.60ms\n     90%     4.00ms\n     95%     4.37ms\n     99%     5.55ms\n  HTTP codes:\n    1xx - 0, 2xx - 774096, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    22.07MB/s\n"
+    },
+    {
+      "id": "validation/coerce",
+      "group": "validation",
+      "description": "GET route with coercion ON for a query schema",
+      "target": {
+        "method": "GET",
+        "path": "/bench/validation/coerce?n=1&b=true"
+      },
+      "metrics": {
+        "requestsPerSec": 88578.14,
+        "latencyAvgMs": 2.89,
+        "p50Ms": 2.66,
+        "p95Ms": 3.64,
+        "p99Ms": 4.18,
+        "throughputMBs": 20.27,
+        "totalRequests": 886014,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4308/bench/validation/coerce?n=1&b=true for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     88578.14    4621.95  100495.59\n  Latency        2.89ms    86.80us    15.24ms\n  Latency Distribution\n     50%     2.66ms\n     75%     3.13ms\n     90%     3.29ms\n     95%     3.64ms\n     99%     4.18ms\n  HTTP codes:\n    1xx - 0, 2xx - 886014, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    20.27MB/s\n"
+    },
+    {
+      "id": "validation/response",
+      "group": "validation",
+      "description": "GET route declaring a response schema (response validation in dev mode)",
+      "target": {
+        "method": "GET",
+        "path": "/bench/validation/response"
+      },
+      "metrics": {
+        "requestsPerSec": 90496.65,
+        "latencyAvgMs": 2.83,
+        "p50Ms": 2.63,
+        "p95Ms": 3.6,
+        "p99Ms": 4.21,
+        "throughputMBs": 18.99,
+        "totalRequests": 905218,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4309/bench/validation/response for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     90496.65    5801.29  103731.60\n  Latency        2.83ms   111.20us    17.93ms\n  Latency Distribution\n     50%     2.63ms\n     75%     3.11ms\n     90%     3.22ms\n     95%     3.60ms\n     99%     4.21ms\n  HTTP codes:\n    1xx - 0, 2xx - 905218, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    18.99MB/s\n"
+    },
+    {
+      "id": "request/query-parsing",
+      "group": "request",
+      "description": "Route that reads the lazily parsed query string",
+      "target": {
+        "method": "GET",
+        "path": "/bench/request/query?q=hello&lang=en"
+      },
+      "metrics": {
+        "requestsPerSec": 93250.33,
+        "latencyAvgMs": 2.74,
+        "p50Ms": 2.62,
+        "p95Ms": 3.37,
+        "p99Ms": 3.98,
+        "throughputMBs": 20.63,
+        "totalRequests": 932759,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4310/bench/request/query?q=hello&lang=en for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     93250.33    4521.23  108090.88\n  Latency        2.74ms    82.39us    15.87ms\n  Latency Distribution\n     50%     2.62ms\n     75%     2.72ms\n     90%     3.17ms\n     95%     3.37ms\n     99%     3.98ms\n  HTTP codes:\n    1xx - 0, 2xx - 932759, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    20.63MB/s\n"
+    },
+    {
+      "id": "request/response-mutation",
+      "group": "request",
+      "description": "Route that mutates the response via req.set",
+      "target": {
+        "method": "GET",
+        "path": "/bench/request/set"
+      },
+      "metrics": {
+        "requestsPerSec": 93307.09,
+        "latencyAvgMs": 2.74,
+        "p50Ms": 2.62,
+        "p95Ms": 3.39,
+        "p99Ms": 4.03,
+        "throughputMBs": 22.33,
+        "totalRequests": 933250,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4311/bench/request/set for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     93307.09    3956.31  100663.04\n  Latency        2.74ms    80.42us    15.78ms\n  Latency Distribution\n     50%     2.62ms\n     75%     2.70ms\n     90%     3.17ms\n     95%     3.39ms\n     99%     4.03ms\n  HTTP codes:\n    1xx - 0, 2xx - 933250, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    22.33MB/s\n"
+    },
+    {
+      "id": "request/json",
+      "group": "request",
+      "description": "Route returning a JSON response",
+      "target": {
+        "method": "GET",
+        "path": "/bench/request/json"
+      },
+      "metrics": {
+        "requestsPerSec": 104756.44,
+        "latencyAvgMs": 2.44,
+        "p50Ms": 2.59,
+        "p95Ms": 3.05,
+        "p99Ms": 3.56,
+        "throughputMBs": 23.67,
+        "totalRequests": 1047735,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4312/bench/request/json for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    104756.44    4283.04  115537.65\n  Latency        2.44ms    67.99us    14.72ms\n  Latency Distribution\n     50%     2.59ms\n     75%     2.62ms\n     90%     2.70ms\n     95%     3.05ms\n     99%     3.56ms\n  HTTP codes:\n    1xx - 0, 2xx - 1047735, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    23.67MB/s\n"
+    },
+    {
+      "id": "errors/404",
+      "group": "errors",
+      "description": "Request to an unregistered path (404 response)",
+      "target": {
+        "method": "GET",
+        "path": "/bench/errors/missing"
+      },
+      "metrics": {
+        "requestsPerSec": 88328.07,
+        "latencyAvgMs": 2.9,
+        "p50Ms": 2.71,
+        "p95Ms": 3.64,
+        "p99Ms": 4.17,
+        "throughputMBs": 23.67,
+        "totalRequests": 883449,
+        "errors": 883449
+      },
+      "raw": "Bombarding http://localhost:4313/bench/errors/missing for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     88328.07    5311.22  101710.36\n  Latency        2.90ms    94.08us    16.68ms\n  Latency Distribution\n     50%     2.71ms\n     75%     3.14ms\n     90%     3.31ms\n     95%     3.64ms\n     99%     4.17ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 883449, 5xx - 0\n    others - 0\n  Throughput:    23.67MB/s\n"
+    },
+    {
+      "id": "errors/405",
+      "group": "errors",
+      "description": "POST to a GET-only route (405 response)",
+      "target": {
+        "method": "POST",
+        "path": "/bench/errors/method"
+      },
+      "metrics": {
+        "requestsPerSec": 100966.23,
+        "latencyAvgMs": 2.53,
+        "p50Ms": 2.6,
+        "p95Ms": 3.11,
+        "p99Ms": 3.61,
+        "throughputMBs": 36.88,
+        "totalRequests": 1009833,
+        "errors": 1009833
+      },
+      "raw": "Bombarding http://localhost:4314/bench/errors/method for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    100966.23    4157.70  112584.05\n  Latency        2.53ms    67.39us    15.76ms\n  Latency Distribution\n     50%     2.60ms\n     75%     2.63ms\n     90%     2.73ms\n     95%     3.11ms\n     99%     3.61ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 1009833, 5xx - 0\n    others - 0\n  Throughput:    36.88MB/s\n"
+    },
+    {
+      "id": "errors/validation",
+      "group": "errors",
+      "description": "POST with an invalid body (validation error response)",
+      "target": {
+        "method": "POST",
+        "path": "/bench/errors/validate",
+        "body": "{\"name\":\"burger\"}",
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "metrics": {
+        "requestsPerSec": 46061.68,
+        "latencyAvgMs": 5.55,
+        "p50Ms": 5.35,
+        "p95Ms": 6.62,
+        "p99Ms": 7.41,
+        "throughputMBs": 49.63,
+        "totalRequests": 460839,
+        "errors": 460839
+      },
+      "raw": "Bombarding http://localhost:4315/bench/errors/validate for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     46061.68    2979.18   53651.41\n  Latency        5.55ms   158.80us    19.68ms\n  Latency Distribution\n     50%     5.35ms\n     75%     5.88ms\n     90%     6.35ms\n     95%     6.62ms\n     99%     7.41ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 460839, 5xx - 0\n    others - 0\n  Throughput:    49.63MB/s\n"
+    },
+    {
+      "id": "phase1/dev-static",
+      "group": "phase1",
+      "description": "Static GET route served through the file-based Route Module pipeline (apiDir)",
+      "target": {
+        "method": "GET",
+        "path": "/bench/phase1/static"
+      },
+      "metrics": {
+        "requestsPerSec": 84361.19,
+        "latencyAvgMs": 3.03,
+        "p50Ms": 3.12,
+        "p95Ms": 3.75,
+        "p99Ms": 4.37,
+        "throughputMBs": 22.52,
+        "totalRequests": 843752,
+        "errors": 843752
+      },
+      "raw": "Bombarding http://localhost:4316/bench/phase1/static for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     84361.19    4137.70   94053.56\n  Latency        3.03ms    93.82us    17.05ms\n  Latency Distribution\n     50%     3.12ms\n     75%     3.17ms\n     90%     3.55ms\n     95%     3.75ms\n     99%     4.37ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 843752, 5xx - 0\n    others - 0\n  Throughput:    22.52MB/s\n"
+    },
+    {
+      "id": "phase1/dev-dynamic",
+      "group": "phase1",
+      "description": "Dynamic GET route served through the file-based Route Module pipeline (apiDir)",
+      "target": {
+        "method": "GET",
+        "path": "/bench/phase1/users/42"
+      },
+      "metrics": {
+        "requestsPerSec": 83015.13,
+        "latencyAvgMs": 3.08,
+        "p50Ms": 3.12,
+        "p95Ms": 3.75,
+        "p99Ms": 4.38,
+        "throughputMBs": 22.32,
+        "totalRequests": 830379,
+        "errors": 830379
+      },
+      "raw": "Bombarding http://localhost:4317/bench/phase1/users/42 for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     83015.13    4393.41   92965.04\n  Latency        3.08ms   105.69us    17.29ms\n  Latency Distribution\n     50%     3.12ms\n     75%     3.17ms\n     90%     3.62ms\n     95%     3.75ms\n     99%     4.38ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 830379, 5xx - 0\n    others - 0\n  Throughput:    22.32MB/s\n"
+    },
+    {
+      "id": "optimize/fallback-trie",
+      "group": "optimize",
+      "description": "Fallback dispatch, trie engine (dynamic :id via trailing-slash miss)",
+      "target": {
+        "method": "GET",
+        "path": "/bench/opt/user/42/"
+      },
+      "metrics": {
+        "requestsPerSec": 77760.04,
+        "latencyAvgMs": 3.29,
+        "p50Ms": 3.14,
+        "p95Ms": 4.02,
+        "p99Ms": 4.77,
+        "throughputMBs": 20.69,
+        "totalRequests": 777794,
+        "errors": 777794
+      },
+      "raw": "Bombarding http://localhost:4318/bench/opt/user/42/ for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     77760.04    4836.70   91662.38\n  Latency        3.29ms   111.96us    16.53ms\n  Latency Distribution\n     50%     3.14ms\n     75%     3.54ms\n     90%     3.73ms\n     95%     4.02ms\n     99%     4.77ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 777794, 5xx - 0\n    others - 0\n  Throughput:    20.69MB/s\n"
+    },
+    {
+      "id": "optimize/fallback-regex",
+      "group": "optimize",
+      "description": "Fallback dispatch, regex engine (dynamic :id via trailing-slash miss)",
+      "target": {
+        "method": "GET",
+        "path": "/bench/opt/user/42/"
+      },
+      "metrics": {
+        "requestsPerSec": 80069.94,
+        "latencyAvgMs": 3.2,
+        "p50Ms": 3.13,
+        "p95Ms": 3.98,
+        "p99Ms": 4.79,
+        "throughputMBs": 21.3,
+        "totalRequests": 800865,
+        "errors": 800865
+      },
+      "raw": "Bombarding http://localhost:4319/bench/opt/user/42/ for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     80069.94    6168.18   96081.58\n  Latency        3.20ms   105.98us    16.00ms\n  Latency Distribution\n     50%     3.13ms\n     75%     3.23ms\n     90%     3.71ms\n     95%     3.98ms\n     99%     4.79ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 800865, 5xx - 0\n    others - 0\n  Throughput:    21.30MB/s\n"
+    },
+    {
+      "id": "optimize/hooks-interpreter",
+      "group": "optimize",
+      "description": "2 forward hooks + 1 response hook, interpreter executor",
+      "target": {
+        "method": "GET",
+        "path": "/bench/opt/hooks"
+      },
+      "metrics": {
+        "requestsPerSec": 100777.98,
+        "latencyAvgMs": 2.54,
+        "p50Ms": 2.59,
+        "p95Ms": 3.12,
+        "p99Ms": 3.64,
+        "throughputMBs": 20.18,
+        "totalRequests": 1007933,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4320/bench/opt/hooks for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    100777.98    4150.67  115510.39\n  Latency        2.54ms    87.72us    16.93ms\n  Latency Distribution\n     50%     2.59ms\n     75%     2.62ms\n     90%     2.76ms\n     95%     3.12ms\n     99%     3.64ms\n  HTTP codes:\n    1xx - 0, 2xx - 1007933, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    20.18MB/s\n"
+    },
+    {
+      "id": "optimize/hooks-jit",
+      "group": "optimize",
+      "description": "Same hooks, JIT-compiled HookPlan",
+      "target": {
+        "method": "GET",
+        "path": "/bench/opt/hooks"
+      },
+      "metrics": {
+        "requestsPerSec": 104832.6,
+        "latencyAvgMs": 2.44,
+        "p50Ms": 2.58,
+        "p95Ms": 2.96,
+        "p99Ms": 3.47,
+        "throughputMBs": 20.99,
+        "totalRequests": 1048575,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4321/bench/opt/hooks for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    104832.60    4739.92  121735.35\n  Latency        2.44ms    68.10us    14.15ms\n  Latency Distribution\n     50%     2.58ms\n     75%     2.61ms\n     90%     2.67ms\n     95%     2.96ms\n     99%     3.47ms\n  HTTP codes:\n    1xx - 0, 2xx - 1048575, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    20.99MB/s\n"
+    },
+    {
+      "id": "optimize/set-clean",
+      "group": "optimize",
+      "description": "Handler never mutates the response (lazy-set fast path)",
+      "target": {
+        "method": "GET",
+        "path": "/bench/opt/clean"
+      },
+      "metrics": {
+        "requestsPerSec": 104944.37,
+        "latencyAvgMs": 2.44,
+        "p50Ms": 2.58,
+        "p95Ms": 2.97,
+        "p99Ms": 3.59,
+        "throughputMBs": 21.02,
+        "totalRequests": 1049662,
+        "errors": 0
+      },
+      "raw": "Bombarding http://localhost:4322/bench/opt/clean for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec    104944.37    4563.04  116532.12\n  Latency        2.44ms    81.64us    17.01ms\n  Latency Distribution\n     50%     2.58ms\n     75%     2.61ms\n     90%     2.66ms\n     95%     2.97ms\n     99%     3.59ms\n  HTTP codes:\n    1xx - 0, 2xx - 1049662, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    21.02MB/s\n"
+    },
+    {
+      "id": "optimize/many-trie",
+      "group": "optimize",
+      "description": "241 dynamic routes, trie engine, mid-set target",
+      "target": {
+        "method": "GET",
+        "path": "/bench/opt/target/77/"
+      },
+      "metrics": {
+        "requestsPerSec": 82328.48,
+        "latencyAvgMs": 3.11,
+        "p50Ms": 3.12,
+        "p95Ms": 3.77,
+        "p99Ms": 4.46,
+        "throughputMBs": 22.06,
+        "totalRequests": 823521,
+        "errors": 823521
+      },
+      "raw": "Bombarding http://localhost:4323/bench/opt/target/77/ for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     82328.48    5152.22   95516.76\n  Latency        3.11ms    99.84us    17.11ms\n  Latency Distribution\n     50%     3.12ms\n     75%     3.18ms\n     90%     3.63ms\n     95%     3.77ms\n     99%     4.46ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 823521, 5xx - 0\n    others - 0\n  Throughput:    22.06MB/s\n"
+    },
+    {
+      "id": "optimize/many-regex",
+      "group": "optimize",
+      "description": "241 dynamic routes, regex engine, mid-set target",
+      "target": {
+        "method": "GET",
+        "path": "/bench/opt/target/77/"
+      },
+      "metrics": {
+        "requestsPerSec": 80356.88,
+        "latencyAvgMs": 3.18,
+        "p50Ms": 3.13,
+        "p95Ms": 3.88,
+        "p99Ms": 4.57,
+        "throughputMBs": 21.53,
+        "totalRequests": 803722,
+        "errors": 803722
+      },
+      "raw": "Bombarding http://localhost:4324/bench/opt/target/77/ for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     80356.88    5507.05   99707.51\n  Latency        3.18ms    95.17us    15.66ms\n  Latency Distribution\n     50%     3.13ms\n     75%     3.22ms\n     90%     3.69ms\n     95%     3.88ms\n     99%     4.57ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 803722, 5xx - 0\n    others - 0\n  Throughput:    21.53MB/s\n"
+    }
+  ]
+}

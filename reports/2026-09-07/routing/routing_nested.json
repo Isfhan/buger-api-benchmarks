@@ -1,0 +1,20 @@
+{
+  "id": "routing/nested",
+  "group": "routing",
+  "description": "Nested dynamic route with two path parameters",
+  "target": {
+    "method": "GET",
+    "path": "/bench/routing/api/users/7/posts/99"
+  },
+  "metrics": {
+    "requestsPerSec": 85126.58,
+    "latencyAvgMs": 3.01,
+    "p50Ms": 3.09,
+    "p95Ms": 3.99,
+    "p99Ms": 5,
+    "throughputMBs": 19.97,
+    "totalRequests": 851405,
+    "errors": 0
+  },
+  "raw": "Bombarding http://localhost:4303/bench/routing/api/users/7/posts/99 for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     85126.58    8834.40   99612.98\n  Latency        3.01ms   120.16us    17.18ms\n  Latency Distribution\n     50%     3.09ms\n     75%     3.15ms\n     90%     3.65ms\n     95%     3.99ms\n     99%     5.00ms\n  HTTP codes:\n    1xx - 0, 2xx - 851405, 3xx - 0, 4xx - 0, 5xx - 0\n    others - 0\n  Throughput:    19.97MB/s\n"
+}

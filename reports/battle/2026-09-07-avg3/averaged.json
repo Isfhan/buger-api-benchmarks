@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "note": "Mean of 3 consecutive battle --profile ci runs (128 conn, 8s, 2s warmup) on the same machine, to smooth single-run noise.",
+    "runs": [
+      {
+        "date": "2026-09-06",
+        "label": "run 1 (originally committed)"
+      },
+      {
+        "date": "2026-09-06",
+        "label": "run 2"
+      },
+      {
+        "date": "2026-09-07",
+        "label": "run 3"
+      }
+    ],
+    "cpu": "Intel(R) Core(TM) i5-14400F",
+    "cores": 16,
+    "memory": "31.8 GB",
+    "os": "win32",
+    "arch": "x64",
+    "bunVersion": "1.4.0"
+  },
+  "avg": {
+    "static": {
+      "burger": {
+        "reqPerSec": 104233.90000000001,
+        "p99Ms": 2.0066666666666664
+      },
+      "elysia": {
+        "reqPerSec": 111868.81666666667,
+        "p99Ms": 2
+      },
+      "elysia2": {
+        "reqPerSec": 107120.57333333332,
+        "p99Ms": 2.29
+      },
+      "hono": {
+        "reqPerSec": 103928.45666666667,
+        "p99Ms": 2.143333333333333
+      },
+      "express": {
+        "reqPerSec": 62239.94,
+        "p99Ms": 3.5500000000000003
+      }
+    },
+    "param": {
+      "burger": {
+        "reqPerSec": 98269.24666666666,
+        "p99Ms": 2.0566666666666666
+      },
+      "elysia": {
+        "reqPerSec": 110834.04999999999,
+        "p99Ms": 2
+      },
+      "elysia2": {
+        "reqPerSec": 108138.93333333333,
+        "p99Ms": 2
+      },
+      "hono": {
+        "reqPerSec": 104397.69333333334,
+        "p99Ms": 2.0066666666666664
+      },
+      "express": {
+        "reqPerSec": 59826.89666666667,
+        "p99Ms": 3.7866666666666666
+      }
+    },
+    "json": {
+      "burger": {
+        "reqPerSec": 107109.39333333333,
+        "p99Ms": 2.0500000000000003
+      },
+      "elysia": {
+        "reqPerSec": 105568.63666666667,
+        "p99Ms": 2.3666666666666667
+      },
+      "elysia2": {
+        "reqPerSec": 100959.74333333333,
+        "p99Ms": 2.4633333333333334
+      },
+      "hono": {
+        "reqPerSec": 100512.62333333334,
+        "p99Ms": 2.4466666666666668
+      },
+      "express": {
+        "reqPerSec": 57199.556666666664,
+        "p99Ms": 5.673333333333333
+      }
+    },
+    "validation": {
+      "burger": {
+        "reqPerSec": 88676.15333333332,
+        "p99Ms": 2.6799999999999997
+      },
+      "elysia": {
+        "reqPerSec": 88141.88666666666,
+        "p99Ms": 2.76
+      },
+      "elysia2": {
+        "reqPerSec": 89467.23,
+        "p99Ms": 2.72
+      },
+      "hono": {
+        "reqPerSec": 83377.51333333332,
+        "p99Ms": 2.9766666666666666
+      },
+      "express": {
+        "reqPerSec": 43994.170000000006,
+        "p99Ms": 4.506666666666667
+      }
+    }
+  },
+  "overall": {
+    "burger": 99572.17333333332,
+    "elysia": 104103.34749999999,
+    "elysia2": 101421.62,
+    "hono": 98054.07166666667,
+    "express": 55815.14083333334
+  }
+}

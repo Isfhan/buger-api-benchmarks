@@ -1,0 +1,20 @@
+{
+  "id": "errors/404",
+  "group": "errors",
+  "description": "Request to an unregistered path (404 response)",
+  "target": {
+    "method": "GET",
+    "path": "/bench/errors/missing"
+  },
+  "metrics": {
+    "requestsPerSec": 88328.07,
+    "latencyAvgMs": 2.9,
+    "p50Ms": 2.71,
+    "p95Ms": 3.64,
+    "p99Ms": 4.17,
+    "throughputMBs": 23.67,
+    "totalRequests": 883449,
+    "errors": 883449
+  },
+  "raw": "Bombarding http://localhost:4313/bench/errors/missing for 10s using 256 connection(s)\n\r\r\r\r\r\r 00m09s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m08s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m07s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m06s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m05s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m04s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m03s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m02s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r 00m01s\r\r\r\r\r\r 10s\nDone!\nStatistics        Avg      Stdev        Max\n  Reqs/sec     88328.07    5311.22  101710.36\n  Latency        2.90ms    94.08us    16.68ms\n  Latency Distribution\n     50%     2.71ms\n     75%     3.14ms\n     90%     3.31ms\n     95%     3.64ms\n     99%     4.17ms\n  HTTP codes:\n    1xx - 0, 2xx - 0, 3xx - 0, 4xx - 883449, 5xx - 0\n    others - 0\n  Throughput:    23.67MB/s\n"
+}

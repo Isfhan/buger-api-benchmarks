@@ -7,9 +7,9 @@
     "cpu": "Intel(R) Core(TM) i5-14400F",
     "cores": 16,
     "memory": "31.8 GB",
-    "date": "2026-09-06",
+    "date": "2026-09-07",
     "gitCommit": "6ed45f0065eaa61482e5a64cb6c5522144994ee1",
-    "profile": "full"
+    "profile": "ci"
   },
   "results": [
     {
@@ -18,13 +18,13 @@
       "description": "Static GET route returning a small JSON body",
       "contestant": "burger",
       "metrics": {
-        "requestsPerSec": 79660.18,
-        "latencyAvgMs": 6.44,
-        "p50Ms": 5.21,
-        "p95Ms": 10.73,
-        "p99Ms": 11.7,
-        "throughputMBs": 16.3,
-        "totalRequests": 2385690,
+        "requestsPerSec": 103668.89,
+        "latencyAvgMs": 1.23,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 21.26,
+        "totalRequests": 829452,
         "errors": 0
       }
     },
@@ -34,13 +34,13 @@
       "description": "Static GET route returning a small JSON body",
       "contestant": "elysia",
       "metrics": {
-        "requestsPerSec": 72831.53,
-        "latencyAvgMs": 7.03,
-        "p50Ms": 5.57,
-        "p95Ms": 10.92,
-        "p99Ms": 12.13,
-        "throughputMBs": 14.92,
-        "totalRequests": 2183545,
+        "requestsPerSec": 113312.14,
+        "latencyAvgMs": 1.13,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 23.23,
+        "totalRequests": 906687,
         "errors": 0
       }
     },
@@ -50,13 +50,13 @@
       "description": "Static GET route returning a small JSON body",
       "contestant": "elysia2",
       "metrics": {
-        "requestsPerSec": 103309.43,
-        "latencyAvgMs": 4.95,
-        "p50Ms": 5,
-        "p95Ms": 6,
-        "p99Ms": 8,
-        "throughputMBs": 21.18,
-        "totalRequests": 3099349,
+        "requestsPerSec": 104383.29,
+        "latencyAvgMs": 1.22,
+        "p50Ms": 1.03,
+        "p95Ms": 2,
+        "p99Ms": 2.87,
+        "throughputMBs": 21.4,
+        "totalRequests": 835258,
         "errors": 0
       }
     },
@@ -66,13 +66,13 @@
       "description": "Static GET route returning a small JSON body",
       "contestant": "hono",
       "metrics": {
-        "requestsPerSec": 96849.75,
-        "latencyAvgMs": 5.28,
-        "p50Ms": 5.01,
-        "p95Ms": 6.01,
-        "p99Ms": 7.31,
-        "throughputMBs": 18.56,
-        "totalRequests": 2905816,
+        "requestsPerSec": 97085.88,
+        "latencyAvgMs": 1.32,
+        "p50Ms": 1.03,
+        "p95Ms": 2,
+        "p99Ms": 2.43,
+        "throughputMBs": 18.61,
+        "totalRequests": 776619,
         "errors": 0
       }
     },
@@ -82,13 +82,13 @@
       "description": "Static GET route returning a small JSON body",
       "contestant": "express",
       "metrics": {
-        "requestsPerSec": 26380.18,
-        "latencyAvgMs": 19.43,
-        "p50Ms": 21.2,
-        "p95Ms": 34.84,
-        "p99Ms": 37.35,
-        "throughputMBs": 8.21,
-        "totalRequests": 790541,
+        "requestsPerSec": 57972.34,
+        "latencyAvgMs": 2.21,
+        "p50Ms": 2,
+        "p95Ms": 3,
+        "p99Ms": 4,
+        "throughputMBs": 18.07,
+        "totalRequests": 463724,
         "errors": 0
       }
     },
@@ -98,13 +98,13 @@
       "description": "Dynamic GET route with one :param returning JSON",
       "contestant": "burger",
       "metrics": {
-        "requestsPerSec": 45272.21,
-        "latencyAvgMs": 11.31,
-        "p50Ms": 12.08,
-        "p95Ms": 14.31,
-        "p99Ms": 15.73,
-        "throughputMBs": 9.89,
-        "totalRequests": 1358627,
+        "requestsPerSec": 94406.16,
+        "latencyAvgMs": 1.35,
+        "p50Ms": 1.04,
+        "p95Ms": 2,
+        "p99Ms": 2.08,
+        "throughputMBs": 20.62,
+        "totalRequests": 755332,
         "errors": 0
       }
     },
@@ -114,13 +114,13 @@
       "description": "Dynamic GET route with one :param returning JSON",
       "contestant": "elysia",
       "metrics": {
-        "requestsPerSec": 83447.18,
-        "latencyAvgMs": 6.13,
-        "p50Ms": 5,
-        "p95Ms": 10.99,
-        "p99Ms": 12.24,
-        "throughputMBs": 18.22,
-        "totalRequests": 2503717,
+        "requestsPerSec": 110486.8,
+        "latencyAvgMs": 1.16,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 24.13,
+        "totalRequests": 884000,
         "errors": 0
       }
     },
@@ -130,13 +130,13 @@
       "description": "Dynamic GET route with one :param returning JSON",
       "contestant": "elysia2",
       "metrics": {
-        "requestsPerSec": 89568.37,
-        "latencyAvgMs": 5.72,
-        "p50Ms": 5.14,
-        "p95Ms": 10.08,
-        "p99Ms": 11.46,
-        "throughputMBs": 19.55,
-        "totalRequests": 2687488,
+        "requestsPerSec": 108046.52,
+        "latencyAvgMs": 1.18,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 23.59,
+        "totalRequests": 864419,
         "errors": 0
       }
     },
@@ -146,13 +146,13 @@
       "description": "Dynamic GET route with one :param returning JSON",
       "contestant": "hono",
       "metrics": {
-        "requestsPerSec": 72373.69,
-        "latencyAvgMs": 7.07,
-        "p50Ms": 5.56,
-        "p95Ms": 13.02,
-        "p99Ms": 14.17,
-        "throughputMBs": 14.84,
-        "totalRequests": 2171519,
+        "requestsPerSec": 100796.8,
+        "latencyAvgMs": 1.27,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2.01,
+        "throughputMBs": 20.67,
+        "totalRequests": 806416,
         "errors": 0
       }
     },
@@ -162,13 +162,13 @@
       "description": "Dynamic GET route with one :param returning JSON",
       "contestant": "express",
       "metrics": {
-        "requestsPerSec": 54389.57,
-        "latencyAvgMs": 9.41,
-        "p50Ms": 9.01,
-        "p95Ms": 11.15,
-        "p99Ms": 13,
-        "throughputMBs": 17.74,
-        "totalRequests": 1632101,
+        "requestsPerSec": 55303.2,
+        "latencyAvgMs": 2.31,
+        "p50Ms": 2,
+        "p95Ms": 3,
+        "p99Ms": 4,
+        "throughputMBs": 18.04,
+        "totalRequests": 442586,
         "errors": 0
       }
     },
@@ -178,13 +178,13 @@
       "description": "GET returning a JSON object (serialization overhead)",
       "contestant": "burger",
       "metrics": {
-        "requestsPerSec": 100669.43,
-        "latencyAvgMs": 5.08,
-        "p50Ms": 5,
-        "p95Ms": 6,
-        "p99Ms": 7,
-        "throughputMBs": 23.13,
-        "totalRequests": 3020121,
+        "requestsPerSec": 104927,
+        "latencyAvgMs": 1.22,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 24.11,
+        "totalRequests": 839476,
         "errors": 0
       }
     },
@@ -194,13 +194,13 @@
       "description": "GET returning a JSON object (serialization overhead)",
       "contestant": "elysia",
       "metrics": {
-        "requestsPerSec": 103412.83,
-        "latencyAvgMs": 4.95,
-        "p50Ms": 4.89,
-        "p95Ms": 6,
-        "p99Ms": 8.35,
-        "throughputMBs": 23.76,
-        "totalRequests": 3102538,
+        "requestsPerSec": 109425.75,
+        "latencyAvgMs": 1.17,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 25.15,
+        "totalRequests": 875552,
         "errors": 0
       }
     },
@@ -210,13 +210,13 @@
       "description": "GET returning a JSON object (serialization overhead)",
       "contestant": "elysia2",
       "metrics": {
-        "requestsPerSec": 72450.4,
-        "latencyAvgMs": 7.06,
-        "p50Ms": 5.82,
-        "p95Ms": 10.5,
-        "p99Ms": 12.07,
-        "throughputMBs": 16.65,
-        "totalRequests": 2174032,
+        "requestsPerSec": 102307.24,
+        "latencyAvgMs": 1.25,
+        "p50Ms": 1.03,
+        "p95Ms": 2,
+        "p99Ms": 2.25,
+        "throughputMBs": 23.51,
+        "totalRequests": 818530,
         "errors": 0
       }
     },
@@ -226,13 +226,13 @@
       "description": "GET returning a JSON object (serialization overhead)",
       "contestant": "hono",
       "metrics": {
-        "requestsPerSec": 98072.26,
-        "latencyAvgMs": 5.22,
-        "p50Ms": 5.16,
-        "p95Ms": 6,
-        "p99Ms": 7,
-        "throughputMBs": 21.23,
-        "totalRequests": 2942439,
+        "requestsPerSec": 100430.82,
+        "latencyAvgMs": 1.27,
+        "p50Ms": 1.03,
+        "p95Ms": 2,
+        "p99Ms": 2.1,
+        "throughputMBs": 21.74,
+        "totalRequests": 803557,
         "errors": 0
       }
     },
@@ -242,13 +242,13 @@
       "description": "GET returning a JSON object (serialization overhead)",
       "contestant": "express",
       "metrics": {
-        "requestsPerSec": 55174.3,
-        "latencyAvgMs": 9.28,
-        "p50Ms": 9,
-        "p95Ms": 11,
-        "p99Ms": 12,
-        "throughputMBs": 18.62,
-        "totalRequests": 1655537,
+        "requestsPerSec": 57576.49,
+        "latencyAvgMs": 2.22,
+        "p50Ms": 2,
+        "p95Ms": 3,
+        "p99Ms": 4,
+        "throughputMBs": 19.43,
+        "totalRequests": 460571,
         "errors": 0
       }
     },
@@ -258,13 +258,13 @@
       "description": "POST with JSON body parsing + Zod validation, echoing the body",
       "contestant": "burger",
       "metrics": {
-        "requestsPerSec": 55653.24,
-        "latencyAvgMs": 9.2,
-        "p50Ms": 7,
-        "p95Ms": 14.65,
-        "p99Ms": 16.27,
-        "throughputMBs": 16.34,
-        "totalRequests": 1669790,
+        "requestsPerSec": 89725.23,
+        "latencyAvgMs": 1.43,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2.09,
+        "throughputMBs": 26.35,
+        "totalRequests": 717943,
         "errors": 0
       }
     },
@@ -274,13 +274,13 @@
       "description": "POST with JSON body parsing + Zod validation, echoing the body",
       "contestant": "elysia",
       "metrics": {
-        "requestsPerSec": 39529.48,
-        "latencyAvgMs": 12.96,
-        "p50Ms": 13.93,
-        "p95Ms": 16.73,
-        "p99Ms": 20.1,
-        "throughputMBs": 11.6,
-        "totalRequests": 1185336,
+        "requestsPerSec": 89620.29,
+        "latencyAvgMs": 1.43,
+        "p50Ms": 1.07,
+        "p95Ms": 2,
+        "p99Ms": 2.14,
+        "throughputMBs": 26.32,
+        "totalRequests": 717056,
         "errors": 0
       }
     },
@@ -290,13 +290,13 @@
       "description": "POST with JSON body parsing + Zod validation, echoing the body",
       "contestant": "elysia2",
       "metrics": {
-        "requestsPerSec": 64809.63,
-        "latencyAvgMs": 7.9,
-        "p50Ms": 6.31,
-        "p95Ms": 15.14,
-        "p99Ms": 16.89,
-        "throughputMBs": 19.03,
-        "totalRequests": 1943724,
+        "requestsPerSec": 91310.75,
+        "latencyAvgMs": 1.4,
+        "p50Ms": 1.03,
+        "p95Ms": 2,
+        "p99Ms": 2.11,
+        "throughputMBs": 26.82,
+        "totalRequests": 730590,
         "errors": 0
       }
     },
@@ -306,13 +306,13 @@
       "description": "POST with JSON body parsing + Zod validation, echoing the body",
       "contestant": "hono",
       "metrics": {
-        "requestsPerSec": 77325.48,
-        "latencyAvgMs": 6.62,
-        "p50Ms": 6.69,
-        "p95Ms": 8,
-        "p99Ms": 9,
-        "throughputMBs": 21.68,
-        "totalRequests": 2320071,
+        "requestsPerSec": 85654.24,
+        "latencyAvgMs": 1.49,
+        "p50Ms": 1.54,
+        "p95Ms": 2,
+        "p99Ms": 2.51,
+        "throughputMBs": 24.01,
+        "totalRequests": 685314,
         "errors": 0
       }
     },
@@ -322,13 +322,13 @@
       "description": "POST with JSON body parsing + Zod validation, echoing the body",
       "contestant": "express",
       "metrics": {
-        "requestsPerSec": 26599.98,
-        "latencyAvgMs": 19.25,
-        "p50Ms": 14.81,
-        "p95Ms": 32.7,
-        "p99Ms": 35.56,
-        "throughputMBs": 10.67,
-        "totalRequests": 798200,
+        "requestsPerSec": 40971.39,
+        "latencyAvgMs": 3.12,
+        "p50Ms": 3,
+        "p95Ms": 4,
+        "p99Ms": 5,
+        "throughputMBs": 16.45,
+        "totalRequests": 327927,
         "errors": 0
       }
     }

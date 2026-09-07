@@ -1,3 +1,4 @@
+import os from 'node:os';
 import type { ReportMeta } from './types';
 
 async function readFileText(path: string): Promise<string | null> {
@@ -33,6 +34,18 @@ async function detectCpu(): Promise<string> {
     const out = await spawnText(['sysctl', '-n', 'machdep.cpu.brand_string']);
     if (out) return out;
   }
+  if (process.platform === 'win32') {
+    if (process.env.PROCESSOR_IDENTIFIER) {
+      const name = await spawnText([
+        'powershell',
+        '-NoProfile',
+        '-Command',
+        '(Get-CimInstance Win32_Processor).Name',
+      ]);
+      if (name) return name.trim();
+      return process.env.PROCESSOR_IDENTIFIER;
+    }
+  }
   return String(process.arch);
 }
 
@@ -48,8 +61,20 @@ async function detectMemory(): Promise<string> {
     const out = await spawnText(['sysctl', '-n', 'hw.memsize']);
     if (out) return `${(Number(out) / 1024 / 1024 / 1024).toFixed(1)} GB`;
   }
+  if (process.platform === 'win32') {
+    const out = await spawnText([
+      'powershell',
+      '-NoProfile',
+      '-Command',
+      '(Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory',
+    ]);
+    if (out && /^\d+$/.test(out)) {
+      return `${(Number(out) / 1024 / 1024 / 1024).toFixed(1)} GB`;
+    }
+  }
   return 'unknown';
 }
+
 
 /** Collects reproducible environment metadata for a benchmark run. */
 export async function collectMetadata(profile: string): Promise<ReportMeta> {
@@ -72,6 +97,7 @@ export async function collectMetadata(profile: string): Promise<ReportMeta> {
     os: String(process.platform),
     arch: String(process.arch),
     cpu: await detectCpu(),
+    cores: os.cpus().length,
     memory: await detectMemory(),
     date,
     gitCommit,

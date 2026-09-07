@@ -49,6 +49,7 @@ export interface ReportMeta {
   os: string;
   arch: string;
   cpu: string;
+  cores: number;
   memory: string;
   date: string;
   gitCommit: string;
