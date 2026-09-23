@@ -1,6 +1,6 @@
 {
   "meta": {
-    "burgerApiVersion": "1.0.0-beta.1",
+    "burgerApiVersion": "1.0.0-beta",
     "bunVersion": "1.4.0",
     "os": "win32",
     "arch": "x64",

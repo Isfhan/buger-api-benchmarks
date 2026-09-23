@@ -2,7 +2,7 @@
 
 - Date: 2026-09-07
 - Profile: default
-- BurgerAPI: 1.0.0-beta.1
+- BurgerAPI: 1.0.0-beta
 - Bun: 1.4.0
 - OS: win32 x64
 - CPU: Intel(R) Core(TM) i5-14400F (16 cores)

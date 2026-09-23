@@ -3,7 +3,7 @@
 _Generated 2026-09-07 · profile `ci` · Bun 1.4.0_
 
 **Environment:** win32/x64 · Intel(R) Core(TM) i5-14400F (16 cores) · 31.8 GB
-**Frameworks:** BurgerAPI 1.0.0-beta.1, Elysia (v1), Elysia 2 (elysia@experimental, for testing only), Hono, Express
+**Frameworks:** BurgerAPI 1.0.0-beta, Elysia (v1), Elysia 2 (elysia@experimental, for testing only), Hono, Express
 **Runtime note:** all frameworks were run on Bun. Express is Node-based and ran
 under Bun's Node compatibility layer (not native Node); its numbers reflect that.
 **Testing note:** Elysia 2 is included for evaluation only (installed as
