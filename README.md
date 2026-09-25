@@ -11,8 +11,8 @@ behaves under load for real features (routing, hooks, validation, request
 handling, errors) and does not compare BurgerAPI with other frameworks.
 
 A separate, opt-in **battle** module (see [Framework comparison (battle)](#framework-comparison-battle))
-does compare BurgerAPI against other frameworks (Elysia, Hono, Express). It is
-isolated under `battle/` and does not affect the core suite.
+does compare BurgerAPI against other frameworks (Elysia 1, Elysia 2, Hono,
+Express). It is isolated under `battle/` and does not affect the core suite.
 
 ## Official Home for All BurgerAPI Benchmarks
 
@@ -223,20 +223,78 @@ Then run `bun install` again.
 ## Framework comparison (battle)
 
 The `battle/` module is an opt-in, cross-framework comparison. It starts
-BurgerAPI alongside Elysia, Hono, and Express, each implementing the **same
-route shape**, and bombards them with identical load settings so the numbers
-reflect framework overhead, not application logic.
+BurgerAPI alongside Elysia 1, Elysia 2, Hono, and Express, each implementing the
+**same route shape**, and bombards them with identical load settings so the
+numbers reflect framework overhead, not application logic.
 
 ```bash
-bun run battle                 # all battle scenarios, default profile
-bun run battle routing         # one group
-bun run battle routing/static  # one scenario
-bun run battle --profile quick # quick | ci | full | default
+bun run battle                  # all battle scenarios, default profile
+bun run battle routing          # one group
+bun run battle routing/static   # one scenario
+bun run battle --profile quick  # quick | ci | full | default
+bun run battle --runs 3         # run the whole selection 3 times, report means
+bun run battle --seed 42        # reproduce a shuffled contestant order
 ```
 
-Reports are written to `reports/battle/<date>/summary.md` (side-by-side
-throughput + p99 tables). `reports/` is gitignored.
+### Contestants and versions
+
+| Column | Package | Bump by editing `package.json` |
+| --- | --- | --- |
+| BurgerAPI | local `link:burger-api` working copy | re-link the framework package |
+| Elysia | `elysia` | `"elysia": "^1.4.30"` |
+| Elysia 2 | `elysia2` (`npm:elysia@2.0.0-beta.19`, the `next` tag) | `"elysia2": "npm:elysia@<version>"` |
+| Hono | `hono` | `"hono": "^4.13.9"` |
+| Express | `express` | `"express": "^5.2.1"` |
+
+The installed versions are read from each package's `package.json` at runtime
+and printed in the report header, so a report always names what actually ran.
+After changing a version, run `bun install`.
+
+### Battle scenarios
+
+| Scenario | What it measures |
+| --- | --- |
+| `routing/static` | Static GET route returning a small JSON body |
+| `routing/param` | Dynamic GET route with one `:param` |
+| `routing/many-routes` | App with 100 static + 100 parameterized routes, then one param route hit |
+| `json/echo` | JSON serialization of a small object |
+| `validation/body` | Real `{ name: string, age: number }` body validation, echoing the validated body |
+| `request/query` | Reading two query string values through each framework query API |
+| `hooks/auth` | A before-handler hook checking `Authorization: Bearer bench` |
+| `errors/not-found` | Request to an unregistered path (404) |
+| `response/text` | Plain-text response |
+
+Each contestant implements the shared `BattleRouteSpec` for the scenario, so
+the difference is framework overhead, not application logic. Every scenario is
+listed explicitly in `battle/registry.ts` (no filesystem scanning).
+
+### Correctness gate
+
+After a contestant is ready and **before** warm-up, the runner sends the
+scenario target once and compares status, `content-type` (prefix match), and the
+exact JSON/text body to the scenario's `expect`. Validation scenarios also send
+an invalid body (`{"name":1}`) and require a 4xx. A mismatch logs
+`FAIL <reason>`, records a failed result with no measurement, and the report
+shows `FAIL` in that cell and lists the reason under "Failed correctness
+checks".
+
+### Metrics and noise control
+
+Each run reports throughput (req/s), p99 latency, startup time (spawn to ready),
+and post-load RSS (read from the server process over a stdin side channel).
+Bombardier's non-2xx count is listed when it is non-zero, except the expected
+404s in `errors/not-found`. Contestant order is shuffled per scenario with a
+seeded Fisher-Yates shuffle; the seed is printed and written to the report.
+`--runs N` repeats the whole selection and reports the mean per cell plus the
+req/s min-max spread.
+
+Reports are written to `reports/battle/<YYYY-MM-DD-HHmm>/summary.md` (side-by-side
+tables plus a per-scenario Winner column and an overall average) and
+`summary.json`. `reports/` is gitignored.
 
 **Runtime note:** all contestants run on Bun. Express is Node-based and runs
 under Bun's Node compatibility layer (not native Node), so its column is an
-"Express-on-Bun" measurement — this is stated in the report, not hidden.
+"Express-on-Bun" measurement — this is stated in the report, not hidden. The
+report also footnotes each contestant's validator: BurgerAPI uses a Zod route
+schema, Elysia and Elysia 2 use TypeBox, Hono uses `@hono/zod-validator`, and
+Express uses Zod `safeParse` in the handler.

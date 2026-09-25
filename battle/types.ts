@@ -34,7 +34,12 @@ export type BattleRouteSpec =
   | { kind: 'static'; path: string; response: unknown }
   | { kind: 'json'; path: string; response: unknown }
   | { kind: 'param'; path: string; response: unknown }
-  | { kind: 'validation'; path: string; response: unknown };
+  | { kind: 'query'; path: string }
+  | { kind: 'validation'; path: string }
+  | { kind: 'auth-hook'; path: string; response: unknown }
+  | { kind: 'not-found'; path: string }
+  | { kind: 'many-routes'; count: number }
+  | { kind: 'text'; path: string; text: string };
 
 export type ContestantName = keyof BattleContestants;
 
@@ -55,10 +60,40 @@ export const CONTESTANT_LABEL: Record<ContestantName, string> = {
   express: 'Express',
 };
 
+/** A validator used by a contestant, footnoted in the report. */
+export const CONTESTANT_VALIDATOR: Record<ContestantName, string> = {
+  burger: 'Zod `schema: { post: { body: z.object(...) } }`',
+  elysia: 'TypeBox `t.Object({ name: t.String(), age: t.Number() })`',
+  elysia2: 'TypeBox `t.Object({ name: t.String(), age: t.Number() })`',
+  hono: '`@hono/zod-validator` with Zod',
+  express: 'Zod `safeParse` in the handler',
+};
+
+/**
+ * Expected response for the correctness gate. The runner sends the scenario
+ * target once before warm-up and requires a match; a mismatch records a failed
+ * result instead of a measurement.
+ */
+export interface BattleExpectation {
+  status: number;
+  /** Prefix match against the `content-type` response header. */
+  contentType?: string;
+  /** Exact JSON body (deep equality). */
+  json?: unknown;
+  /** Exact text body. */
+  text?: string;
+}
+
+/** Invalid request probe for validation scenarios (must be rejected). */
+export interface BattleInvalidProbe {
+  body: string;
+  expectStatusRange: [number, number];
+}
+
 /**
  * A cross-framework comparison scenario. Unlike a core `Scenario` (which is
- * BurgerAPI-only), a `BattleScenario` declares a contestant per framework and a
- * single shared target hit on each.
+ * BurgerAPI-only), a `BattleScenario` declares a contestant per framework, a
+ * single shared target hit on each, and the response the target must return.
  */
 export interface BattleScenario {
   id: string;
@@ -66,4 +101,6 @@ export interface BattleScenario {
   description: string;
   contestants: BattleContestants;
   target: BattleTarget;
+  expect: BattleExpectation;
+  invalidProbe?: BattleInvalidProbe;
 }

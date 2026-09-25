@@ -1,9 +1,4 @@
-import { Burger } from 'burger-api';
-import { toFrameworkApp } from '../../src/battle-adapter';
-import { createApp as elysiaApp } from '../challengers/elysia';
-import { createApp as elysia2App } from '../challengers/elysia2';
-import { createApp as honoApp } from '../challengers/hono';
-import { createApp as expressApp } from '../challengers/express';
+import { contestantsFor } from '../contestants';
 import type { BattleScenario, BattleRouteSpec } from '../types';
 
 const staticSpec: BattleRouteSpec = {
@@ -18,53 +13,38 @@ const paramSpec: BattleRouteSpec = {
   response: { ok: true },
 };
 
+const manyRoutesSpec: BattleRouteSpec = {
+  kind: 'many-routes',
+  count: 100,
+};
+
 export const battleRoutingStatic: BattleScenario = {
   id: 'routing/static',
   group: 'routing',
   description: 'Static GET route returning a small JSON body',
-  contestants: {
-    burger: () =>
-      toFrameworkApp(
-        new Burger({
-          apiRoutes: [
-            {
-              path: staticSpec.path,
-              handlers: { GET: () => Response.json(staticSpec.response as object) },
-            },
-          ],
-        }),
-      ),
-    elysia: () => elysiaApp(staticSpec),
-    elysia2: () => elysia2App(staticSpec),
-    hono: () => honoApp(staticSpec),
-    express: () => expressApp(staticSpec),
-  },
+  contestants: contestantsFor(staticSpec),
   target: { method: 'GET', path: staticSpec.path },
+  expect: { status: 200, contentType: 'application/json', json: { ok: true } },
 };
 
 export const battleRoutingParam: BattleScenario = {
   id: 'routing/param',
   group: 'routing',
   description: 'Dynamic GET route with one :param returning JSON',
-  contestants: {
-    burger: () =>
-      toFrameworkApp(
-        new Burger({
-          apiRoutes: [
-            {
-              path: paramSpec.path,
-              handlers: {
-                GET: (req: any) =>
-                  Response.json({ id: req.params.id, ...(paramSpec.response as object) }),
-              },
-            },
-          ],
-        }),
-      ),
-    elysia: () => elysiaApp(paramSpec),
-    elysia2: () => elysia2App(paramSpec),
-    hono: () => honoApp(paramSpec),
-    express: () => expressApp(paramSpec),
+  contestants: contestantsFor(paramSpec),
+  target: { method: 'GET', path: '/bench/routing/param/42' },
+  expect: {
+    status: 200,
+    contentType: 'application/json',
+    json: { id: '42', ok: true },
   },
-  target: { method: 'GET', path: paramSpec.path },
+};
+
+export const battleRoutingManyRoutes: BattleScenario = {
+  id: 'routing/many-routes',
+  group: 'routing',
+  description: 'App with 100 static + 100 parameterized routes, one param route hit',
+  contestants: contestantsFor(manyRoutesSpec),
+  target: { method: 'GET', path: '/bench/many/p99/abc' },
+  expect: { status: 200, contentType: 'application/json', json: { id: 'abc' } },
 };

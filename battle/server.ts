@@ -19,3 +19,15 @@ if (!factory) {
 const app = factory();
 await app.start(port);
 console.log('BENCH_SERVER_READY');
+
+// Side channel: the runner writes `RSS` on stdin and expects `RSS <bytes>` back,
+// so the measured process reports its own resident set size after the load.
+process.stdin.setEncoding('utf8');
+process.stdin.on('data', (chunk: string) => {
+  for (const line of chunk.split('\n')) {
+    if (line.trim() === 'RSS') {
+      console.log(`RSS ${process.memoryUsage().rss}`);
+    }
+  }
+});
+process.stdin.resume();

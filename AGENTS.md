@@ -159,10 +159,25 @@ core BurgerAPI-only suite and must not change it.
   shared `BattleRouteSpec` so every framework serves the identical route shape.
 - Battle reuses the shared Bombardier `BenchmarkEngine` (`src/engine`) and
   `collectMetadata` (`src/system`) — do not duplicate the engine.
+- **Correctness gate:** before warm-up the runner probes each contestant once
+  and compares status, `content-type` prefix, and exact body to the scenario's
+  `expect`; validation scenarios also require 4xx for an invalid body. A
+  mismatch is a `FAIL` cell with no measurement, never a silent number.
+- **Extra metrics:** startup (spawn to ready) and post-load RSS (via the
+  `RSS` stdin side channel in `battle/server.ts`), plus Bombardier non-2xx when
+  non-zero (expected 404s excluded).
+- **Noise control:** contestant order is shuffled per scenario (seeded
+  Fisher-Yates; `--seed N`), and `--runs N` repeats the selection and reports
+  per-cell means plus the req/s min-max spread.
 - Run with `bun run battle` (CLI: `battle/index.ts`). Reports go to
-  `reports/battle/<date>/` (gitignored).
+  `reports/battle/<YYYY-MM-DD-HHmm>/` (gitignored) as `summary.md` + `summary.json`.
+- **Versions:** read each framework's `package.json` at runtime for the report
+  header. Bump versions in `package.json` (`elysia` 1.x, `elysia2` =
+  `npm:elysia@<2.x>`, `hono`, `express`) then `bun install`; never hardcode a
+  version into battle code.
 - **Fairness rule:** all contestants run on Bun. Express is Node-based and runs
   under Bun's Node compatibility; the report must always foot-note this so the
-  Express column is read as "Express-on-Bun", never as native Node.
+  Express column is read as "Express-on-Bun", never as native Node. The report
+  also lists each contestant's validator.
 - Every battle scenario is listed explicitly in `battle/registry.ts` (no
   filesystem scanning).

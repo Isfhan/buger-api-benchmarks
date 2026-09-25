@@ -9,8 +9,8 @@ import type { FrameworkApp } from '../battle/types';
 export function toFrameworkApp(burger: Burger): FrameworkApp {
   let server: { stop: () => void } | undefined;
   return {
-    start(port: number) {
-      burger.serve(port);
+    async start(port: number) {
+      await burger.serve(port);
       server = burger.getServer() as { stop: () => void } | undefined;
     },
     stop() {
