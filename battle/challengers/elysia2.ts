@@ -1,14 +1,18 @@
 import { Elysia, t } from 'elysia2';
-import type { BattleRouteSpec, FrameworkApp } from '../types';
+import type {
+  BattleRouteSpec,
+  FrameworkApp,
+  InProcessHandler,
+} from '../types';
 
 const validationSchema = t.Object({ name: t.String(), age: t.Number() });
 
 /**
- * Builds an Elysia 2 app for a battle route spec. Elysia 2 takes the hook
- * object BEFORE the handler — `.post(path, hook, handler)` — and renames the
- * hook points (`beforeHandle`, no `on` prefix).
+ * Builds an Elysia 2 app instance for a battle route spec. Elysia 2 takes the
+ * hook object BEFORE the handler — `.post(path, hook, handler)` — and renames
+ * the hook points (`beforeHandle`, no `on` prefix).
  */
-export function createApp(spec: BattleRouteSpec): FrameworkApp {
+export function buildApp(spec: BattleRouteSpec): Elysia {
   const app = new Elysia();
 
   switch (spec.kind) {
@@ -62,6 +66,16 @@ export function createApp(spec: BattleRouteSpec): FrameworkApp {
       break;
   }
 
+  return app;
+}
+
+/**
+ * Wraps the app in the framework-agnostic server contract used by the HTTP
+ * battle runner.
+ */
+export function createApp(spec: BattleRouteSpec): FrameworkApp {
+  const app = buildApp(spec);
+
   let server: ReturnType<typeof app.listen> | undefined;
   return {
     start(port: number) {
@@ -71,4 +85,12 @@ export function createApp(spec: BattleRouteSpec): FrameworkApp {
       server?.stop();
     },
   };
+}
+
+/** The public in-process handler: `app.handle(request)`. */
+export async function createHandler(
+  spec: BattleRouteSpec,
+): Promise<InProcessHandler> {
+  const app = buildApp(spec);
+  return (request) => app.handle(request);
 }

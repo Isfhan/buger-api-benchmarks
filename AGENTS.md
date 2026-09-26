@@ -171,6 +171,15 @@ core BurgerAPI-only suite and must not change it.
   per-cell means plus the req/s min-max spread.
 - Run with `bun run battle` (CLI: `battle/index.ts`). Reports go to
   `reports/battle/<YYYY-MM-DD-HHmm>/` (gitignored) as `summary.md` + `summary.json`.
+- **In-process overhead (`battle/overhead.ts`, `bun run overhead`):** the same
+  scenarios and contestants, but no server and no network — each framework's
+  public in-process handler (`burger.fetchHandler()`, `app.handle`,
+  `app.fetch`) is called directly with a reused `Request`, one contestant per
+  `Bun.spawn` process, after the shared correctness gate (`battle/gate.ts`).
+  Reports go to `reports/battle/overhead-<YYYY-MM-DD-HHmm>/`. `--target a,b`,
+  `--iterations N`, `--warmup N`, `--rounds N` are supported. Express is
+  skipped (not fetch-based) and the report must always footnote that
+  BurgerAPI's Bun `serve()` native-route path is not what is measured here.
 - **Versions:** read each framework's `package.json` at runtime for the report
   header. Bump versions in `package.json` (`elysia` 1.x, `elysia2` =
   `npm:elysia@<2.x>`, `hono`, `express`) then `bun install`; never hardcode a

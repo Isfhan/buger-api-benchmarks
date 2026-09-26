@@ -1,7 +1,11 @@
 import { Burger, type RouteDefinition } from 'burger-api';
 import { z } from 'zod';
 import { toFrameworkApp } from '../../src/battle-adapter';
-import type { BattleRouteSpec, FrameworkApp } from '../types';
+import type {
+  BattleRouteSpec,
+  FrameworkApp,
+  InProcessHandler,
+} from '../types';
 
 const validationSchema = z.object({ name: z.string(), age: z.number() });
 
@@ -16,82 +20,70 @@ const authHook = (ctx: any) => {
  * Builds a BurgerAPI app for a battle route spec using only public APIs
  * (`apiRoutes`, `schema`, `hooks`) the same way a user would.
  */
-export function createApp(spec: BattleRouteSpec): FrameworkApp {
+export function buildApp(spec: BattleRouteSpec): Burger {
   switch (spec.kind) {
     case 'static':
     case 'json':
-      return toFrameworkApp(
-        new Burger({
-          apiRoutes: [
-            {
-              path: spec.path,
-              handlers: { GET: () => Response.json(spec.response as object) },
-            },
-          ],
-        }),
-      );
+      return new Burger({
+        apiRoutes: [
+          {
+            path: spec.path,
+            handlers: { GET: () => Response.json(spec.response as object) },
+          },
+        ],
+      });
     case 'param':
-      return toFrameworkApp(
-        new Burger({
-          apiRoutes: [
-            {
-              path: spec.path,
-              handlers: {
-                GET: (ctx) =>
-                  Response.json({ id: ctx.params.id, ...(spec.response as object) }),
-              },
+      return new Burger({
+        apiRoutes: [
+          {
+            path: spec.path,
+            handlers: {
+              GET: (ctx) =>
+                Response.json({ id: ctx.params.id, ...(spec.response as object) }),
             },
-          ],
-        }),
-      );
+          },
+        ],
+      });
     case 'query':
-      return toFrameworkApp(
-        new Burger({
-          apiRoutes: [
-            {
-              path: spec.path,
-              handlers: {
-                GET: (ctx) => Response.json({ q: ctx.query.q, page: ctx.query.page }),
-              },
+      return new Burger({
+        apiRoutes: [
+          {
+            path: spec.path,
+            handlers: {
+              GET: (ctx) => Response.json({ q: ctx.query.q, page: ctx.query.page }),
             },
-          ],
-        }),
-      );
+          },
+        ],
+      });
     case 'validation':
-      return toFrameworkApp(
-        new Burger({
-          apiRoutes: [
-            {
-              path: spec.path,
-              handlers: { POST: (ctx: any) => Response.json(ctx.validated.body) },
-              schema: { post: { body: validationSchema } },
-            },
-          ],
-        }),
-      );
+      return new Burger({
+        apiRoutes: [
+          {
+            path: spec.path,
+            handlers: { POST: (ctx: any) => Response.json(ctx.validated.body) },
+            schema: { post: { body: validationSchema } },
+          },
+        ],
+      });
     case 'auth-hook':
-      return toFrameworkApp(
-        new Burger({
-          apiRoutes: [
-            {
-              path: spec.path,
-              handlers: { GET: () => Response.json(spec.response as object) },
-              hooks: { beforeRoute: [authHook] },
-            },
-          ],
-        }),
-      );
+      return new Burger({
+        apiRoutes: [
+          {
+            path: spec.path,
+            handlers: { GET: () => Response.json(spec.response as object) },
+            hooks: { beforeRoute: [authHook] },
+          },
+        ],
+      });
     case 'not-found':
-      return toFrameworkApp(
-        new Burger({
-          apiRoutes: [
-            {
-              path: spec.path,
-              handlers: { GET: () => Response.json({ ok: true }) },
-            },
-          ],
-        }),
-      );
+      return new Burger({
+        apiRoutes: [
+          {
+            path: spec.path,
+            handlers: { GET: () => Response.json({ ok: true }) },
+          },
+        ],
+      });
     case 'many-routes': {
       const apiRoutes: RouteDefinition[] = [];
       for (let i = 0; i < spec.count; i++) {
@@ -106,23 +98,41 @@ export function createApp(spec: BattleRouteSpec): FrameworkApp {
           handlers: { GET: (ctx) => Response.json({ id: ctx.params.id }) },
         });
       }
-      return toFrameworkApp(new Burger({ apiRoutes }));
+      return new Burger({ apiRoutes });
     }
     case 'text':
-      return toFrameworkApp(
-        new Burger({
-          apiRoutes: [
-            {
-              path: spec.path,
-              handlers: {
-                GET: () =>
-                  new Response(spec.text, {
-                    headers: { 'content-type': 'text/plain' },
-                  }),
-              },
+      return new Burger({
+        apiRoutes: [
+          {
+            path: spec.path,
+            handlers: {
+              GET: () =>
+                new Response(spec.text, {
+                  headers: { 'content-type': 'text/plain' },
+                }),
             },
-          ],
-        }),
-      );
+          },
+        ],
+      });
   }
+}
+
+/**
+ * Builds a BurgerAPI app for a battle route spec using only public APIs
+ * (`apiRoutes`, `schema`, `hooks`) the same way a user would.
+ */
+export function createApp(spec: BattleRouteSpec): FrameworkApp {
+  return toFrameworkApp(buildApp(spec));
+}
+
+/**
+ * The public in-process (WinterCG) handler: `await burger.fetchHandler()`.
+ * This is the portable path used on Cloudflare/Deno/Vercel/node-server; it
+ * does not involve Bun's native `serve()` route table.
+ */
+export async function createHandler(
+  spec: BattleRouteSpec,
+): Promise<InProcessHandler> {
+  const handler = await buildApp(spec).fetchHandler();
+  return (request) => handler(request);
 }

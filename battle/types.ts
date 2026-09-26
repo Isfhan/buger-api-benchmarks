@@ -99,8 +99,24 @@ export interface BattleScenario {
   id: string;
   group: string;
   description: string;
+  /** The shared route shape every contestant implements for this scenario. */
+  spec: BattleRouteSpec;
   contestants: BattleContestants;
   target: BattleTarget;
   expect: BattleExpectation;
   invalidProbe?: BattleInvalidProbe;
 }
+
+/**
+ * A public in-process handler: a `Request` in, a `Response` (or a promise of
+ * one) out, with no listening socket involved. Used by the overhead benchmark
+ * to measure framework overhead alone.
+ */
+export type InProcessHandler = (
+  request: Request,
+) => Response | Promise<Response>;
+
+/** Builds a framework's public in-process handler for a shared route spec. */
+export type InProcessHandlerFactory = (
+  spec: BattleRouteSpec,
+) => Promise<InProcessHandler>;

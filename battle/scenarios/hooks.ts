@@ -11,6 +11,7 @@ export const battleHooksAuth: BattleScenario = {
   id: 'hooks/auth',
   group: 'hooks',
   description: 'GET guarded by a before-handler hook that checks the Authorization header',
+  spec,
   contestants: contestantsFor(spec),
   target: {
     method: 'GET',

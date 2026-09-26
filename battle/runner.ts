@@ -1,6 +1,7 @@
 import type { BenchConfig, Metrics, ReportMeta } from '../src/types';
 import type { BenchmarkEngine } from '../src/engine/types';
 import { getEngine } from '../src/engine';
+import { checkExpectation, checkInvalidProbe } from './gate';
 import {
   CONTESTANT_ORDER,
   CONTESTANT_LABEL,
@@ -115,67 +116,31 @@ function captureLines(proc: ReturnType<typeof Bun.spawn>): ServerStream {
  * content-type prefix and body to the scenario's `expect`. Returns a failure
  * reason or `null` when the response matches.
  */
-async function checkExpectation(scenario: BattleScenario, url: string): Promise<string | null> {
-  const expect = scenario.expect;
-  let res: Response;
-  try {
-    res = await fetch(url, {
-      method: scenario.target.method,
-      headers: scenario.target.headers,
-      body: scenario.target.body,
-    });
-  } catch (error) {
-    return `request failed: ${(error as Error).message}`;
-  }
-
-  if (res.status !== expect.status) {
-    return `status ${res.status}, expected ${expect.status}`;
-  }
-  if (expect.contentType) {
-    const contentType = res.headers.get('content-type') ?? '';
-    if (!contentType.startsWith(expect.contentType)) {
-      return `content-type "${contentType}", expected prefix "${expect.contentType}"`;
-    }
-  }
-  if ('json' in expect) {
-    let actual: unknown;
-    try {
-      actual = await res.json();
-    } catch (error) {
-      return `response body is not JSON: ${(error as Error).message}`;
-    }
-    if (!Bun.deepEquals(actual, expect.json)) {
-      return `body ${JSON.stringify(actual)}, expected ${JSON.stringify(expect.json)}`;
-    }
-  } else if (expect.text !== undefined) {
-    const actual = await res.text();
-    if (actual !== expect.text) {
-      return `body "${actual}", expected "${expect.text}"`;
-    }
-  }
-  return null;
+async function checkExpectationOverHttp(
+  scenario: BattleScenario,
+  url: string,
+): Promise<string | null> {
+  return checkExpectation(scenario, (target) =>
+    fetch(url, {
+      method: target.method,
+      headers: target.headers,
+      body: target.body,
+    }),
+  );
 }
 
 /** Sends the scenario's invalid probe (if any) and requires a 4xx response. */
-async function checkInvalidProbe(scenario: BattleScenario, url: string): Promise<string | null> {
-  const probe = scenario.invalidProbe;
-  if (!probe) return null;
-  let res: Response;
-  try {
-    res = await fetch(url, {
-      method: scenario.target.method,
-      headers: scenario.target.headers,
-      body: probe.body,
-    });
-  } catch (error) {
-    return `invalid request failed: ${(error as Error).message}`;
-  }
-  await res.text().catch(() => '');
-  const [min, max] = probe.expectStatusRange;
-  if (res.status < min || res.status > max) {
-    return `invalid body returned ${res.status}, expected ${min}-${max}`;
-  }
-  return null;
+async function checkInvalidProbeOverHttp(
+  scenario: BattleScenario,
+  url: string,
+): Promise<string | null> {
+  return checkInvalidProbe(scenario, (target) =>
+    fetch(url, {
+      method: target.method,
+      headers: target.headers,
+      body: target.body,
+    }),
+  );
 }
 
 /** Asks the server process for its RSS over the stdin side channel. */
@@ -259,7 +224,8 @@ export async function runBattle(
           const url = `http://localhost:${port}${scenario.target.path}`;
 
           const failure =
-            (await checkExpectation(scenario, url)) ?? (await checkInvalidProbe(scenario, url));
+            (await checkExpectationOverHttp(scenario, url)) ??
+            (await checkInvalidProbeOverHttp(scenario, url));
           if (failure) {
             recordFailure(failure, startupMs);
             continue;

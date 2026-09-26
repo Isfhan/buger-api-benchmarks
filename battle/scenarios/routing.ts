@@ -22,6 +22,7 @@ export const battleRoutingStatic: BattleScenario = {
   id: 'routing/static',
   group: 'routing',
   description: 'Static GET route returning a small JSON body',
+  spec: staticSpec,
   contestants: contestantsFor(staticSpec),
   target: { method: 'GET', path: staticSpec.path },
   expect: { status: 200, contentType: 'application/json', json: { ok: true } },
@@ -31,6 +32,7 @@ export const battleRoutingParam: BattleScenario = {
   id: 'routing/param',
   group: 'routing',
   description: 'Dynamic GET route with one :param returning JSON',
+  spec: paramSpec,
   contestants: contestantsFor(paramSpec),
   target: { method: 'GET', path: '/bench/routing/param/42' },
   expect: {
@@ -44,6 +46,7 @@ export const battleRoutingManyRoutes: BattleScenario = {
   id: 'routing/many-routes',
   group: 'routing',
   description: 'App with 100 static + 100 parameterized routes, one param route hit',
+  spec: manyRoutesSpec,
   contestants: contestantsFor(manyRoutesSpec),
   target: { method: 'GET', path: '/bench/many/p99/abc' },
   expect: { status: 200, contentType: 'application/json', json: { id: 'abc' } },

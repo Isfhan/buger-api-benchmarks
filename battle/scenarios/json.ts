@@ -11,6 +11,7 @@ export const battleJson: BattleScenario = {
   id: 'json/echo',
   group: 'json',
   description: 'GET returning a JSON object (serialization overhead)',
+  spec,
   contestants: contestantsFor(spec),
   target: { method: 'GET', path: spec.path },
   expect: {

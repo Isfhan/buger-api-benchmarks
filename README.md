@@ -298,3 +298,41 @@ under Bun's Node compatibility layer (not native Node), so its column is an
 report also footnotes each contestant's validator: BurgerAPI uses a Zod route
 schema, Elysia and Elysia 2 use TypeBox, Hono uses `@hono/zod-validator`, and
 Express uses Zod `safeParse` in the handler.
+
+## In-process overhead (fetch handler)
+
+The HTTP battle is bounded by Bun's single-thread HTTP ceiling, so at parity it
+can no longer show where framework overhead differs. `battle/overhead.ts`
+removes the network and the server entirely: for each battle scenario it builds
+every contestant's **public in-process handler** and calls it directly with a
+`Request`, awaiting the handler and reading the response body so lazy work is
+included.
+
+```bash
+bun run overhead                        # all scenarios, 5×300k iterations
+bun run overhead routing                # one group
+bun run overhead routing/param          # one scenario
+bun run overhead --target burger,hono   # only some contestants
+bun run overhead --iterations 100000    # shorter timed rounds
+bun run overhead --warmup 20000 --rounds 3
+```
+
+- **Handlers measured:** BurgerAPI `fetchHandler()` (the portable WinterCG path
+  — Cloudflare/Deno/Vercel/node-server), Elysia 1/2 `app.handle(request)`, Hono
+  `app.fetch(request)`. Express is skipped (not fetch-based) and the report says
+  so.
+- **Isolation:** each contestant runs in its own `Bun.spawn` process, so JIT
+  state never leaks between frameworks.
+- **Requests:** bodyless requests are prebuilt once outside the timed loop; POST
+  bodies are rebuilt per iteration for every contestant (a body can be read only
+  once), so the same construction cost is paid by all.
+- **Gate:** the same correctness gate as the HTTP battle runs before warm-up
+  (`battle/gate.ts`, shared by both runners).
+- **Output:** `reports/battle/overhead-<YYYY-MM-DD-HHmm>/summary.md` + `.json`
+  with a table per scenario (mean of rounds, min–max spread) and an overall mean.
+
+> Footnote: BurgerAPI's Bun `serve()` path is not measured here. On Bun,
+> `serve()` registers native per-method `routes` (static + `:param`) and never
+> enters this fetch handler for matched paths. The overhead benchmark measures
+> the portable fetch path — `burger.fetchHandler()` / `toFetchHandler()` — the
+> same code that runs on Cloudflare Workers, Deno, Vercel and node-server.

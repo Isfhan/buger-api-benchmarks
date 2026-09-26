@@ -10,6 +10,7 @@ export const battleRequestQuery: BattleScenario = {
   id: 'request/query',
   group: 'request',
   description: 'GET reading two query string values through each framework query API',
+  spec,
   contestants: contestantsFor(spec),
   target: { method: 'GET', path: '/bench/request/query?q=burger&page=2' },
   expect: {

@@ -12,6 +12,7 @@ export const battleValidation: BattleScenario = {
   id: 'validation/body',
   group: 'validation',
   description: 'POST with JSON body parsing + real schema validation, echoing the body',
+  spec,
   contestants: contestantsFor(spec),
   target: {
     method: 'POST',

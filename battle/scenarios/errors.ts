@@ -10,6 +10,7 @@ export const battleErrorsNotFound: BattleScenario = {
   id: 'errors/not-found',
   group: 'errors',
   description: 'Request to an unregistered path on a single-route app (404)',
+  spec,
   contestants: contestantsFor(spec),
   target: { method: 'GET', path: '/bench/missing' },
   expect: { status: 404 },
