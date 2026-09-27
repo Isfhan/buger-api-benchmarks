@@ -1,0 +1,750 @@
+{
+  "meta": {
+    "burgerApiVersion": "1.0.0-beta",
+    "burgerApiCommit": "5ed2996",
+    "burgerApiDirty": false,
+    "bunVersion": "1.4.2",
+    "os": "win32",
+    "arch": "x64",
+    "cpu": "Intel(R) Core(TM) i5-14400F",
+    "cores": 16,
+    "memory": "31.8 GB",
+    "date": "2026-09-27",
+    "gitCommit": "a1ecbf106284d4d4e1126478cccdaa59c1880542",
+    "profile": "overhead"
+  },
+  "versions": {
+    "elysia": "1.4.30",
+    "elysia2": "2.0.0-beta.19",
+    "hono": "4.13.9",
+    "express": "5.2.1",
+    "zodValidator": "0.9.1"
+  },
+  "config": {
+    "iterations": 300000,
+    "warmup": 50000,
+    "rounds": 5
+  },
+  "results": [
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "burger",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        2001268.8044220034,
+        2052466.517429546,
+        2069198.1236511406,
+        2048584.223443179,
+        2035664.848139403
+      ],
+      "meanOpsPerSec": 2041436.5034170547,
+      "minOpsPerSec": 2001268.8044220034,
+      "maxOpsPerSec": 2069198.1236511406,
+      "meanNsPerOp": 489.91253333333333,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "elysia",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        2357669.4594571227,
+        2560443.5370991193,
+        2564878.6042956593,
+        2550113.9900953574,
+        2591389.675903533
+      ],
+      "meanOpsPerSec": 2524899.053370158,
+      "minOpsPerSec": 2357669.4594571227,
+      "maxOpsPerSec": 2591389.675903533,
+      "meanNsPerOp": 396.5239333333333,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "elysia2",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        2093930.9505329751,
+        2101582.0709830364,
+        2142583.198291076,
+        2180953.7310665958,
+        2124651.9111952153
+      ],
+      "meanOpsPerSec": 2128740.3724137796,
+      "minOpsPerSec": 2093930.9505329751,
+      "maxOpsPerSec": 2180953.7310665958,
+      "meanNsPerOp": 469.86186666666663,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "hono",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1262406.8291159829,
+        1275281.3908388887,
+        1303552.6589649885,
+        1298166.8585789998,
+        1305272.8672929078
+      ],
+      "meanOpsPerSec": 1288936.1209583536,
+      "minOpsPerSec": 1262406.8291159829,
+      "maxOpsPerSec": 1305272.8672929078,
+      "meanNsPerOp": 775.9706,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "burger",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1442035.2308434034,
+        1456614.730259229,
+        1459424.354387151,
+        1467776.436121391,
+        1454873.4623806106
+      ],
+      "meanOpsPerSec": 1456144.8427983571,
+      "minOpsPerSec": 1442035.2308434034,
+      "maxOpsPerSec": 1467776.436121391,
+      "meanNsPerOp": 686.7674,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "elysia",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1805226.853832587,
+        1808152.5984358273,
+        1847217.8436317772,
+        1827602.2771924376,
+        1810240.894790005
+      ],
+      "meanOpsPerSec": 1819688.0935765267,
+      "minOpsPerSec": 1805226.853832587,
+      "maxOpsPerSec": 1847217.8436317772,
+      "meanNsPerOp": 549.5860000000001,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "elysia2",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1726508.407232689,
+        1762405.4249188853,
+        1732903.0342554492,
+        1770513.1655358986,
+        1721046.9702402307
+      ],
+      "meanOpsPerSec": 1742675.400436631,
+      "minOpsPerSec": 1721046.9702402307,
+      "maxOpsPerSec": 1770513.1655358986,
+      "meanNsPerOp": 573.9051999999999,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "hono",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1003204.9052707048,
+        991025.2751086166,
+        997783.5900519647,
+        1001218.8170399432,
+        1002548.478231665
+      ],
+      "meanOpsPerSec": 999156.2131405789,
+      "minOpsPerSec": 991025.2751086166,
+      "maxOpsPerSec": 1003204.9052707048,
+      "meanNsPerOp": 1000.8646666666666,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "burger",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1410163.4238391884,
+        1410223.0831895296,
+        1393190.364138165,
+        1404512.1356871082,
+        1411550.150259513
+      ],
+      "meanOpsPerSec": 1405927.8314227008,
+      "minOpsPerSec": 1393190.364138165,
+      "maxOpsPerSec": 1411550.150259513,
+      "meanNsPerOp": 711.2908666666667,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "elysia",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1829201.3706815604,
+        1901045.5116632308,
+        1881619.7735658765,
+        1878995.213572859,
+        1846552.7015373774
+      ],
+      "meanOpsPerSec": 1867482.914204181,
+      "minOpsPerSec": 1829201.3706815604,
+      "maxOpsPerSec": 1901045.5116632308,
+      "meanNsPerOp": 535.5838000000001,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "elysia2",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1709927.841045108,
+        1746849.9927505723,
+        1715119.7525196539,
+        1721597.0911895547,
+        1722059.5832615816
+      ],
+      "meanOpsPerSec": 1723110.8521532943,
+      "minOpsPerSec": 1709927.841045108,
+      "maxOpsPerSec": 1746849.9927505723,
+      "meanNsPerOp": 580.3769333333333,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "hono",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        752541.8983973115,
+        779058.694541733,
+        785520.6548728594,
+        769531.2810618094,
+        772252.0568933534
+      ],
+      "meanOpsPerSec": 771780.9171534133,
+      "minOpsPerSec": 752541.8983973115,
+      "maxOpsPerSec": 785520.6548728594,
+      "meanNsPerOp": 1295.975466666667,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "burger",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1843521.8641693091,
+        1915690.4627350306,
+        1744803.8287975215,
+        1770154.835443457,
+        1904775.2079538328
+      ],
+      "meanOpsPerSec": 1835789.2398198298,
+      "minOpsPerSec": 1744803.8287975215,
+      "maxOpsPerSec": 1915690.4627350306,
+      "meanNsPerOp": 545.4988000000001,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "elysia",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        2141292.4698595232,
+        2205104.080912619,
+        2269364.487169013,
+        2259682.7405432286,
+        2221504.7584631927
+      ],
+      "meanOpsPerSec": 2219389.707389515,
+      "minOpsPerSec": 2141292.4698595232,
+      "maxOpsPerSec": 2269364.487169013,
+      "meanNsPerOp": 450.7676666666666,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "elysia2",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1970332.0534932017,
+        2023773.9471484686,
+        2030656.138842729,
+        2042640.807741881,
+        2039596.7309343598
+      ],
+      "meanOpsPerSec": 2021399.9356321278,
+      "minOpsPerSec": 1970332.0534932017,
+      "maxOpsPerSec": 2042640.807741881,
+      "meanNsPerOp": 494.7924,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "hono",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1211773.1027571473,
+        1222596.517882104,
+        1254999.0796673417,
+        1263496.2457314888,
+        1253946.7975452738
+      ],
+      "meanOpsPerSec": 1241362.348716671,
+      "minOpsPerSec": 1211773.1027571473,
+      "maxOpsPerSec": 1263496.2457314888,
+      "meanNsPerOp": 805.7836666666666,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "burger",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        569459.4349367919,
+        585711.1089287947,
+        581665.2144425147,
+        586166.1276869121,
+        583255.4363295038
+      ],
+      "meanOpsPerSec": 581251.4644649035,
+      "minOpsPerSec": 569459.4349367919,
+      "maxOpsPerSec": 586166.1276869121,
+      "meanNsPerOp": 1720.6190666666666,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "elysia",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        590227.0209865054,
+        593388.9351952032,
+        588937.6311122399,
+        590227.9499691314,
+        595840.9112711451
+      ],
+      "meanOpsPerSec": 591724.489706845,
+      "minOpsPerSec": 588937.6311122399,
+      "maxOpsPerSec": 595840.9112711451,
+      "meanNsPerOp": 1690.0064666666665,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "elysia2",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        606922.8042746786,
+        616165.8504865349,
+        608300.997066164,
+        612674.6454604997,
+        602284.2231446984
+      ],
+      "meanOpsPerSec": 609269.704086515,
+      "minOpsPerSec": 602284.2231446984,
+      "maxOpsPerSec": 616165.8504865349,
+      "meanNsPerOp": 1641.4104,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "hono",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        361720.77808550844,
+        366584.6372443393,
+        359895.9324921605,
+        369210.04802684305,
+        369499.7195497128
+      ],
+      "meanOpsPerSec": 365382.22307971277,
+      "minOpsPerSec": 359895.9324921605,
+      "maxOpsPerSec": 369499.7195497128,
+      "meanNsPerOp": 2737.1749333333332,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "burger",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1387295.4259482513,
+        1431456.1535437126,
+        1430294.593009674,
+        1428290.5314335795,
+        1436712.1130634956
+      ],
+      "meanOpsPerSec": 1422809.7633997425,
+      "minOpsPerSec": 1387295.4259482513,
+      "maxOpsPerSec": 1436712.1130634956,
+      "meanNsPerOp": 702.9488666666668,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "elysia",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1617238.468281102,
+        1636387.1408334775,
+        1633671.0494430545,
+        1618043.558811299,
+        1612026.1449147018
+      ],
+      "meanOpsPerSec": 1623473.2724567268,
+      "minOpsPerSec": 1612026.1449147018,
+      "maxOpsPerSec": 1636387.1408334775,
+      "meanNsPerOp": 615.9852666666667,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "elysia2",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1514728.4622022235,
+        1531338.0678903414,
+        1544195.6516479915,
+        1533086.3020271997,
+        1525881.2345599881
+      ],
+      "meanOpsPerSec": 1529845.9436655487,
+      "minOpsPerSec": 1514728.4622022235,
+      "maxOpsPerSec": 1544195.6516479915,
+      "meanNsPerOp": 653.6864666666668,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "hono",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        872354.7296747164,
+        904361.1005351107,
+        903655.5578280815,
+        900226.1368055659,
+        904392.1806252062
+      ],
+      "meanOpsPerSec": 896997.9410937361,
+      "minOpsPerSec": 872354.7296747164,
+      "maxOpsPerSec": 904392.1806252062,
+      "meanNsPerOp": 1115.0478,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "burger",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1533921.9162161625,
+        1534861.3048162928,
+        1536907.291702955,
+        1531856.487514348,
+        1525412.611399612
+      ],
+      "meanOpsPerSec": 1532591.922329874,
+      "minOpsPerSec": 1525412.611399612,
+      "maxOpsPerSec": 1536907.291702955,
+      "meanNsPerOp": 652.4937333333332,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "elysia",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1672039.4868845225,
+        1696291.454535997,
+        1676524.631499886,
+        1717545.1242042764,
+        1724327.2106305931
+      ],
+      "meanOpsPerSec": 1697345.5815510552,
+      "minOpsPerSec": 1672039.4868845225,
+      "maxOpsPerSec": 1724327.2106305931,
+      "meanNsPerOp": 589.2455999999999,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "elysia2",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1812657.0591814402,
+        1801887.2967546207,
+        1805298.5512479125,
+        1809268.1570613624,
+        1787905.5342231928
+      ],
+      "meanOpsPerSec": 1803403.3196937058,
+      "minOpsPerSec": 1787905.5342231928,
+      "maxOpsPerSec": 1812657.0591814402,
+      "meanNsPerOp": 554.5196666666667,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "hono",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        747048.4117252736,
+        772822.2127651683,
+        767174.9371108344,
+        728115.929647497,
+        771248.8704417587
+      ],
+      "meanOpsPerSec": 757282.0723381063,
+      "minOpsPerSec": 728115.929647497,
+      "maxOpsPerSec": 772822.2127651683,
+      "meanNsPerOp": 1321.2099333333333,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "burger",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        2437045.034155186,
+        2738263.1197031713,
+        2731332.480550638,
+        2742977.5203848956,
+        2774140.5712510254
+      ],
+      "meanOpsPerSec": 2684751.7452089833,
+      "minOpsPerSec": 2437045.034155186,
+      "maxOpsPerSec": 2774140.5712510254,
+      "meanNsPerOp": 373.3378,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "elysia",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        3159138.439764706,
+        3641324.665362262,
+        3590823.2919949787,
+        3498640.195177475,
+        3519259.735445512
+      ],
+      "meanOpsPerSec": 3481837.265548987,
+      "minOpsPerSec": 3159138.439764706,
+      "maxOpsPerSec": 3641324.665362262,
+      "meanNsPerOp": 287.92620000000005,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "elysia2",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        2207270.011661743,
+        2409845.665450766,
+        2468469.417309567,
+        2503730.5585322133,
+        2464458.4024066264
+      ],
+      "meanOpsPerSec": 2410754.8110721833,
+      "minOpsPerSec": 2207270.011661743,
+      "maxOpsPerSec": 2503730.5585322133,
+      "meanNsPerOp": 415.6589333333333,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "hono",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        984903.0773296653,
+        1004966.8813164263,
+        999540.2115027086,
+        983924.6392440303,
+        1000312.0973743806
+      ],
+      "meanOpsPerSec": 994729.3813534422,
+      "minOpsPerSec": 983924.6392440303,
+      "maxOpsPerSec": 1004966.8813164263,
+      "meanNsPerOp": 1005.3744000000003,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "burger",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1615094.0226985312,
+        1626958.0440059612,
+        1636839.8079441295,
+        1661676.0994479908,
+        1656829.7005501224
+      ],
+      "meanOpsPerSec": 1639479.5349293468,
+      "minOpsPerSec": 1615094.0226985312,
+      "maxOpsPerSec": 1661676.0994479908,
+      "meanNsPerOp": 610.0201333333333,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "elysia",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1937141.0639037008,
+        1960798.4109689677,
+        2002683.5960186645,
+        1982064.954911327,
+        2012400.4113346427
+      ],
+      "meanOpsPerSec": 1979017.6874274604,
+      "minOpsPerSec": 1937141.0639037008,
+      "maxOpsPerSec": 2012400.4113346427,
+      "meanNsPerOp": 505.3988666666667,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "elysia2",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1585901.127522838,
+        1620906.6703551295,
+        1618700.0867083683,
+        1618964.7691680025,
+        1631875.9774257157
+      ],
+      "meanOpsPerSec": 1615269.726236011,
+      "minOpsPerSec": 1585901.127522838,
+      "maxOpsPerSec": 1631875.9774257157,
+      "meanNsPerOp": 619.1490000000001,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "hono",
+      "iterations": 300000,
+      "warmup": 50000,
+      "rounds": [
+        1246899.376882818,
+        1250458.5014505319,
+        1256068.9062654397,
+        1258225.1224777303,
+        1221601.332034093
+      ],
+      "meanOpsPerSec": 1246650.6478221226,
+      "minOpsPerSec": 1221601.332034093,
+      "maxOpsPerSec": 1258225.1224777303,
+      "meanNsPerOp": 802.2397333333331,
+      "failed": false
+    }
+  ]
+}
