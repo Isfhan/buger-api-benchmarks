@@ -1,4 +1,7 @@
 node_modules/
+# Local runs are never committed. The maintainer force-adds only the single
+# latest curated battle + overhead report via `git add -f` (AGENTS.md Rule 6).
+reports/
 results/
 *.log
 .DS_Store

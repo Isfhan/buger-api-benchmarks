@@ -20,8 +20,8 @@ import { errors404 } from './errors/404';
 import { errors405 } from './errors/405';
 import { errorsValidation } from './errors/validation-error';
 
-import { phase1DevStatic } from './phase1/dev-static';
-import { phase1DevDynamic } from './phase1/dev-dynamic';
+import { lifecycleDevStatic } from './lifecycle/dev-static';
+import { lifecycleDevDynamic } from './lifecycle/dev-dynamic';
 
 import {
   optimizeFallbackTrie,
@@ -60,8 +60,8 @@ export const scenarios: Scenario[] = [
   errors405,
   errorsValidation,
 
-  phase1DevStatic,
-  phase1DevDynamic,
+  lifecycleDevStatic,
+  lifecycleDevDynamic,
 
   optimizeFallbackTrie,
   optimizeFallbackRegex,

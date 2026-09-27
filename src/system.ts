@@ -1,3 +1,4 @@
+import { realpathSync } from 'node:fs';
 import os from 'node:os';
 import type { ReportMeta } from './types';
 
@@ -76,6 +77,27 @@ async function detectMemory(): Promise<string> {
 }
 
 
+/**
+ * Resolves the linked burger-api working copy and records which framework
+ * commit was actually measured, plus whether it had uncommitted changes.
+ */
+async function collectFrameworkGit(): Promise<{
+  burgerApiCommit: string;
+  burgerApiDirty: boolean;
+}> {
+  let dir: string;
+  try {
+    dir = realpathSync('node_modules/burger-api');
+  } catch {
+    return { burgerApiCommit: 'unknown', burgerApiDirty: false };
+  }
+  const burgerApiCommit =
+    (await spawnText(['git', '-C', dir, 'rev-parse', '--short', 'HEAD'])) ||
+    'unknown';
+  const status = await spawnText(['git', '-C', dir, 'status', '--porcelain']);
+  return { burgerApiCommit, burgerApiDirty: status !== null && status.length > 0 };
+}
+
 /** Collects reproducible environment metadata for a benchmark run. */
 export async function collectMetadata(profile: string): Promise<ReportMeta> {
   const pkgText = await readFileText('node_modules/burger-api/package.json');
@@ -89,10 +111,13 @@ export async function collectMetadata(profile: string): Promise<ReportMeta> {
   }
 
   const gitCommit = (await spawnText(['git', 'rev-parse', 'HEAD'])) ?? 'unknown';
+  const { burgerApiCommit, burgerApiDirty } = await collectFrameworkGit();
   const date = new Date().toISOString().slice(0, 10);
 
   return {
     burgerApiVersion,
+    burgerApiCommit,
+    burgerApiDirty,
     bunVersion: Bun.version,
     os: String(process.platform),
     arch: String(process.arch),

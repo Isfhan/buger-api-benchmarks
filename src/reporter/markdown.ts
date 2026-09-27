@@ -10,6 +10,9 @@ export const markdownReporter: Reporter = {
     lines.push(`- Date: ${meta.date}`);
     lines.push(`- Profile: ${meta.profile}`);
     lines.push(`- BurgerAPI: ${meta.burgerApiVersion}`);
+    lines.push(
+      `- BurgerAPI commit: ${meta.burgerApiCommit} (${meta.burgerApiDirty ? 'dirty' : 'clean'})`,
+    );
     lines.push(`- Bun: ${meta.bunVersion}`);
     lines.push(`- OS: ${meta.os} ${meta.arch}`);
     lines.push(`- CPU: ${meta.cpu} (${meta.cores} cores)`);

@@ -45,6 +45,10 @@ export interface ReportResult {
 /** Environment metadata captured alongside every report. */
 export interface ReportMeta {
   burgerApiVersion: string;
+  /** Short SHA of the linked burger-api working copy, or `unknown`. */
+  burgerApiCommit: string;
+  /** True when the linked burger-api working copy has uncommitted changes. */
+  burgerApiDirty: boolean;
   bunVersion: string;
   os: string;
   arch: string;

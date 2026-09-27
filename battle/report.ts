@@ -245,7 +245,7 @@ export function renderBattleReport(
 _Generated ${meta.date} · profile \`${meta.profile}\` · ${runsLabel} · seed ${outcome.seed} · Bun ${meta.bunVersion}_
 
 **Environment:** ${meta.os}/${meta.arch} · ${meta.cpu} (${meta.cores} cores) · ${meta.memory}
-**Frameworks:** BurgerAPI ${meta.burgerApiVersion} · Elysia ${versions.elysia} · Elysia 2 ${versions.elysia2} · Hono ${versions.hono} · Express ${versions.express}
+**Frameworks:** BurgerAPI ${meta.burgerApiVersion} (${meta.burgerApiCommit}, ${meta.burgerApiDirty ? 'dirty' : 'clean'}) · Elysia ${versions.elysia} · Elysia 2 ${versions.elysia2} · Hono ${versions.hono} · Express ${versions.express}
 **Validators:** ${CONTESTANT_ORDER.map((c) => `${CONTESTANT_LABEL[c]} — ${CONTESTANT_VALIDATOR[c]}`).join('; ')}
 **Correctness gate:** each contestant was probed once before warm-up; status, content-type and body had to match the expected response. A \`FAIL\` cell was not measured.
 **Runtime note:** all frameworks were run on Bun. Express is Node-based and ran
@@ -289,7 +289,7 @@ difference is framework overhead, not application logic. The same Bombardier loa
 settings (connections, duration, warm-up) were applied to every contestant.
 
 > Fairness caveat: Express ran on Bun's Node compatibility, not raw Node. Treat
-> its column as "Express-on-Bun", not a native Node Express baseline.
+> its column as "Express-on-Bun", never as native Node.
 > Elysia 2 is \`elysia2\` (\`npm:elysia@2.0.0-beta.19\`, the \`next\` tag) and is
 > reported alongside Elysia 1 as a second upstream data point.
 `;

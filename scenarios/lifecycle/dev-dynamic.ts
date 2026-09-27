@@ -6,14 +6,15 @@ import type { Scenario } from '../../src/types';
  * pipeline (apiDir). Mirrors `routing/dynamic` but via the dev discovery
  * path, proving the compiler emits the same trie-dispatched handler.
  */
-export const phase1DevDynamic: Scenario = {
-  id: 'phase1/dev-dynamic',
-  group: 'phase1',
+export const lifecycleDevDynamic: Scenario = {
+  id: 'lifecycle/dev-dynamic',
+  group: 'lifecycle',
   description:
     'Dynamic GET route served through the file-based Route Module pipeline (apiDir)',
   createApp: () =>
     new Burger({
       apiDir: setDir(__dirname, 'fixtures/dynamic'),
+      apiPrefix: '',
     }),
-  targets: [{ method: 'GET', path: '/bench/phase1/users/42' }],
+  targets: [{ method: 'GET', path: '/bench/lifecycle/users/42' }],
 };

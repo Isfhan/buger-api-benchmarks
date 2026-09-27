@@ -156,9 +156,17 @@ easy to debug.
 
 ## Reports
 
-Reports are written under `reports/<date>/` and raw Bombardier output under
-`results/<date>/`. Both directories are gitignored, so generated artifacts are
-never committed.
+Reports are written under `reports/<date>/` (and battle reports under
+`reports/battle/<YYYY-MM-DD-HHmm>/`) and raw Bombardier output under
+`results/<date>/`. Both directories are gitignored and local runs are never
+committed.
+
+The only committed report artifacts are the single latest curated battle +
+overhead report, committed by the maintainer after a curated run. Those
+summaries carry the measured BurgerAPI commit (short SHA + dirty flag). Because
+`reports/` is ignored, curated files are added explicitly with `git add -f`;
+every other report folder stays local and is pruned by the maintainer when the
+curated report is committed.
 
 Each run produces:
 
@@ -168,7 +176,8 @@ Each run produces:
 - `results/<date>/<scenario>_<METHOD>.txt` — raw Bombardier output
 
 Every report includes environment metadata for reproducibility: BurgerAPI
-version, Bun version, operating system, CPU, memory, date, and the Git commit.
+version and the measured commit (short SHA plus a dirty flag), Bun version,
+operating system, CPU, memory, date, and the benchmark-suite Git commit.
 
 ## Adding a benchmark
 
@@ -214,7 +223,7 @@ your working copy. To benchmark a released version instead, change the
 
 ```json
 "dependencies": {
-  "burger-api": "^1.0.0"
+  "burger-api": "^1.0.0-beta"
 }
 ```
 
@@ -332,7 +341,8 @@ bun run overhead --warmup 20000 --rounds 3
   with a table per scenario (mean of rounds, min–max spread) and an overall mean.
 
 > Footnote: BurgerAPI's Bun `serve()` path is not measured here. On Bun,
-> `serve()` registers native per-method `routes` (static + `:param`) and never
-> enters this fetch handler for matched paths. The overhead benchmark measures
-> the portable fetch path — `burger.fetchHandler()` / `toFetchHandler()` — the
-> same code that runs on Cloudflare Workers, Deno, Vercel and node-server.
+> `serve()` registers native per-method `routes` (static + `:param` + `*`) and
+> never enters this fetch handler for matched paths. The overhead benchmark
+> measures the portable fetch path — `burger.fetchHandler()` /
+> `toFetchHandler()` — the same code that runs on Cloudflare Workers, Deno,
+> Vercel and node-server.

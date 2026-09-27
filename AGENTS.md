@@ -94,10 +94,16 @@ format (e.g. HTML) the same way. Do not tie the runner to one tool.
 Only benchmark behavior BurgerAPI actually provides. If a feature does not
 exist, do not invent a scenario for it.
 
-## Rule 6 — Never Commit Generated Artifacts
+## Rule 6 — Reports: Local Runs Are Never Committed
 
-`reports/` and `results/` are gitignored. They are produced locally on each run
-and must never be committed. Node modules are gitignored too.
+`reports/` and `results/` are gitignored and are produced locally on each run.
+Local runs are never committed. The only committed report artifacts are the
+single latest curated battle + overhead report, committed by the maintainer
+after a curated run; those report headers carry the measured burger-api short
+SHA and dirty flag. Since `reports/` is ignored, the curated files are added
+explicitly with `git add -f` and every other report folder stays local.
+Contributors never prune `reports/`; the maintainer removes superseded folders
+when committing the curated report. Node modules are gitignored too.
 
 ## Rule 7 — Terminology
 
@@ -149,8 +155,8 @@ After changes:
 ## Rule 10 — Battle Module (Cross-Framework Comparison)
 
 The `battle/` directory is an **isolated, opt-in** comparison of BurgerAPI
-against other frameworks (Elysia, Hono, Express). It is separate from the
-core BurgerAPI-only suite and must not change it.
+against other frameworks (Elysia 1.4.x, Elysia 2 beta, Hono, Express). It is
+separate from the core BurgerAPI-only suite and must not change it.
 
 - The core suite (`scenarios/`, `src/runner.ts`, `src/report.ts`,
   `scenarios/registry.ts`) stays BurgerAPI-only. Do not add competitor apps

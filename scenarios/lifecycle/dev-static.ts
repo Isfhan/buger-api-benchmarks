@@ -8,14 +8,15 @@ import type { Scenario } from '../../src/types';
  * prod routing scenarios, so this measures the same hot path while proving
  * the file-based discovery pipeline boots and serves correctly under load.
  */
-export const phase1DevStatic: Scenario = {
-  id: 'phase1/dev-static',
-  group: 'phase1',
+export const lifecycleDevStatic: Scenario = {
+  id: 'lifecycle/dev-static',
+  group: 'lifecycle',
   description:
     'Static GET route served through the file-based Route Module pipeline (apiDir)',
   createApp: () =>
     new Burger({
       apiDir: setDir(__dirname, 'fixtures/static'),
+      apiPrefix: '',
     }),
-  targets: [{ method: 'GET', path: '/bench/phase1/static' }],
+  targets: [{ method: 'GET', path: '/bench/lifecycle/static' }],
 };
