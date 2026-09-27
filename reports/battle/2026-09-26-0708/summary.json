@@ -1,0 +1,2725 @@
+{
+  "meta": {
+    "burgerApiVersion": "1.0.0-beta",
+    "bunVersion": "1.4.2",
+    "os": "win32",
+    "arch": "x64",
+    "cpu": "Intel(R) Core(TM) i5-14400F",
+    "cores": 16,
+    "memory": "31.8 GB",
+    "date": "2026-09-26",
+    "gitCommit": "ea8bc243036e2fb25094d254b523e20c0966aac7",
+    "profile": "ci"
+  },
+  "versions": {
+    "elysia": "1.4.30",
+    "elysia2": "2.0.0-beta.19",
+    "hono": "4.13.9",
+    "express": "5.2.1",
+    "zodValidator": "0.9.1"
+  },
+  "seed": 42,
+  "runs": 3,
+  "results": [
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "burger",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 112231.13,
+        "latencyAvgMs": 1.14,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 23.01,
+        "totalRequests": 897969,
+        "errors": 0
+      },
+      "startupMs": 192.8523,
+      "rssBytes": 85336064,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "express",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 63819.43,
+        "latencyAvgMs": 2,
+        "p50Ms": 2,
+        "p95Ms": 3,
+        "p99Ms": 3.01,
+        "throughputMBs": 19.9,
+        "totalRequests": 510715,
+        "errors": 0
+      },
+      "startupMs": 151.08669999999984,
+      "rssBytes": 115097600,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "elysia2",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 114921.24,
+        "latencyAvgMs": 1.11,
+        "p50Ms": 1.03,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 23.56,
+        "totalRequests": 919425,
+        "errors": 0
+      },
+      "startupMs": 148.92959999999948,
+      "rssBytes": 102682624,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "elysia",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 114714.86,
+        "latencyAvgMs": 1.11,
+        "p50Ms": 1.03,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 23.52,
+        "totalRequests": 917759,
+        "errors": 0
+      },
+      "startupMs": 151.22119999999995,
+      "rssBytes": 85897216,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "hono",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 114161.55,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.03,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 21.88,
+        "totalRequests": 913366,
+        "errors": 0
+      },
+      "startupMs": 148.18679999999586,
+      "rssBytes": 91549696,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "hono",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 111400.11,
+        "latencyAvgMs": 1.15,
+        "p50Ms": 1.03,
+        "p95Ms": 1.58,
+        "p99Ms": 2,
+        "throughputMBs": 22.63,
+        "totalRequests": 891318,
+        "errors": 0
+      },
+      "startupMs": 152.61439999999857,
+      "rssBytes": 92450816,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "elysia",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 112899.11,
+        "latencyAvgMs": 1.13,
+        "p50Ms": 1.03,
+        "p95Ms": 1.58,
+        "p99Ms": 2,
+        "throughputMBs": 24.44,
+        "totalRequests": 903254,
+        "errors": 0
+      },
+      "startupMs": 154.66449999999895,
+      "rssBytes": 84566016,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "express",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 63180.68,
+        "latencyAvgMs": 2.02,
+        "p50Ms": 2,
+        "p95Ms": 3,
+        "p99Ms": 3.19,
+        "throughputMBs": 20.48,
+        "totalRequests": 505515,
+        "errors": 0
+      },
+      "startupMs": 171.85500000001048,
+      "rssBytes": 116740096,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "elysia2",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 116985.38,
+        "latencyAvgMs": 1.09,
+        "p50Ms": 1.03,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 25.32,
+        "totalRequests": 935953,
+        "errors": 0
+      },
+      "startupMs": 154.05539999999746,
+      "rssBytes": 98385920,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "burger",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 109018.65,
+        "latencyAvgMs": 1.17,
+        "p50Ms": 1.03,
+        "p95Ms": 1.59,
+        "p99Ms": 2,
+        "throughputMBs": 23.6,
+        "totalRequests": 872207,
+        "errors": 0
+      },
+      "startupMs": 152.18499999999767,
+      "rssBytes": 86155264,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "elysia2",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 119062.62,
+        "latencyAvgMs": 1.07,
+        "p50Ms": 1.04,
+        "p95Ms": 1.54,
+        "p99Ms": 1.66,
+        "throughputMBs": 24.3,
+        "totalRequests": 952619,
+        "errors": 0
+      },
+      "startupMs": 149.3176000000094,
+      "rssBytes": 99807232,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "hono",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 109589.18,
+        "latencyAvgMs": 1.17,
+        "p50Ms": 1.04,
+        "p95Ms": 1.58,
+        "p99Ms": 2.05,
+        "throughputMBs": 20.9,
+        "totalRequests": 876843,
+        "errors": 0
+      },
+      "startupMs": 149.84979999999632,
+      "rssBytes": 92110848,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "burger",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 110820.06,
+        "latencyAvgMs": 1.15,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.7,
+        "throughputMBs": 22.62,
+        "totalRequests": 886699,
+        "errors": 0
+      },
+      "startupMs": 171.58769999998913,
+      "rssBytes": 96907264,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "elysia",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 113890.12,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.66,
+        "throughputMBs": 23.24,
+        "totalRequests": 911219,
+        "errors": 0
+      },
+      "startupMs": 148.56729999999516,
+      "rssBytes": 86106112,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "express",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 41799.47,
+        "latencyAvgMs": 3.06,
+        "p50Ms": 3,
+        "p95Ms": 4,
+        "p99Ms": 4.2,
+        "throughputMBs": 12.99,
+        "totalRequests": 334557,
+        "errors": 0
+      },
+      "startupMs": 168.81999999997788,
+      "rssBytes": 115998720,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "elysia2",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 113458.9,
+        "latencyAvgMs": 1.13,
+        "p50Ms": 1.03,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 26.08,
+        "totalRequests": 907747,
+        "errors": 0
+      },
+      "startupMs": 151.11509999999544,
+      "rssBytes": 93257728,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "express",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 64868.56,
+        "latencyAvgMs": 1.97,
+        "p50Ms": 2.06,
+        "p95Ms": 2.6,
+        "p99Ms": 3.15,
+        "throughputMBs": 21.9,
+        "totalRequests": 519009,
+        "errors": 0
+      },
+      "startupMs": 170.40679999999702,
+      "rssBytes": 116404224,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "burger",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 118505.78,
+        "latencyAvgMs": 1.08,
+        "p50Ms": 1.03,
+        "p95Ms": 1.55,
+        "p99Ms": 2,
+        "throughputMBs": 27.24,
+        "totalRequests": 948083,
+        "errors": 0
+      },
+      "startupMs": 149.4775999999838,
+      "rssBytes": 87080960,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "elysia",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 115554.38,
+        "latencyAvgMs": 1.11,
+        "p50Ms": 1.03,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 26.56,
+        "totalRequests": 924543,
+        "errors": 0
+      },
+      "startupMs": 154.48299999997835,
+      "rssBytes": 86867968,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "hono",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 111752.61,
+        "latencyAvgMs": 1.14,
+        "p50Ms": 1.03,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 24.19,
+        "totalRequests": 894116,
+        "errors": 0
+      },
+      "startupMs": 152.24649999997928,
+      "rssBytes": 92139520,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "elysia",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 98596.69,
+        "latencyAvgMs": 1.3,
+        "p50Ms": 1.04,
+        "p95Ms": 2,
+        "p99Ms": 2.01,
+        "throughputMBs": 28.96,
+        "totalRequests": 788926,
+        "errors": 0
+      },
+      "startupMs": 169.27629999999772,
+      "rssBytes": 99004416,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "express",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 46546.63,
+        "latencyAvgMs": 2.75,
+        "p50Ms": 2.7,
+        "p95Ms": 3.56,
+        "p99Ms": 4,
+        "throughputMBs": 18.69,
+        "totalRequests": 372462,
+        "errors": 0
+      },
+      "startupMs": 149.2225000000035,
+      "rssBytes": 126324736,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "burger",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 100020.06,
+        "latencyAvgMs": 1.28,
+        "p50Ms": 1.06,
+        "p95Ms": 1.73,
+        "p99Ms": 2.01,
+        "throughputMBs": 29.38,
+        "totalRequests": 800198,
+        "errors": 0
+      },
+      "startupMs": 154.234300000011,
+      "rssBytes": 93720576,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "elysia2",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 99960.23,
+        "latencyAvgMs": 1.28,
+        "p50Ms": 1.03,
+        "p95Ms": 2,
+        "p99Ms": 2.01,
+        "throughputMBs": 29.36,
+        "totalRequests": 799763,
+        "errors": 0
+      },
+      "startupMs": 152.6077000000223,
+      "rssBytes": 102375424,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "hono",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 84120.01,
+        "latencyAvgMs": 1.52,
+        "p50Ms": 1.56,
+        "p95Ms": 1.78,
+        "p99Ms": 2.31,
+        "throughputMBs": 23.58,
+        "totalRequests": 673085,
+        "errors": 0
+      },
+      "startupMs": 149.81529999998747,
+      "rssBytes": 94531584,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "elysia2",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 118267.51,
+        "latencyAvgMs": 1.08,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.65,
+        "throughputMBs": 27.52,
+        "totalRequests": 946239,
+        "errors": 0
+      },
+      "startupMs": 151.93469999998342,
+      "rssBytes": 102350848,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "hono",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 113392.22,
+        "latencyAvgMs": 1.13,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.75,
+        "throughputMBs": 24.87,
+        "totalRequests": 907269,
+        "errors": 0
+      },
+      "startupMs": 147.70829999999842,
+      "rssBytes": 93339648,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "elysia",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 112634.37,
+        "latencyAvgMs": 1.14,
+        "p50Ms": 1.04,
+        "p95Ms": 1.59,
+        "p99Ms": 2.37,
+        "throughputMBs": 26.21,
+        "totalRequests": 901109,
+        "errors": 0
+      },
+      "startupMs": 146.9707000000053,
+      "rssBytes": 91205632,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "burger",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 111457.38,
+        "latencyAvgMs": 1.15,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.99,
+        "throughputMBs": 25.93,
+        "totalRequests": 891734,
+        "errors": 0
+      },
+      "startupMs": 168.4953000000096,
+      "rssBytes": 89911296,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "express",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 58613.66,
+        "latencyAvgMs": 2.18,
+        "p50Ms": 2.1,
+        "p95Ms": 2.97,
+        "p99Ms": 3.6,
+        "throughputMBs": 19.95,
+        "totalRequests": 468914,
+        "errors": 0
+      },
+      "startupMs": 149.6023999999743,
+      "rssBytes": 120029184,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "elysia2",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 108759.83,
+        "latencyAvgMs": 1.18,
+        "p50Ms": 1.05,
+        "p95Ms": 1.59,
+        "p99Ms": 2.12,
+        "throughputMBs": 25.41,
+        "totalRequests": 870148,
+        "errors": 0
+      },
+      "startupMs": 169.83790000004228,
+      "rssBytes": 99848192,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "express",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 64097.02,
+        "latencyAvgMs": 2,
+        "p50Ms": 2.09,
+        "p95Ms": 2.72,
+        "p99Ms": 3.42,
+        "throughputMBs": 21.84,
+        "totalRequests": 511905,
+        "errors": 0
+      },
+      "startupMs": 172.33950000000186,
+      "rssBytes": 119848960,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "hono",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 96763.58,
+        "latencyAvgMs": 1.32,
+        "p50Ms": 1.09,
+        "p95Ms": 1.64,
+        "p99Ms": 2.25,
+        "throughputMBs": 21.32,
+        "totalRequests": 774163,
+        "errors": 0
+      },
+      "startupMs": 150.75250000000233,
+      "rssBytes": 92962816,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "burger",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 116925.65,
+        "latencyAvgMs": 1.09,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.68,
+        "throughputMBs": 27.32,
+        "totalRequests": 935506,
+        "errors": 0
+      },
+      "startupMs": 148.21230000001378,
+      "rssBytes": 90464256,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "elysia",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 114017.03,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.7,
+        "throughputMBs": 26.64,
+        "totalRequests": 912194,
+        "errors": 0
+      },
+      "startupMs": 150.06050000002142,
+      "rssBytes": 95047680,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "express",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 69720.63,
+        "latencyAvgMs": 1.83,
+        "p50Ms": 1.6,
+        "p95Ms": 2.65,
+        "p99Ms": 3.15,
+        "throughputMBs": 33.18,
+        "totalRequests": 557841,
+        "errors": 557841
+      },
+      "startupMs": 167.59849999996368,
+      "rssBytes": 129384448,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "elysia",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 114490.62,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.99,
+        "throughputMBs": 22.49,
+        "totalRequests": 916032,
+        "errors": 916032
+      },
+      "startupMs": 147.46240000001853,
+      "rssBytes": 83902464,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "hono",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 113322.72,
+        "latencyAvgMs": 1.13,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.79,
+        "throughputMBs": 22.91,
+        "totalRequests": 906706,
+        "errors": 906706
+      },
+      "startupMs": 167.29550000000745,
+      "rssBytes": 89866240,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "burger",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 111182.6,
+        "latencyAvgMs": 1.15,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.76,
+        "throughputMBs": 29.05,
+        "totalRequests": 889536,
+        "errors": 889536
+      },
+      "startupMs": 150.35820000001695,
+      "rssBytes": 92983296,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "elysia2",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 113923.35,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 29.33,
+        "totalRequests": 911445,
+        "errors": 911445
+      },
+      "startupMs": 150.91970000002766,
+      "rssBytes": 93827072,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "elysia",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 111612.72,
+        "latencyAvgMs": 1.15,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 19.58,
+        "totalRequests": 892960,
+        "errors": 0
+      },
+      "startupMs": 169.45780000003288,
+      "rssBytes": 86986752,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "express",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 67832.92,
+        "latencyAvgMs": 1.89,
+        "p50Ms": 2,
+        "p95Ms": 2.44,
+        "p99Ms": 3,
+        "throughputMBs": 20.05,
+        "totalRequests": 542812,
+        "errors": 0
+      },
+      "startupMs": 152.14030000002822,
+      "rssBytes": 117329920,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "burger",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 118372.51,
+        "latencyAvgMs": 1.08,
+        "p50Ms": 1.03,
+        "p95Ms": 1.55,
+        "p99Ms": 2,
+        "throughputMBs": 20.77,
+        "totalRequests": 947012,
+        "errors": 0
+      },
+      "startupMs": 154.51530000002822,
+      "rssBytes": 88764416,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "hono",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 111715.38,
+        "latencyAvgMs": 1.14,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 21.09,
+        "totalRequests": 893744,
+        "errors": 0
+      },
+      "startupMs": 149.6542999999947,
+      "rssBytes": 90599424,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "elysia2",
+      "run": 0,
+      "metrics": {
+        "requestsPerSec": 115732.88,
+        "latencyAvgMs": 1.1,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.74,
+        "throughputMBs": 20.31,
+        "totalRequests": 925970,
+        "errors": 0
+      },
+      "startupMs": 174.28190000000177,
+      "rssBytes": 98582528,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "hono",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 116150.46,
+        "latencyAvgMs": 1.1,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 22.26,
+        "totalRequests": 929260,
+        "errors": 0
+      },
+      "startupMs": 171.03429999999935,
+      "rssBytes": 90161152,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "elysia2",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 121768.04,
+        "latencyAvgMs": 1.05,
+        "p50Ms": 1,
+        "p95Ms": 1.53,
+        "p99Ms": 2,
+        "throughputMBs": 24.97,
+        "totalRequests": 974176,
+        "errors": 0
+      },
+      "startupMs": 148.7658999999985,
+      "rssBytes": 97521664,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "elysia",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 116773.77,
+        "latencyAvgMs": 1.1,
+        "p50Ms": 1.03,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 23.94,
+        "totalRequests": 934268,
+        "errors": 0
+      },
+      "startupMs": 148.5836999999592,
+      "rssBytes": 87457792,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "express",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 66825.05,
+        "latencyAvgMs": 1.91,
+        "p50Ms": 2,
+        "p95Ms": 2.57,
+        "p99Ms": 3.06,
+        "throughputMBs": 20.84,
+        "totalRequests": 534728,
+        "errors": 0
+      },
+      "startupMs": 170.27029999997467,
+      "rssBytes": 116408320,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "burger",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 114263.12,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.03,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 23.43,
+        "totalRequests": 914183,
+        "errors": 0
+      },
+      "startupMs": 149.1238000000012,
+      "rssBytes": 87523328,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "express",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 63354.66,
+        "latencyAvgMs": 2.02,
+        "p50Ms": 2,
+        "p95Ms": 2.96,
+        "p99Ms": 3.29,
+        "throughputMBs": 20.54,
+        "totalRequests": 506974,
+        "errors": 0
+      },
+      "startupMs": 172.31030000001192,
+      "rssBytes": 116559872,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "hono",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 115500.79,
+        "latencyAvgMs": 1.11,
+        "p50Ms": 1.03,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 23.46,
+        "totalRequests": 924110,
+        "errors": 0
+      },
+      "startupMs": 151.21210000000428,
+      "rssBytes": 91582464,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "burger",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 112425.65,
+        "latencyAvgMs": 1.14,
+        "p50Ms": 1.03,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 24.34,
+        "totalRequests": 899441,
+        "errors": 0
+      },
+      "startupMs": 171.93269999988843,
+      "rssBytes": 88342528,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "elysia2",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 112809.47,
+        "latencyAvgMs": 1.13,
+        "p50Ms": 1.02,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 24.42,
+        "totalRequests": 902550,
+        "errors": 0
+      },
+      "startupMs": 151.00740000000224,
+      "rssBytes": 99807232,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "elysia",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 117944.1,
+        "latencyAvgMs": 1.08,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.81,
+        "throughputMBs": 25.53,
+        "totalRequests": 943685,
+        "errors": 0
+      },
+      "startupMs": 150.28179999999702,
+      "rssBytes": 83304448,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "elysia2",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 107671.35,
+        "latencyAvgMs": 1.19,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 21.97,
+        "totalRequests": 861423,
+        "errors": 0
+      },
+      "startupMs": 152.20279999997,
+      "rssBytes": 100315136,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "burger",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 104902.42,
+        "latencyAvgMs": 1.22,
+        "p50Ms": 1.04,
+        "p95Ms": 1.58,
+        "p99Ms": 1.83,
+        "throughputMBs": 21.41,
+        "totalRequests": 839281,
+        "errors": 0
+      },
+      "startupMs": 170.10519999999087,
+      "rssBytes": 99098624,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "elysia",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 104132.76,
+        "latencyAvgMs": 1.23,
+        "p50Ms": 1.04,
+        "p95Ms": 1.58,
+        "p99Ms": 2,
+        "throughputMBs": 21.25,
+        "totalRequests": 833111,
+        "errors": 0
+      },
+      "startupMs": 169.0828999999212,
+      "rssBytes": 84598784,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "express",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 40327.98,
+        "latencyAvgMs": 3.17,
+        "p50Ms": 3.14,
+        "p95Ms": 4,
+        "p99Ms": 4.66,
+        "throughputMBs": 12.54,
+        "totalRequests": 322717,
+        "errors": 0
+      },
+      "startupMs": 170.98600000003353,
+      "rssBytes": 118272000,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "hono",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 101458.29,
+        "latencyAvgMs": 1.26,
+        "p50Ms": 1.05,
+        "p95Ms": 1.59,
+        "p99Ms": 2.09,
+        "throughputMBs": 19.35,
+        "totalRequests": 811824,
+        "errors": 0
+      },
+      "startupMs": 151.19270000001416,
+      "rssBytes": 91631616,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "elysia2",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 109200.85,
+        "latencyAvgMs": 1.17,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.9,
+        "throughputMBs": 25.1,
+        "totalRequests": 873640,
+        "errors": 0
+      },
+      "startupMs": 167.53479999990668,
+      "rssBytes": 96407552,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "hono",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 105197.94,
+        "latencyAvgMs": 1.22,
+        "p50Ms": 1.04,
+        "p95Ms": 1.58,
+        "p99Ms": 2,
+        "throughputMBs": 22.77,
+        "totalRequests": 841639,
+        "errors": 0
+      },
+      "startupMs": 169.2921000000788,
+      "rssBytes": 92291072,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "burger",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 114634.64,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 26.35,
+        "totalRequests": 917160,
+        "errors": 0
+      },
+      "startupMs": 150.82140000001527,
+      "rssBytes": 85405696,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "express",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 65881.64,
+        "latencyAvgMs": 1.94,
+        "p50Ms": 2,
+        "p95Ms": 2.86,
+        "p99Ms": 3,
+        "throughputMBs": 22.24,
+        "totalRequests": 527184,
+        "errors": 0
+      },
+      "startupMs": 171.99170000001322,
+      "rssBytes": 115249152,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "elysia",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 115608.85,
+        "latencyAvgMs": 1.11,
+        "p50Ms": 1.02,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 26.57,
+        "totalRequests": 924949,
+        "errors": 0
+      },
+      "startupMs": 172.51029999996535,
+      "rssBytes": 88387584,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "elysia",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 98694.53,
+        "latencyAvgMs": 1.3,
+        "p50Ms": 1.03,
+        "p95Ms": 2,
+        "p99Ms": 2.01,
+        "throughputMBs": 28.99,
+        "totalRequests": 789652,
+        "errors": 0
+      },
+      "startupMs": 167.02080000005662,
+      "rssBytes": 98705408,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "burger",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 99557.61,
+        "latencyAvgMs": 1.28,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 29.24,
+        "totalRequests": 796625,
+        "errors": 0
+      },
+      "startupMs": 169.80500000005122,
+      "rssBytes": 95199232,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "express",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 45709.14,
+        "latencyAvgMs": 2.8,
+        "p50Ms": 3,
+        "p95Ms": 3.99,
+        "p99Ms": 4,
+        "throughputMBs": 18.35,
+        "totalRequests": 365774,
+        "errors": 0
+      },
+      "startupMs": 148.2210999999661,
+      "rssBytes": 125018112,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "elysia2",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 99955.72,
+        "latencyAvgMs": 1.28,
+        "p50Ms": 1.02,
+        "p95Ms": 2,
+        "p99Ms": 2.01,
+        "throughputMBs": 29.36,
+        "totalRequests": 799730,
+        "errors": 0
+      },
+      "startupMs": 167.23320000001695,
+      "rssBytes": 108814336,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "hono",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 82606.87,
+        "latencyAvgMs": 1.55,
+        "p50Ms": 1.54,
+        "p95Ms": 2.01,
+        "p99Ms": 2.43,
+        "throughputMBs": 23.16,
+        "totalRequests": 660893,
+        "errors": 0
+      },
+      "startupMs": 147.92869999993127,
+      "rssBytes": 96309248,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "hono",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 113666.62,
+        "latencyAvgMs": 1.13,
+        "p50Ms": 1.03,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 24.93,
+        "totalRequests": 909450,
+        "errors": 0
+      },
+      "startupMs": 151.80339999997523,
+      "rssBytes": 93425664,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "burger",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 119546.2,
+        "latencyAvgMs": 1.07,
+        "p50Ms": 1.04,
+        "p95Ms": 1.49,
+        "p99Ms": 1.61,
+        "throughputMBs": 27.82,
+        "totalRequests": 956451,
+        "errors": 0
+      },
+      "startupMs": 168.4716999999946,
+      "rssBytes": 89272320,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "elysia2",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 119766.99,
+        "latencyAvgMs": 1.07,
+        "p50Ms": 1.04,
+        "p95Ms": 1.53,
+        "p99Ms": 1.66,
+        "throughputMBs": 27.87,
+        "totalRequests": 958218,
+        "errors": 0
+      },
+      "startupMs": 168.67360000009649,
+      "rssBytes": 104112128,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "elysia",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 118686.94,
+        "latencyAvgMs": 1.08,
+        "p50Ms": 1.04,
+        "p95Ms": 1.55,
+        "p99Ms": 1.66,
+        "throughputMBs": 27.62,
+        "totalRequests": 949608,
+        "errors": 0
+      },
+      "startupMs": 168.33259999996517,
+      "rssBytes": 90435584,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "express",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 62358.62,
+        "latencyAvgMs": 2.05,
+        "p50Ms": 2.09,
+        "p95Ms": 2.69,
+        "p99Ms": 3.31,
+        "throughputMBs": 21.23,
+        "totalRequests": 498952,
+        "errors": 0
+      },
+      "startupMs": 148.95850000006612,
+      "rssBytes": 117665792,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "elysia2",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 115080.31,
+        "latencyAvgMs": 1.11,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.7,
+        "throughputMBs": 26.89,
+        "totalRequests": 920750,
+        "errors": 0
+      },
+      "startupMs": 168.3963999999687,
+      "rssBytes": 103104512,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "hono",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 104383,
+        "latencyAvgMs": 1.23,
+        "p50Ms": 1.05,
+        "p95Ms": 1.59,
+        "p99Ms": 2.08,
+        "throughputMBs": 22.99,
+        "totalRequests": 835129,
+        "errors": 0
+      },
+      "startupMs": 147.4194000000134,
+      "rssBytes": 92749824,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "elysia",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 114169.75,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.68,
+        "throughputMBs": 26.67,
+        "totalRequests": 913465,
+        "errors": 0
+      },
+      "startupMs": 170.67599999997765,
+      "rssBytes": 94216192,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "express",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 65001.63,
+        "latencyAvgMs": 1.97,
+        "p50Ms": 2.08,
+        "p95Ms": 2.62,
+        "p99Ms": 3.29,
+        "throughputMBs": 22.19,
+        "totalRequests": 520107,
+        "errors": 0
+      },
+      "startupMs": 145.39419999998063,
+      "rssBytes": 115007488,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "burger",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 116512.17,
+        "latencyAvgMs": 1.1,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.67,
+        "throughputMBs": 27.22,
+        "totalRequests": 932168,
+        "errors": 0
+      },
+      "startupMs": 167.51249999995343,
+      "rssBytes": 92270592,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "elysia2",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 111784.05,
+        "latencyAvgMs": 1.14,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.95,
+        "throughputMBs": 28.78,
+        "totalRequests": 894358,
+        "errors": 894358
+      },
+      "startupMs": 170.1026000001002,
+      "rssBytes": 95395840,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "elysia",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 116896.48,
+        "latencyAvgMs": 1.09,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 22.96,
+        "totalRequests": 935262,
+        "errors": 935262
+      },
+      "startupMs": 171.3878000000259,
+      "rssBytes": 87134208,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "burger",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 111529.89,
+        "latencyAvgMs": 1.15,
+        "p50Ms": 1.05,
+        "p95Ms": 1.57,
+        "p99Ms": 1.82,
+        "throughputMBs": 29.14,
+        "totalRequests": 892263,
+        "errors": 892263
+      },
+      "startupMs": 168.1770999999717,
+      "rssBytes": 93396992,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "express",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 68164.75,
+        "latencyAvgMs": 1.88,
+        "p50Ms": 1.63,
+        "p95Ms": 2.71,
+        "p99Ms": 3.18,
+        "throughputMBs": 32.43,
+        "totalRequests": 545377,
+        "errors": 545377
+      },
+      "startupMs": 149.3362999999663,
+      "rssBytes": 131325952,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "hono",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 113829.82,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.78,
+        "throughputMBs": 23.01,
+        "totalRequests": 910717,
+        "errors": 910717
+      },
+      "startupMs": 148.61609999998473,
+      "rssBytes": 90009600,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "hono",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 116224.02,
+        "latencyAvgMs": 1.1,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.77,
+        "throughputMBs": 21.94,
+        "totalRequests": 929737,
+        "errors": 0
+      },
+      "startupMs": 148.88179999997374,
+      "rssBytes": 92893184,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "burger",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 121019.38,
+        "latencyAvgMs": 1.06,
+        "p50Ms": 1.04,
+        "p95Ms": 1.55,
+        "p99Ms": 1.92,
+        "throughputMBs": 21.23,
+        "totalRequests": 968242,
+        "errors": 0
+      },
+      "startupMs": 153.46879999991506,
+      "rssBytes": 88100864,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "elysia2",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 116719.05,
+        "latencyAvgMs": 1.1,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 20.48,
+        "totalRequests": 933818,
+        "errors": 0
+      },
+      "startupMs": 170.41399999998976,
+      "rssBytes": 100950016,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "elysia",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 116173.92,
+        "latencyAvgMs": 1.1,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.75,
+        "throughputMBs": 20.38,
+        "totalRequests": 929445,
+        "errors": 0
+      },
+      "startupMs": 152.00410000002012,
+      "rssBytes": 87076864,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "express",
+      "run": 1,
+      "metrics": {
+        "requestsPerSec": 67707.16,
+        "latencyAvgMs": 1.89,
+        "p50Ms": 2,
+        "p95Ms": 2.59,
+        "p99Ms": 3.13,
+        "throughputMBs": 20.02,
+        "totalRequests": 541750,
+        "errors": 0
+      },
+      "startupMs": 152.28739999991376,
+      "rssBytes": 117633024,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "express",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 66932.04,
+        "latencyAvgMs": 1.91,
+        "p50Ms": 2.08,
+        "p95Ms": 2.58,
+        "p99Ms": 3.12,
+        "throughputMBs": 20.87,
+        "totalRequests": 535547,
+        "errors": 0
+      },
+      "startupMs": 150.70810000004712,
+      "rssBytes": 117993472,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "elysia",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 115031.19,
+        "latencyAvgMs": 1.11,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 23.58,
+        "totalRequests": 920387,
+        "errors": 0
+      },
+      "startupMs": 151.79330000001937,
+      "rssBytes": 87515136,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "burger",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 112565.32,
+        "latencyAvgMs": 1.14,
+        "p50Ms": 1.03,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 23.08,
+        "totalRequests": 900553,
+        "errors": 0
+      },
+      "startupMs": 169.63179999997374,
+      "rssBytes": 85577728,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "hono",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 117075.74,
+        "latencyAvgMs": 1.09,
+        "p50Ms": 1.03,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 22.43,
+        "totalRequests": 936489,
+        "errors": 0
+      },
+      "startupMs": 155.83290000003763,
+      "rssBytes": 92119040,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/static",
+      "group": "routing",
+      "description": "Static GET route returning a small JSON body",
+      "contestant": "elysia2",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 116871.83,
+        "latencyAvgMs": 1.09,
+        "p50Ms": 1.03,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 23.96,
+        "totalRequests": 935033,
+        "errors": 0
+      },
+      "startupMs": 148.05469999997877,
+      "rssBytes": 97083392,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "burger",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 112678.52,
+        "latencyAvgMs": 1.13,
+        "p50Ms": 1.03,
+        "p95Ms": 1.58,
+        "p99Ms": 2,
+        "throughputMBs": 24.39,
+        "totalRequests": 901506,
+        "errors": 0
+      },
+      "startupMs": 149.68889999995008,
+      "rssBytes": 86454272,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "express",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 65577.79,
+        "latencyAvgMs": 1.95,
+        "p50Ms": 2.06,
+        "p95Ms": 2.59,
+        "p99Ms": 3.13,
+        "throughputMBs": 21.26,
+        "totalRequests": 524725,
+        "errors": 0
+      },
+      "startupMs": 169.07629999995697,
+      "rssBytes": 116338688,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "elysia",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 112192.16,
+        "latencyAvgMs": 1.14,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.99,
+        "throughputMBs": 24.29,
+        "totalRequests": 897601,
+        "errors": 0
+      },
+      "startupMs": 170.0840999999782,
+      "rssBytes": 85401600,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "hono",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 116214.28,
+        "latencyAvgMs": 1.1,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 23.6,
+        "totalRequests": 929816,
+        "errors": 0
+      },
+      "startupMs": 171.80970000009984,
+      "rssBytes": 94076928,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/param",
+      "group": "routing",
+      "description": "Dynamic GET route with one :param returning JSON",
+      "contestant": "elysia2",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 120295.34,
+        "latencyAvgMs": 1.06,
+        "p50Ms": 1.03,
+        "p95Ms": 1.54,
+        "p99Ms": 2,
+        "throughputMBs": 26.04,
+        "totalRequests": 962403,
+        "errors": 0
+      },
+      "startupMs": 152.70120000001043,
+      "rssBytes": 99950592,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "hono",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 110476.64,
+        "latencyAvgMs": 1.16,
+        "p50Ms": 1,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 21.06,
+        "totalRequests": 883631,
+        "errors": 0
+      },
+      "startupMs": 150.045599999954,
+      "rssBytes": 92131328,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "express",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 43134.06,
+        "latencyAvgMs": 2.97,
+        "p50Ms": 3,
+        "p95Ms": 3.71,
+        "p99Ms": 4.27,
+        "throughputMBs": 13.41,
+        "totalRequests": 345226,
+        "errors": 0
+      },
+      "startupMs": 151.40439999999944,
+      "rssBytes": 117866496,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "burger",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 110926.75,
+        "latencyAvgMs": 1.15,
+        "p50Ms": 1.03,
+        "p95Ms": 1.58,
+        "p99Ms": 2,
+        "throughputMBs": 22.64,
+        "totalRequests": 887492,
+        "errors": 0
+      },
+      "startupMs": 174.84930000000168,
+      "rssBytes": 98205696,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "elysia2",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 112598.39,
+        "latencyAvgMs": 1.14,
+        "p50Ms": 1.03,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 22.98,
+        "totalRequests": 900824,
+        "errors": 0
+      },
+      "startupMs": 152.94209999986924,
+      "rssBytes": 105525248,
+      "failed": false
+    },
+    {
+      "scenarioId": "routing/many-routes",
+      "group": "routing",
+      "description": "App with 100 static + 100 parameterized routes, one param route hit",
+      "contestant": "elysia",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 113333.76,
+        "latencyAvgMs": 1.13,
+        "p50Ms": 1.03,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 23.13,
+        "totalRequests": 906764,
+        "errors": 0
+      },
+      "startupMs": 150.76640000008047,
+      "rssBytes": 89059328,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "burger",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 112522.26,
+        "latencyAvgMs": 1.14,
+        "p50Ms": 1.03,
+        "p95Ms": 1.58,
+        "p99Ms": 2,
+        "throughputMBs": 25.86,
+        "totalRequests": 900181,
+        "errors": 0
+      },
+      "startupMs": 150.29209999996237,
+      "rssBytes": 85225472,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "hono",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 117521.95,
+        "latencyAvgMs": 1.09,
+        "p50Ms": 1.03,
+        "p95Ms": 1.55,
+        "p99Ms": 2,
+        "throughputMBs": 25.44,
+        "totalRequests": 940302,
+        "errors": 0
+      },
+      "startupMs": 150.5771000001114,
+      "rssBytes": 92258304,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "elysia2",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 109540.6,
+        "latencyAvgMs": 1.17,
+        "p50Ms": 1.03,
+        "p95Ms": 1.58,
+        "p99Ms": 2,
+        "throughputMBs": 25.17,
+        "totalRequests": 876430,
+        "errors": 0
+      },
+      "startupMs": 153.28850000002421,
+      "rssBytes": 95780864,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "express",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 65578.18,
+        "latencyAvgMs": 1.95,
+        "p50Ms": 2,
+        "p95Ms": 2.62,
+        "p99Ms": 3.17,
+        "throughputMBs": 22.14,
+        "totalRequests": 524750,
+        "errors": 0
+      },
+      "startupMs": 171.7510000001639,
+      "rssBytes": 117067776,
+      "failed": false
+    },
+    {
+      "scenarioId": "json/echo",
+      "group": "json",
+      "description": "GET returning a JSON object (serialization overhead)",
+      "contestant": "elysia",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 112785.34,
+        "latencyAvgMs": 1.13,
+        "p50Ms": 1.03,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 25.92,
+        "totalRequests": 902358,
+        "errors": 0
+      },
+      "startupMs": 151.83740000007674,
+      "rssBytes": 88895488,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "burger",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 99555.4,
+        "latencyAvgMs": 1.28,
+        "p50Ms": 1.05,
+        "p95Ms": 2,
+        "p99Ms": 2.01,
+        "throughputMBs": 29.24,
+        "totalRequests": 796589,
+        "errors": 0
+      },
+      "startupMs": 151.2009000000544,
+      "rssBytes": 94855168,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "elysia2",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 101288.3,
+        "latencyAvgMs": 1.26,
+        "p50Ms": 1.03,
+        "p95Ms": 2,
+        "p99Ms": 2.01,
+        "throughputMBs": 29.75,
+        "totalRequests": 810423,
+        "errors": 0
+      },
+      "startupMs": 148.97060000011697,
+      "rssBytes": 111120384,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "elysia",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 98934.84,
+        "latencyAvgMs": 1.29,
+        "p50Ms": 1.01,
+        "p95Ms": 2,
+        "p99Ms": 2.01,
+        "throughputMBs": 29.06,
+        "totalRequests": 791547,
+        "errors": 0
+      },
+      "startupMs": 175.22200000006706,
+      "rssBytes": 98693120,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "hono",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 83245.85,
+        "latencyAvgMs": 1.54,
+        "p50Ms": 1.56,
+        "p95Ms": 2,
+        "p99Ms": 2.34,
+        "throughputMBs": 23.34,
+        "totalRequests": 666107,
+        "errors": 0
+      },
+      "startupMs": 148.28549999999814,
+      "rssBytes": 95399936,
+      "failed": false
+    },
+    {
+      "scenarioId": "validation/body",
+      "group": "validation",
+      "description": "POST with JSON body parsing + real schema validation, echoing the body",
+      "contestant": "express",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 46233.97,
+        "latencyAvgMs": 2.77,
+        "p50Ms": 3,
+        "p95Ms": 3.69,
+        "p99Ms": 4,
+        "throughputMBs": 18.56,
+        "totalRequests": 369968,
+        "errors": 0
+      },
+      "startupMs": 151.6105999997817,
+      "rssBytes": 123998208,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "express",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 60117.14,
+        "latencyAvgMs": 2.13,
+        "p50Ms": 2,
+        "p95Ms": 3,
+        "p99Ms": 3.47,
+        "throughputMBs": 20.46,
+        "totalRequests": 481015,
+        "errors": 0
+      },
+      "startupMs": 170.43690000008792,
+      "rssBytes": 119197696,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "hono",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 113260.12,
+        "latencyAvgMs": 1.13,
+        "p50Ms": 1.03,
+        "p95Ms": 1.56,
+        "p99Ms": 2,
+        "throughputMBs": 24.84,
+        "totalRequests": 906177,
+        "errors": 0
+      },
+      "startupMs": 147.59080000012182,
+      "rssBytes": 93130752,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "elysia2",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 118728.89,
+        "latencyAvgMs": 1.08,
+        "p50Ms": 1.03,
+        "p95Ms": 1.54,
+        "p99Ms": 2,
+        "throughputMBs": 27.62,
+        "totalRequests": 949832,
+        "errors": 0
+      },
+      "startupMs": 154.14000000013039,
+      "rssBytes": 102072320,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "burger",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 119211.76,
+        "latencyAvgMs": 1.07,
+        "p50Ms": 1.02,
+        "p95Ms": 1.54,
+        "p99Ms": 2,
+        "throughputMBs": 27.74,
+        "totalRequests": 953793,
+        "errors": 0
+      },
+      "startupMs": 169.03979999991134,
+      "rssBytes": 89829376,
+      "failed": false
+    },
+    {
+      "scenarioId": "request/query",
+      "group": "request",
+      "description": "GET reading two query string values through each framework query API",
+      "contestant": "elysia",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 116572.13,
+        "latencyAvgMs": 1.1,
+        "p50Ms": 1.03,
+        "p95Ms": 1.55,
+        "p99Ms": 2,
+        "throughputMBs": 27.12,
+        "totalRequests": 932737,
+        "errors": 0
+      },
+      "startupMs": 150.18599999998696,
+      "rssBytes": 91242496,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "elysia",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 114029.42,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.03,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 26.64,
+        "totalRequests": 912315,
+        "errors": 0
+      },
+      "startupMs": 150.24949999991804,
+      "rssBytes": 93896704,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "elysia2",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 114897.92,
+        "latencyAvgMs": 1.11,
+        "p50Ms": 1.02,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 26.84,
+        "totalRequests": 919233,
+        "errors": 0
+      },
+      "startupMs": 151.94010000000708,
+      "rssBytes": 101937152,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "burger",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 114945.07,
+        "latencyAvgMs": 1.11,
+        "p50Ms": 1.02,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 26.86,
+        "totalRequests": 919680,
+        "errors": 0
+      },
+      "startupMs": 169.7436999999918,
+      "rssBytes": 92250112,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "express",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 65914.5,
+        "latencyAvgMs": 1.94,
+        "p50Ms": 2,
+        "p95Ms": 2.62,
+        "p99Ms": 3,
+        "throughputMBs": 22.5,
+        "totalRequests": 527453,
+        "errors": 0
+      },
+      "startupMs": 150.0918000000529,
+      "rssBytes": 116002816,
+      "failed": false
+    },
+    {
+      "scenarioId": "hooks/auth",
+      "group": "hooks",
+      "description": "GET guarded by a before-handler hook that checks the Authorization header",
+      "contestant": "hono",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 104209.57,
+        "latencyAvgMs": 1.23,
+        "p50Ms": 1.03,
+        "p95Ms": 2,
+        "p99Ms": 2.01,
+        "throughputMBs": 22.96,
+        "totalRequests": 833732,
+        "errors": 0
+      },
+      "startupMs": 149.29330000001937,
+      "rssBytes": 92336128,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "elysia",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 114037.67,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.03,
+        "p95Ms": 2,
+        "p99Ms": 2,
+        "throughputMBs": 22.4,
+        "totalRequests": 912398,
+        "errors": 912398
+      },
+      "startupMs": 150.72289999993518,
+      "rssBytes": 84066304,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "hono",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 113863.97,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.8,
+        "throughputMBs": 23.02,
+        "totalRequests": 911029,
+        "errors": 911029
+      },
+      "startupMs": 150.93690000008792,
+      "rssBytes": 91959296,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "elysia2",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 113900.55,
+        "latencyAvgMs": 1.12,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 2,
+        "throughputMBs": 29.33,
+        "totalRequests": 911287,
+        "errors": 911287
+      },
+      "startupMs": 147.6123999999836,
+      "rssBytes": 92385280,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "burger",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 110927.81,
+        "latencyAvgMs": 1.15,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.83,
+        "throughputMBs": 28.98,
+        "totalRequests": 887517,
+        "errors": 887517
+      },
+      "startupMs": 169.39099999982864,
+      "rssBytes": 93171712,
+      "failed": false
+    },
+    {
+      "scenarioId": "errors/not-found",
+      "group": "errors",
+      "description": "Request to an unregistered path on a single-route app (404)",
+      "contestant": "express",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 67696.46,
+        "latencyAvgMs": 1.89,
+        "p50Ms": 1.66,
+        "p95Ms": 2.76,
+        "p99Ms": 3.22,
+        "throughputMBs": 32.21,
+        "totalRequests": 541678,
+        "errors": 541678
+      },
+      "startupMs": 150.2898999999743,
+      "rssBytes": 129138688,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "elysia",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 118260.16,
+        "latencyAvgMs": 1.08,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.66,
+        "throughputMBs": 20.75,
+        "totalRequests": 946200,
+        "errors": 0
+      },
+      "startupMs": 150.65729999984615,
+      "rssBytes": 88281088,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "express",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 68084.56,
+        "latencyAvgMs": 1.88,
+        "p50Ms": 2.06,
+        "p95Ms": 2.56,
+        "p99Ms": 3.14,
+        "throughputMBs": 20.13,
+        "totalRequests": 544693,
+        "errors": 0
+      },
+      "startupMs": 170.92540000006557,
+      "rssBytes": 122482688,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "burger",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 112058.64,
+        "latencyAvgMs": 1.14,
+        "p50Ms": 1.04,
+        "p95Ms": 1.57,
+        "p99Ms": 1.99,
+        "throughputMBs": 19.66,
+        "totalRequests": 896544,
+        "errors": 0
+      },
+      "startupMs": 171.4405999998562,
+      "rssBytes": 88965120,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "elysia2",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 116570.23,
+        "latencyAvgMs": 1.1,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.72,
+        "throughputMBs": 20.45,
+        "totalRequests": 932613,
+        "errors": 0
+      },
+      "startupMs": 171.01129999989644,
+      "rssBytes": 103264256,
+      "failed": false
+    },
+    {
+      "scenarioId": "response/text",
+      "group": "response",
+      "description": "GET returning a plain-text body",
+      "contestant": "hono",
+      "run": 2,
+      "metrics": {
+        "requestsPerSec": 120114.51,
+        "latencyAvgMs": 1.06,
+        "p50Ms": 1.04,
+        "p95Ms": 1.56,
+        "p99Ms": 1.77,
+        "throughputMBs": 22.68,
+        "totalRequests": 961037,
+        "errors": 0
+      },
+      "startupMs": 149.94120000000112,
+      "rssBytes": 92139520,
+      "failed": false
+    }
+  ]
+}
